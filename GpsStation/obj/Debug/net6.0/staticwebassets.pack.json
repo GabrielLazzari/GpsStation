@@ -13,6 +13,54 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\cliente.gif",
+      "PackagePath": "staticwebassets\\gifs\\cliente.gif"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\cliente_parado.png",
+      "PackagePath": "staticwebassets\\gifs\\cliente_parado.png"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\configuracoes.gif",
+      "PackagePath": "staticwebassets\\gifs\\configuracoes.gif"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\configuracoes.png",
+      "PackagePath": "staticwebassets\\gifs\\configuracoes.png"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\definicoes.gif",
+      "PackagePath": "staticwebassets\\gifs\\definicoes.gif"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\definicoes_parado.png",
+      "PackagePath": "staticwebassets\\gifs\\definicoes_parado.png"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\em-formacao.gif",
+      "PackagePath": "staticwebassets\\gifs\\em-formacao.gif"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\em-formacao.png",
+      "PackagePath": "staticwebassets\\gifs\\em-formacao.png"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\jornal.gif",
+      "PackagePath": "staticwebassets\\gifs\\jornal.gif"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\jornal.png",
+      "PackagePath": "staticwebassets\\gifs\\jornal.png"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\mapa.gif",
+      "PackagePath": "staticwebassets\\gifs\\mapa.gif"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\gifs\\mapa.png",
+      "PackagePath": "staticwebassets\\gifs\\mapa.png"
+    },
+    {
       "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\js\\mapa.js",
       "PackagePath": "staticwebassets\\js\\mapa.js"
     },
