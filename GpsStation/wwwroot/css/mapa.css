@@ -1,0 +1,19 @@
+﻿html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map_55bbce51b6ab60a6b4c85363dc2540ad {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0.0%;
+    top: 0.0%;
+    z-index: 1;
+}
+
+.leaflet-container {
+    font-size: 1rem;
+}

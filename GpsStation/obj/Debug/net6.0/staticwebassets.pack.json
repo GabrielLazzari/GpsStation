@@ -5,8 +5,28 @@
       "PackagePath": "staticwebassets\\GpsStation.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\css\\andarilho.css",
+      "PackagePath": "staticwebassets\\css\\andarilho.css"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\css\\configuracao.css",
+      "PackagePath": "staticwebassets\\css\\configuracao.css"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\css\\mapa.css",
+      "PackagePath": "staticwebassets\\css\\mapa.css"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\css\\relatorio.css",
+      "PackagePath": "staticwebassets\\css\\relatorio.css"
+    },
+    {
       "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\css\\sobre.css",
+      "PackagePath": "staticwebassets\\css\\sobre.css"
     },
     {
       "Id": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\wwwroot\\favicon.ico",

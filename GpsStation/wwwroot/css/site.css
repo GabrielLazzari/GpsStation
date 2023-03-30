@@ -1,16 +1,20 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    background: #333;
+
+.pagina {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
-.navigation{
+
+.navigation {
     position: fixed;
     inset: 0 0 0 0;
     width: 45px;
+    height: 100%;
     background: #fff;
     transition: 0.5s;
     display: flex;
@@ -18,16 +22,27 @@ body {
     align-items: center;
     z-index: 3;
 }
-.navigation.open{
+
+.navigation.open {
     width: 250px;
 }
 
-.navigation .menuToggle{
+.navigation.barraSuperior {
+    width: 100%;
+    height: 45px;
+}
+
+.navigation.barraSuperior.open {
+    height: 310px;
+}
+
+
+.navigation .menuToggle {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 60px;
+    width: 45px;
+    height: 46px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     cursor: pointer;
     display: flex;
@@ -35,7 +50,13 @@ body {
     justify-content: flex-start;
     padding: 0 7px;
 }
-.navigation .menuToggle::before{
+
+.navigation.barraSuperior .menuToggle {
+    height: 45px;
+    border-bottom: 0px solid rgba(0, 0, 0, 0.25);
+}
+
+.navigation .menuToggle:before {
     content: '';
     position: absolute;
     width: 30px;
@@ -44,10 +65,12 @@ body {
     transform: translateY(-8px);
     transition: 0.5s;
 }
-.navigation.open .menuToggle::before{
+
+.navigation.open .menuToggle:before {
     transform: translateX(0px) rotate(45deg);
 }
-.navigation .menuToggle::after{
+
+.navigation .menuToggle::after {
     content: '';
     position: absolute;
     width: 30px;
@@ -57,24 +80,37 @@ body {
     transition: 0.5s;
     box-shadow: 0 -8px 0 #33cccb;
 }
-.navigation.open .menuToggle::after{
+
+.navigation.open .menuToggle::after {
     transform: translateX(0px) rotate(-45deg);
     box-shadow: 0 0 0 #33cccb;
 }
 
+
 .navigation ul {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
     position: absolute;
-    left: -20px;
+    top: 60px;
     transition: 0.5s;
+    left: -20px;
+    align-items: center;
+    justify-content: flex-start;
 }
-.navigation.open ul{
-    left: 0px;
+
+.navigation.barraSuperior ul {
+    top: 0px;
+    left: 60px;
+    flex-direction: row;
+    height: 45px;
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
 }
-.navigation ul li{
+
+.navigation.barraSuperior.open ul {
+    flex-direction: column;
+}
+
+.navigation ul li {
     list-style: none;
     position: relative;
     width: 100%;
@@ -82,7 +118,9 @@ body {
     padding: 0 5px;
     transition: 0.5s;
 }
-.navigation ul li a{
+
+.navigation ul li a {
+    height: 100%;
     position: relative;
     display: flex;
     align-items: center;
@@ -91,54 +129,58 @@ body {
     text-decoration: none;
 }
 
-.navigation ul li a .icon{
+
+.navigation ul li a .icon {
     position: relative;
     display: block;
     min-width: 35px;
     height: 35px;
-    line-height: 43px; /*muda o top do icone*/
+    line-height: 43px;
     transition: 0.5s;
     border-radius: 10px;
     font-size: 1.75em;
     color: #222;
 }
-.navigation.open ul li a .icon{
+
+.navigation.open ul li a .icon {
     min-width: 55px;
     height: 55px;
-    line-height: 60px; /*muda o top do icone*/
+    line-height: 60px;
 }
-/*.navigation ul li.active a .icon{
-    color: #fff;
-    background: var(--clr);
-}*/
-.navigation ul li a .icon::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--clr);
-    filter: blur(8px);
-    opacity: 0;
-    transition: 0.5s;
+
+.navigation.barraSuperior.open ul li a .icon {
+    min-width: 75px;
+    height: 75px;
+    line-height: 60px;
 }
-.navigation ul li.active a .icon::before{
-    opacity: 0.5;
+
+.navigation.barraSuperior ul li a .icon {
+    padding: 10px;
+    min-width: 55px;
+    height: 55px;
 }
-        
-.navigation ul li a .text{
+
+.navigation ul li a .text {
     position: relative;
     padding: 0 15px;
     height: 60px;
-    display: flex;
     align-items: center;
     color: #333;
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
 }
-.navigation.open ul li a .text{
+
+.navigation.barraSuperior ul li a .text {
+    padding: 0 0px;
+}
+
+.navigation.open ul li a .text {
     opacity: 1;
     visibility: visible;
+    display: flex;
+}
+
+a span {
+    display: none;
 }
