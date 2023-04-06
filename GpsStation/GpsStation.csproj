@@ -6,4 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Views\Usuario\Cadastro.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Views\Usuario\Cadastro.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
+
 </Project>

@@ -34,17 +34,34 @@ function redmin() {
         if (pagina != null) {
             pagina.style.top = "45px";
             pagina.style.left = "0px";
+            pagina.style.width = "100%";
+            pagina.style.height = "calc(100% - 45px)";
         }
     } else {
         navigation.classList.remove('barraSuperior');
         if (pagina != null) {
             pagina.style.top = "0px";
             pagina.style.left = "45px";
+            pagina.style.width = "calc(100% - 45px)";
+            pagina.style.height = "100%";
         }
     }
 }
 
+function corrigirNavigationUlPadding() {
+    var path = window.location.pathname.split("/");
+    console.log(path)
+    if (path.length == 2 || path.includes("Mapa")) {
+        console.log('aw', path);
+        navigation.classList.add('mapaEmTela');
+    } else {
+        console.log('bw', path);
+        navigation.classList.remove('mapaEmTela');
+    }
+}
+
 redmin();
+corrigirNavigationUlPadding();
 addEventListener("resize", redmin);
 
 document.onmousedown = function (evt) {
@@ -52,5 +69,7 @@ document.onmousedown = function (evt) {
         if (navigation.classList.contains("open")) {
             navigation.classList.toggle('open');
         }
+    } else {
+        corrigirNavigationUlPadding();
     }
 }

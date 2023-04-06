@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,7 @@
 
     @{
         string currentAction = ViewContext.RouteData.Values["controller"].ToString();
-        if (currentAction == "Home")
+        if (currentAction == "Mapa")
         {
             @RenderBody()
         }
@@ -31,13 +31,13 @@
         <div class="menuToggle"></div>
         <ul>
             <li class="list active" style="--clr:rgb(244, 67, 54);">
-                <a href="/Home/">
+                <a href="/Mapa/">
                     <img class="icon" src="/gifs/mapa.png" gif="/gifs/mapa.gif" id="mapa">
                     <span class="text">Mapa</span>
                 </a>
             </li>
             <li class="list" style="--clr:rgb(255, 161, 23);">
-                <a href="/Andarilho/">
+                <a href="/Usuario/">
                     <img class="icon" src="/gifs/cliente_parado.png" gif="/gifs/cliente.gif" alt="">
                     <span class="text">Usuários</span>
                 </a>
