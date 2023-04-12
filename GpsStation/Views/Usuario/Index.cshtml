@@ -1,3 +1,40 @@
-﻿
-<h1>Viajantes de uma vida</h1>
+﻿@model UsuarioModel
+@{
+	ViewData["Title"] = "Usuários";
+}
 
+<div class="text-center">
+	<h1 class="display-4">USUÁRIOS</h1>
+
+</div>
+@*<a asp-controller="Usuario" asp-action="Editar">editar este usuário</a>*@
+
+@*<p><a href="\produto\inserir">Novo Produto</a></p>*@
+
+<table>
+	<tr>
+		<th>Nome</th>
+		<th>Senha</th>
+		<th>Código</th>
+		<th>Administrador</th>
+	</tr>
+	@{
+		foreach (var item in ViewBag.usuarios)
+		{
+			<tr>
+				<td>@item.Nome</td>
+				<td>@item.Senha</td>
+				<td>@item.Id_usuario</td>
+				<td>@item.Administrador</td>
+				<td>
+					<a aps-controller="Usuario" asp-action="Editar" asp-route-id="@item.Id_usuario">Editar</a>
+				</td>
+
+			</tr>
+		}
+	}
+
+</table>
+
+@*<p><a href="\Usuario\Editar">Novo Produto</a></p>*@
+<a asp-controller="Usuario" asp-action="Inserir">Adicionar Usuário</a>

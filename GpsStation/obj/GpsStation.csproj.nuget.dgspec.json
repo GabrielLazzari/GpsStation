@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\GpsStation.csproj": {}
+    "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\GpsStation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\GpsStation.csproj": {
+    "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\GpsStation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\GpsStation.csproj",
+        "projectUniqueName": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\GpsStation.csproj",
         "projectName": "GpsStation",
-        "projectPath": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\GpsStation.csproj",
-        "packagesPath": "C:\\Users\\lazza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lazza\\Desktop\\Ftec\\Projetos Para Sistemas Web\\ProjetoGPSStation\\GpsStation\\GpsStation\\obj\\",
+        "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\GpsStation.csproj",
+        "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lazza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +43,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

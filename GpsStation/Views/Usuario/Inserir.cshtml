@@ -1,0 +1,36 @@
+﻿@model UsuarioModel
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<div class="text-center">
+    <h1 class="display-4">CADASTRO</h1>
+    <p>cadastro de usuarios</p>
+
+    <!-- <p>Usuário: Model.Nome</p>
+     <p>Senha: Model.Senha</p>
+      <p>Administrador: Model.Administrador</p>-->
+
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">CADASTRO DE USUÁRIO</h1>
+
+   
+    <form action="\Usuario\gravar" method="POST">
+
+        <label>Nome:</label>
+        <input type="text" id="nome" name="usuario.nome" >
+
+        <label>Senha:</label>
+        <input type="password" id="senha" name="usuario.senha" >
+
+        <label>Administrador</label>
+        <input type="text" id="administrador" name="usuario.administrador" >
+
+        <label>Código</label>
+        <input type="text" id="Id_usuario" name="usuario.Id_usuario" >
+
+        <button type="submit">SALVAR</button>
+    </form>
+</div>

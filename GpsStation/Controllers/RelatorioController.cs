@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GpsStation.Repository;
+using Microsoft.AspNetCore.Mvc;
 
 namespace GpsStation.Controllers
 {
@@ -6,7 +7,9 @@ namespace GpsStation.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+			LocalizacaoRepository localizacaoRepository = new LocalizacaoRepository();
+            ViewBag.localizacoes = localizacaoRepository.ListarLocalizacao();
+			return View();
         }
     }
 }

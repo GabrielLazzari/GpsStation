@@ -1,3 +1,40 @@
-﻿
+﻿@model DispositivoModel
+@{
+    ViewData["Title"] = "Dispositivos";
+}
 
-<h1>Viajantes de uma vida</h1>
+<h1>lista de dispositivos</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Dispositivos</h1>
+    <p>Lista de Dispositivos</p>
+    
+</div>
+
+
+
+<table>
+	<tr>
+		<th>Dispositivo</th>
+		<th>Status</th>
+	</tr>
+	@{
+		foreach (var item in ViewBag.dispositivos)
+		{
+			<tr>
+				<td>@item.Nome</td>
+				<td>@item.Ativo</td>
+				<td>
+					<a asp-controller="Relatorio" asp-action="Index">Últimos registros</a>
+					<a asp-controller="Mapa" asp-action="Index">Visualizar localização</a>
+					<a asp-controller="Dispositivo" asp-action="Excluir">Excluir</a>
+					<a asp-controller="Dispositivo" asp-action="Cadastro">Editar</a>
+					
+				</td>
+
+			</tr>
+		}
+	}
+
+</table>
+<a asp-controller="Dispositivo" asp-action="Cadastro">Novo Dispositivo</a>

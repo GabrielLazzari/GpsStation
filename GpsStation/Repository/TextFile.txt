@@ -1,0 +1,1 @@
+﻿Data Source=ACER_B\TEW_SQLEXPRESS;Initial Catalog=gpsstation;User ID=user;Password=********;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False

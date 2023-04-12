@@ -1,2 +1,34 @@
-﻿
-<h1>Relatórios</h1>
+﻿@model LocalizacaoModel
+@{
+	ViewData["Title"] = "Relatório";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Relatório</h1>
+
+</div>
+
+<table>
+	<tr>
+		<th>Dispositivo</th>
+		<th>Latitude</th>
+		<th>Longitude</th>
+		<th>Data/Hora</th>
+	</tr>
+	@{
+		foreach (var item in ViewBag.localizacoes)
+		{
+			<tr>
+				<td>@item.IdDispositivo</td>
+				<td>@item.Latitude</td>
+				<td>@item.Longitude</td>
+				<td>@item.DataHora</td>
+				<td>
+					
+				</td>
+
+			</tr>
+		}
+	}
+
+</table>

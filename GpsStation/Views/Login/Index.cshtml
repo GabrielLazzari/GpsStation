@@ -1,0 +1,19 @@
+﻿@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center">
+    <h1 class="display-4">LOGIN</h1>
+
+    <!--Formulário de login, submit direciona para controller Login, método Confirmarlogin-->
+    <form action="/Login/Confirmarlogin" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+
+        <button type="submit">Entrar</button>
+    </form>
+</div>
