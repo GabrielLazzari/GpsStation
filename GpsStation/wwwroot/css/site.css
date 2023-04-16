@@ -8,6 +8,8 @@
     position: absolute;
     padding-top: 10px;
     padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
 }
 
 .navigation {
@@ -37,7 +39,7 @@
 }
 
 .navigation.barraSuperior.open {
-    height: 310px;
+    height: 380px;
 }
 
 
@@ -149,7 +151,6 @@
     height: 35px;
     line-height: 43px;
     transition: 0.5s;
-    border-radius: 10px;
     font-size: 1.75em;
     color: #222;
 }
@@ -195,4 +196,25 @@
 
 a span {
     display: none;
+}
+
+
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border: 1px solid black;
+    padding: 7px;
+}
+
+tr:nth-child(odd) {
+    background-color: #d5f2f2; /* cor de fundo das linhas ímpares */
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff; /* cor de fundo das linhas pares */
 }

@@ -3,20 +3,21 @@
     ViewData["Title"] = "Dispositivos";
 }
 
-<h1>lista de dispositivos</h1>
-
 <div class="text-center">
     <h1 class="display-4">Dispositivos</h1>
-    <p>Lista de Dispositivos</p>
-    
 </div>
 
 
+<div style="width:100%; text-align: right; padding: 10px;">
+	Pesquisar
+	<button onclick="location.href='\\Dispositivo\\Cadastro';" style="text-decoration: none; padding: 10px;">Novo Dispositivo</button>
+</div >
 
 <table>
 	<tr>
 		<th>Dispositivo</th>
 		<th>Status</th>
+		<th>Açoes</th>
 	</tr>
 	@{
 		foreach (var item in ViewBag.dispositivos)
@@ -37,4 +38,3 @@
 	}
 
 </table>
-<a asp-controller="Dispositivo" asp-action="Cadastro">Novo Dispositivo</a>

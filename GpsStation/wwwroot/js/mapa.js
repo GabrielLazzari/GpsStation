@@ -1,3 +1,4 @@
+ï»¿
 
 // Cria o mapa
 var map_55bbce51b6ab60a6b4c85363dc2540ad = L.map(
@@ -12,7 +13,7 @@ var map_55bbce51b6ab60a6b4c85363dc2540ad = L.map(
 ).setView([-23.5505, -46.6333], 4);
 
 
-////adiciona uma pequena referência no canto inferior direito
+////adiciona uma pequena referï¿½ncia no canto inferior direito
 var tile_layer_dab421bc9de218ab2d83e9c8544b0bb6 = L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     { "attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false }
@@ -26,7 +27,7 @@ var myGeojsonData = {
         {
             "type": "Feature",
             "properties": {
-                "name": "São Paulo"
+                "name": "Sï¿½o Paulo"
             },
             "geometry": {
                 "type": "Point",
@@ -44,7 +45,7 @@ var geojsonLayer = L.geoJSON(myGeojsonData).addTo(map_55bbce51b6ab60a6b4c85363dc
 var marker = L.marker([-23.5505, -46.6333]).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
 
 // adiciona um pop-up ao marcador
-marker.bindPopup("<b>São Paulo</b><br>Capital do estado de São Paulo.").openPopup();
+marker.bindPopup("<b>Sï¿½o Paulo</b><br>Capital do estado de Sï¿½o Paulo.").openPopup();
 
 
 // Cria polyline com coordenadas informadas 
@@ -58,5 +59,4 @@ var polylinePoints = [
 
 // desenha as linhas no mapa
 var polyline = L.polyline(polylinePoints, { color: 'red' }).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
-
 

@@ -1,76 +1,80 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - GpsStation</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - GpsStation</title>
 
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-    @RenderSection("Estilo", false)
-    @RenderSection("Script", false)
+	@RenderSection("Estilo", false)
+	@RenderSection("Script", false)
 
 </head>
 <body>
 
-    @{
-        string currentAction = ViewContext.RouteData.Values["controller"].ToString();
-        if (currentAction.ToLower() == "mapa")
-        {
-            @RenderBody()
-        }
-        else 
-        {
-            <div class="pagina">
-                @RenderBody()
-            </div>
-        }
-    }
+	@{
+		string currentAction = ViewContext.RouteData.Values["controller"].ToString();
+		if (currentAction.ToLower() == "mapa")
+		{
+			@RenderBody()
+		}
+		else
+		{
+			<div class="pagina">
+				@RenderBody()
+			</div>
+		}
+	}
 
-    <div class="navigation">
-        <div class="menuToggle"></div>
-        <ul>
-            <li class="list active" style="--clr:rgb(244, 67, 54);">
-                <a href="/Mapa/">
-                    <img class="icon" src="/gifs/mapa.png" gif="/gifs/mapa.gif" id="mapa">
-                    <span class="text">Mapa</span>
-                </a>
-            </li>
-            <li class="list" style="--clr:rgb(255, 161, 23);">
-                <a href="/Usuario/">
-                    <img class="icon" src="/gifs/cliente_parado.png" gif="/gifs/cliente.gif" alt="">
-                    <span class="text">Usuários</span>
-                </a>
-            </li>
-            <li class="list" style="--clr:rgb(255, 161, 23);">
-                <a href="/Dispositivo/">
-                    <img class="icon" src="/gifs/cliente_parado.png" gif="/gifs/cliente.gif" alt="">
-                    <span class="text">Dispositivos</span>
-                </a>
-            </li>
-            <li class="list" style="--clr:rgb(15, 199, 15);">
-                <a href="/Relatorio/">
-                    <img class="icon" src="/gifs/jornal.png" gif="/gifs/jornal.gif" alt="">
-                    <span class="text">Relatório</span>
-                </a>
-            </li>
-            <li class="list" style="--clr:rgb(33, 150, 243);">
-                <a href="/Sobre/">
-                    <img class="icon" src="/gifs/em-formacao.png" gif="/gifs/em-formacao.gif" alt="">
-                    <span class="text">Sobre</span>
-                </a>
-            </li>
-            <li class="list" style="--clr:hwb(280 27% 9%);">
-                <a href="/Configuracao/">
-                    <img class="icon" src="/gifs/configuracoes.png" gif="/gifs/configuracoes.gif" alt="">
-                    <span class="text">Configurações</span>
-                </a>
-            </li>
+	<div class="navigation">
+		<div class="menuToggle"></div>
+		<ul>
+			<li class="list active" style="--clr:rgb(244, 67, 54);">
+				<a href="/Mapa/">
+					<img class="icon" src="/gifs/mapa.png" gif="/gifs/mapa.gif" id="mapa">
+					<span class="text">Mapa</span>
+				</a>
+			</li>
+			<li class="list" style="--clr:rgb(255, 161, 23);">
+				<a href="/Usuario/">
+					<img class="icon" src="/gifs/cliente_parado.png" gif="/gifs/cliente.gif" alt="">
+					<span class="text">Usuários</span>
+				</a>
+			</li>
+			<li class="list" style="--clr:rgb(255, 161, 23);">
+				<a href="/Dispositivo/">
+					<img class="icon" src="/gifs/responsivo.png" gif="/gifs/responsivo.gif" alt="">
+					<span class="text">Dispositivos</span>
+				</a>
+			</li>
+			<li class="list" style="--clr:rgb(15, 199, 15);">
+				<a href="/Relatorio/">
+					<img class="icon" src="/gifs/jornal.png" gif="/gifs/jornal.gif" alt="">
+					<span class="text">Relatório</span>
+				</a>
+			</li>
+			<li class="list" style="--clr:rgb(33, 150, 243);">
+				<a href="/Sobre/">
+					<img class="icon" src="/gifs/em-formacao.png" gif="/gifs/em-formacao.gif" alt="">
+					<span class="text">Sobre</span>
+				</a>
+			</li>
+			<li class="list" style="--clr:hwb(280 27% 9%);">
+				<a href="/Configuracao/">
+					<img class="icon" src="/gifs/configuracoes.png" gif="/gifs/configuracoes.gif" alt="">
+					<span class="text">Configurações</span>
+				</a>
+			</li>
 
-        </ul>
-    </div>
+		</ul>
+	</div>
 
-    <script src="~/js/site.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+	<!--<script src="~/js/site.js"></script>-->
+
 </body>
 </html>
