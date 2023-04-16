@@ -28,7 +28,6 @@ document.addEventListener("mouseout", function (evt) {
 // Define se o estilo do menu esquerdo deve ser superior ou padrao(lateral)
 function redmin() {
     larguraTela = window.innerWidth;
-    console.log(larguraTela)
     if (larguraTela < tamanhoControle) {
         navigation.classList.add('barraSuperior');
         if (pagina != null) {
@@ -50,12 +49,9 @@ function redmin() {
 
 function corrigirNavigationUlPadding() {
     var path = window.location.pathname.split("/");
-    console.log(path)
     if (path.length == 2 || path.includes("Mapa")) {
-        console.log('aw', path);
         navigation.classList.add('mapaEmTela');
     } else {
-        console.log('bw', path);
         navigation.classList.remove('mapaEmTela');
     }
 }

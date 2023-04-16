@@ -13,10 +13,11 @@ var map_55bbce51b6ab60a6b4c85363dc2540ad = L.map(
 
 
 ////adiciona uma pequena referência no canto inferior direito
-var tile_layer_dab421bc9de218ab2d83e9c8544b0bb6 = l.tilelayer(
+var tile_layer_dab421bc9de218ab2d83e9c8544b0bb6 = L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-    { "attribution": "data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eopenstreetmap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eodbl\u003c/a\u003e.", "detectretina": false, "maxnativezoom": 18, "maxzoom": 18, "minzoom": 0, "nowrap": false, "opacity": 1, "subdomains": "abc", "tms": false }
-).addto(map_55bbce51b6ab60a6b4c85363dc2540ad);
+    { "attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false }
+).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
+
 
 // Estrutura GeoJson para colocar pontos no mapa
 var myGeojsonData = {
@@ -35,21 +36,24 @@ var myGeojsonData = {
     ]
 };
 
-//Adiciona a camada GeoJSON
+
+// adiciona a camada GeoJSON
 var geojsonLayer = L.geoJSON(myGeojsonData).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
 
-// Adiciona um marcador
+// adiciona um marcador
 var marker = L.marker([-23.5505, -46.6333]).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
 
-// Adiciona um pop-up ao marcador
+// adiciona um pop-up ao marcador
 marker.bindPopup("<b>São Paulo</b><br>Capital do estado de São Paulo.").openPopup();
+
 
 // Cria polyline com coordenadas informadas 
 
 // define as coordenadas da polyline
 var polylinePoints = [
-    [51.505, -0.09],
-    [51.525, -0.3]
+    [-30.6333, -50.09],
+    [-32.6333, -50.3],
+    [-32.6333, -48.3],
 ];
 
 // desenha as linhas no mapa
