@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ftec.ProjetosWeb.GPStation.MVC", "GpsStation\Ftec.ProjetosWeb.GPStation.MVC.csproj", "{43F2FCD2-4831-4426-90E5-56F6F112F0EF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{287FD310-52F8-428F-85E8-FD68F77A4F64} = {287FD310-52F8-428F-85E8-FD68F77A4F64}
+		{FDE28DA1-01DA-4569-81B0-6419FF14E646} = {FDE28DA1-01DA-4569-81B0-6419FF14E646}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ftec.ProjetosWeb.GPStation.Dominio", "Ftec.ProjetosWeb.GPStation.Dominio\Ftec.ProjetosWeb.GPStation.Dominio.csproj", "{287FD310-52F8-428F-85E8-FD68F77A4F64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ftec.ProjetosWeb.GPStation.Aplicacao", "Ftec.ProjetosWeb.GPStation.Aplicacao\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj", "{FDE28DA1-01DA-4569-81B0-6419FF14E646}"
+	ProjectSection(ProjectDependencies) = postProject
+		{287FD310-52F8-428F-85E8-FD68F77A4F64} = {287FD310-52F8-428F-85E8-FD68F77A4F64}
+		{B4035262-CB3A-47D9-8561-C150711EE479} = {B4035262-CB3A-47D9-8561-C150711EE479}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ftec.ProjetosWeb.GPStation.Persistencia", "Ftec.ProjetosWeb.GPStation.Persistencia\Ftec.ProjetosWeb.GPStation.Persistencia.csproj", "{B4035262-CB3A-47D9-8561-C150711EE479}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43F2FCD2-4831-4426-90E5-56F6F112F0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F2FCD2-4831-4426-90E5-56F6F112F0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F2FCD2-4831-4426-90E5-56F6F112F0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F2FCD2-4831-4426-90E5-56F6F112F0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{287FD310-52F8-428F-85E8-FD68F77A4F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{287FD310-52F8-428F-85E8-FD68F77A4F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{287FD310-52F8-428F-85E8-FD68F77A4F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{287FD310-52F8-428F-85E8-FD68F77A4F64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDE28DA1-01DA-4569-81B0-6419FF14E646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE28DA1-01DA-4569-81B0-6419FF14E646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE28DA1-01DA-4569-81B0-6419FF14E646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE28DA1-01DA-4569-81B0-6419FF14E646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4035262-CB3A-47D9-8561-C150711EE479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4035262-CB3A-47D9-8561-C150711EE479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4035262-CB3A-47D9-8561-C150711EE479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4035262-CB3A-47D9-8561-C150711EE479}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A5A992A-6267-4EAD-ADF8-051C741D8914}
+	EndGlobalSection
+EndGlobal

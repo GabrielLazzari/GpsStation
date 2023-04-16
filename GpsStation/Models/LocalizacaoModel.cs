@@ -7,5 +7,6 @@
         public DateTime DataHora { get; set;}
         public Guid IdDispositivo { get; set;}
 
+       
     }
 }

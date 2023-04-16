@@ -12,7 +12,7 @@ namespace GpsStation.Factory
                 usuarios.Add(new UsuarioModel()
                 {
                     Administrador = true,
-                    Nome = "",//string.Empty,
+                    Nome = "teste",//string.Empty,
                     Senha = "",//string.Empty,
                     Id_usuario = Guid.NewGuid()
                 }); 
