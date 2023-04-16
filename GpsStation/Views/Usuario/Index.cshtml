@@ -47,7 +47,7 @@
 	<script>
 		function Consultar(consultanome) {
 			var url = "/usuario/Consultar/";
-			var parametros = { n: consultanome };
+			var parametros = { nome: consultanome };
 			$.post(url, parametros, CallBackConsultar);
 		}
 	

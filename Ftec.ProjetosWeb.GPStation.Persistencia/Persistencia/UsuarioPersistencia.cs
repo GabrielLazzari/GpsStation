@@ -43,35 +43,58 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
 		}
 		//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-		public List<Usuario> Consultar(int n)
+		public List<Usuario> Consultar(string nome)
 		{
 			List<Usuario> usuarios = new List<Usuario>();
-			for (int i = 0; i < n; i++)
+			string conexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+
+			using (var con = new SqlConnection(conexao))
 			{
-				usuarios.Add(new Usuario()
+				con.Open();
+				try
 				{
-					Administrador = true,
-					Nome = "teste",//string.Empty,
-					Senha = "",//string.Empty,
-					Id_usuario = Guid.NewGuid()
-				});
+					using (var comando = new SqlCommand())
+					{
+						comando.Connection = con;
+						comando.CommandText = "select* from usuario";
+						comando.Parameters.AddWithValue("nome", nome);
+						using (SqlDataReader reader = comando.ExecuteReader())
+						{
+							while (reader.Read())
+							{
+								Usuario usuario = new Usuario()
+								{
+									Administrador = Convert.ToBoolean(reader["administrador"]),
+									Nome = reader["nome"].ToString(),
+									Senha = reader["senha"].ToString(),
+									Id_usuario = Guid.Parse(reader["id_usuario"].ToString())
+								};
+								usuarios.Add(usuario);
+							}
+						}
+
+					}
+				}
+				catch (Exception ex)
+				{
+
+				}
+				return usuarios;
 			}
-			return usuarios;
+			//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+			//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		}
-		//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-		//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 	}
 }
 

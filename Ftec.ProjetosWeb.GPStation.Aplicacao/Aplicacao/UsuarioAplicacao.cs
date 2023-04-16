@@ -21,11 +21,11 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
             return usuarioPersistencia.Inserir(usuario);
         }
 		//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-		public List<Usuario> Consultar(int n)
+		public List<Usuario> Consultar(string nome)
         {
 			UsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
-			List<Usuario> usuarios = new List<Usuario>();
-            return usuarioPersistencia.Consultar(n);
+			//List<Usuario> usuarios = new List<Usuario>();
+            return usuarioPersistencia.Consultar(nome);
 		}
 		//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

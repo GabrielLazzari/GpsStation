@@ -30,10 +30,10 @@ namespace GpsStation.Controllers
 			return Json(usuariotrocado);
 		}
 		//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-		public IActionResult Consultar(string n)
+		public IActionResult Consultar(string nome)
 		{
 			UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-			return Json(usuarioAplicacao.Consultar(int.Parse(n)));
+			return Json(usuarioAplicacao.Consultar(nome));
 		}
 		//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
