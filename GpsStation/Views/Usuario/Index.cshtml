@@ -3,6 +3,7 @@
 	ViewData["Title"] = "Usuários";
 }
 
+
 <div class="text-center">
 	<h1 class="display-4">USUÁRIOS</h1>
 
@@ -14,11 +15,11 @@
 	<label>Nome:</label>
 	<input type="text" id="consultanome">
 	<button onclick="Consultar(consultanome.value)">PESQUISAR</button>
-	<label id="retnome">vazio</label>
 </div>
 
-
-
+<div>
+	<a aps-controller="Usuario" asp-action="Inserir" > INSERIR NOVO USUÁRIO</a>
+</div>
 
 
 <table id="tabela">
@@ -28,21 +29,18 @@
 		<th>Código</th>
 		<th>Administrador</th>
 	</tr>
-	@*@{
-		foreach (var item in ViewBag.model)
+	@{
+		foreach (var item in ViewBag.Usuarios)
 		{
 			<tr>
 				<td id="@(item.Id_usuario)">@item.Nome</td>
 				<td>@item.Senha</td>
 				<td>@item.Id_usuario</td>
 				<td>@item.Administrador</td>
-				<td>
-					 <a aps-controller="Usuario" asp-action="Editar" asp-route-id="AROBAitem.Id_usuario">Editar</a> 
-					<a href="#" onclick="Consultar('@item.Id_usuario')">trocar</a>
-				</td>
+				<td><a href="#" onclick="Consultar('@item.Id_usuario')">trocar</a></td>
 			</tr>
 		}
-	}*@
+	}
 </table>
 
 
@@ -55,47 +53,10 @@
 		}
 	
 		function CallBackConsultar(retorno) {
-			//var elemento = $("#" + "retnome");
-			//elemento.html(retorno.nome);
+			var elemento = $("#" + "retnome");
+			elemento.html(retorno.nome);
 			return (retorno);
 		}
-
-				//var tabela = document.getElementById("tabela"); // Obtém a tabela pelo ID
-
-		//// Loop para percorrer o array de objetos JSON
-		//for (var i = 0; i < retorno.length; i++) {
-		//	var objeto = retorno[ i ]; // Obtém o objeto atual
-
-		//	var novaLinha = document.createElement("tr"); // Cria uma nova linha
-			
-		//	var novaCelula1 = document.createElement("td"); // Cria uma nova célula para a coluna 1
-		//	novaCelula1.textContent = objeto.Administrador; // Define o conteúdo da célula 1
-			
-		//	var novaCelula2 = document.createElement("td"); // Cria uma nova célula para a coluna 2
-		//	novaCelula2.textContent = objeto.Nome; // Define o conteúdo da célula 2
-
-		//	var novaCelula3 = document.createElement("td"); // Cria uma nova célula para a coluna 2
-		//	novaCelula3.textContent = objeto.Senha; // Define o conteúdo da célula 2
-
-		//	var novaCelula4 = document.createElement("td"); // Cria uma nova célula para a coluna 2
-		//	novaCelula4.textContent = objeto.Id_usuario; // Define o conteúdo da célula 2
-			
-		//	novaLinha.appendChild(novaCelula1); // Adiciona a célula 1 à nova linha
-		//	novaLinha.appendChild(novaCelula2); // Adiciona a célula 2 à nova linha
-		//	novaLinha.appendChild(novaCelula3);
-		//	novaLinha.appendChild(novaCelula4);
-		//	tabela.getElementsByTagName("tbody")[0].appendChild(novaLinha); // Adiciona a nova linha à tabela
-
-
-				//{administrador: true, nome: 'teste', senha: '', id_usuario: '2232582f-1e95-4049-bf28-710c75f78e27'}
-
-		//{
-		//	"administrador": true,
-		//		"nome": "teste",
-		//			"senha": "",
-		//				"id_usuario": "a574aa75-8240-4d86-9cd3-f5be800094da"
-		//}
-
 
 	</script>
 }

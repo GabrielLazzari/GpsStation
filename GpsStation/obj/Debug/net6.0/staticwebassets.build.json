@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/rRtFMPUvEUb4LLShYwQ61uh21qCzC6gKPD1MS/BkK8=",
+  "Hash": "K25V7FrYc7S0Hcz/SC6qMCyGEppsZEEMmu+kI6gAaLs=",
   "Source": "Ftec.ProjetosWeb.GPStation.MVC",
   "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
   "Mode": "Default",
@@ -423,6 +423,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\gifs\\mapa.png"
+    },
+    {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\G_certo\\GpsStation\\GpsStation\\wwwroot\\gifs\\responsivo.gif",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\G_certo\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "gifs/responsivo.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\gifs\\responsivo.gif"
+    },
+    {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\G_certo\\GpsStation\\GpsStation\\wwwroot\\gifs\\responsivo.png",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\G_certo\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "gifs/responsivo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\gifs\\responsivo.png"
     },
     {
       "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\G_certo\\GpsStation\\GpsStation\\wwwroot\\js\\mapa.js",

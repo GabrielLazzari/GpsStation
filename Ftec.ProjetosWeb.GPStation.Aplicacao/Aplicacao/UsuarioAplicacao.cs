@@ -8,27 +8,39 @@ using System.Threading.Tasks;
 
 namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
 {
-    public class UsuarioAplicacao
-    {
-        public String Inserir(Usuario usuario)
-        {
-			 UsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
-			usuario.Id_usuario=Guid.NewGuid();
-            //regras de negocio
-            if(string.IsNullOrEmpty(usuario.Nome) ) {
-                throw new ApplicationException("");
-            }
-            return usuarioPersistencia.Inserir(usuario);
-        }
-		//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-		public List<Usuario> Consultar(string nome)
-        {
+	public class UsuarioAplicacao
+	{
+		public Boolean Inserir(Usuario usuario)
+		{
 			UsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
-			//List<Usuario> usuarios = new List<Usuario>();
-            return usuarioPersistencia.Consultar(nome);
+			usuario.Id_usuario = Guid.NewGuid();
+			return usuarioPersistencia.Inserir(usuario);
 		}
-		//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+		public List<Usuario> Consultar(string nome)
+		{
+			UsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+			return usuarioPersistencia.Consultar(nome);
+		}
 
+		public List<Usuario> Listar()
+		{
+			UsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+			return usuarioPersistencia.Listar();
+		}
+
+		public void Editar(Usuario usuario)
+		{
+			UsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+			usuarioPersistencia.Editar(usuario);
+			throw new NotImplementedException();
+		}
+
+		public void Excluir(Guid id)
+		{
+			UsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+			usuarioPersistencia.Excluir(id);
+			throw new NotImplementedException();
+		}
 	}
 }

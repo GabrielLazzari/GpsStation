@@ -93,6 +93,14 @@
       "PackagePath": "staticwebassets\\gifs\\mapa.png"
     },
     {
+      "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\G_certo\\GpsStation\\GpsStation\\wwwroot\\gifs\\responsivo.gif",
+      "PackagePath": "staticwebassets\\gifs\\responsivo.gif"
+    },
+    {
+      "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\G_certo\\GpsStation\\GpsStation\\wwwroot\\gifs\\responsivo.png",
+      "PackagePath": "staticwebassets\\gifs\\responsivo.png"
+    },
+    {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\G_certo\\GpsStation\\GpsStation\\wwwroot\\js\\mapa.js",
       "PackagePath": "staticwebassets\\js\\mapa.js"
     },
