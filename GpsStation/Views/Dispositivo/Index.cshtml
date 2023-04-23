@@ -3,17 +3,28 @@
     ViewData["Title"] = "Dispositivos";
 }
 
+@section Estilo{
+	<link rel="stylesheet" href="~/css/tabela.css" />
+}
+
+@section Script{
+	<script src="/js/tabela.js"></script>
+}
+
 <div class="text-center">
     <h1 class="display-4">Dispositivos</h1>
 </div>
 
 
-<div style="width:100%; text-align: right; padding: 10px;">
-	Pesquisar
-	<button onclick="location.href='\\Dispositivo\\Cadastro';" style="text-decoration: none; padding: 10px;">Novo Dispositivo</button>
+<div class="conjuntoPesquisa">
+	<div class="divPesquisar" style="right: 135px;">
+		<input id="pesquisarDispositivo" class="inputPersonalizado"></input>
+		<img src="~/gifs/search-outline.svg" class="svg-sm" title="Pesquisar">
+	</div>
+	<button onclick="novaLinha('tabelaDispositivos', JSON.stringify({dispositivo:'', status:''}))" class="botaoNovo">Novo Dispositivo</button>
 </div >
 
-<table>
+<table id="tabelaDispositivos">
 	<tr>
 		<th>Dispositivo</th>
 		<th>Status</th>
@@ -28,8 +39,8 @@
 				<td>
 					<a asp-controller="Relatorio" asp-action="Index">Últimos registros</a>
 					<a asp-controller="Mapa" asp-action="Index">Visualizar localização</a>
-					<a asp-controller="Dispositivo" asp-action="Excluir">Excluir</a>
-					<a asp-controller="Dispositivo" asp-action="Cadastro">Editar</a>
+					<img onclick="editarLinha('tabelaDispositivos', this, JSON.stringify({dispositivo:'', status:''}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+					<img onclick="excluirDispositivo('@item.Nome', '@item.Id', this)" src="~/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
 					
 				</td>
 

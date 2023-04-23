@@ -33,14 +33,12 @@ namespace GpsStation.Controllers
 
 		public IActionResult Excluir(Guid id)
 		{
-			UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-			usuarioAplicacao.Excluir(id);
-			return View();
-		}
 
-		public IActionResult Inserir()
-		{
-			return View();
+			//LEMBRAR QUE AQUI TEM QUE EXCLUIR TODOS OS DISPOSITIVOS VINCULADOS AO USUARIO
+
+			//UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+			//usuarioAplicacao.Excluir(id);
+			return RedirectToAction("Index");
 		}
 
 
@@ -53,11 +51,16 @@ namespace GpsStation.Controllers
 				Administrador = usuario.Administrador,
 				Nome = usuario.Nome,
 				Senha = usuario.Senha,
-				Id_usuario = usuario.Id_usuario
+				Id = usuario.Id
 			});
 
 			return RedirectToAction("Index");
 
+		}
+
+		public IActionResult Inserir(UsuarioModel usuario)
+		{
+			return RedirectToAction("Index");
 		}
 
 
@@ -70,7 +73,7 @@ namespace GpsStation.Controllers
 				Administrador = usuario.Administrador,
 				Nome = usuario.Nome,
 				Senha = usuario.Senha,
-				Id_usuario = usuario.Id_usuario
+				Id = usuario.Id
 			});
 			return RedirectToAction("Index");
 		}

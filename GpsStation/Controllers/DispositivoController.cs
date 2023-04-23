@@ -14,14 +14,19 @@ namespace GpsStation.Controllers
 			return View();
 		}
 
-        public IActionResult Excluir()
+        public IActionResult Excluir(Guid Id)
         {
             return RedirectToAction("Index");
         }
 
-        public IActionResult Cadastro()
+        public IActionResult Inserir(DispositivoModel dispositivo)
         {
-            return View();
-        }
-    }
+			return RedirectToAction("Index");
+		}
+
+		public IActionResult Gravar(DispositivoModel dispositivoModel)
+		{
+			return RedirectToAction("Index");
+		}
+	}
 }

@@ -198,23 +198,39 @@ a span {
     display: none;
 }
 
-
-
-table {
-    border: 1px solid black;
-    border-collapse: collapse;
+.conjuntoPesquisa {
     width: 100%;
+    text-align: right;
+    padding: 10px;
+    position: relative;
+    padding-right: 0px;
 }
 
-td {
-    border: 1px solid black;
-    padding: 7px;
+.inputPersonalizado {
+    outline: none;
+    border: none;
+    border-bottom: black 0px solid;
+    width: 150px;
 }
 
-tr:nth-child(odd) {
-    background-color: #d5f2f2; /* cor de fundo das linhas ímpares */
+.divPesquisar {
+    display: inline;
+    border-bottom: black 2px solid;
+    margin: 10px;
+    position: absolute;
+    bottom: 0px;
 }
 
-tr:nth-child(even) {
-    background-color: #ffffff; /* cor de fundo das linhas pares */
+.botaoNovo {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.svg-sm {
+    width: 24px;
+    height: 24px;
+}
+
+.display-4{
+    margin-bottom: 10px;
 }

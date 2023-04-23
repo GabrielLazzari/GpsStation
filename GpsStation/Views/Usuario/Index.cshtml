@@ -3,15 +3,23 @@
 	ViewData["Title"] = "Usuários";
 }
 
+@section Estilo{
+	<link rel="stylesheet" href="~/css/tabela.css" />
+}
+
+@section Script{
+	<script src="/js/tabela.js"></script>
+}
+
 
 <div class="text-center">
-	<h1 class="display-4">USUÁRIOS</h1>
-
+	<h1 class="display-4">Usuários</h1>
 </div>
 @*<p><a href="\produto\inserir">Pesquisar</a></p>*@
 
 
-<div style="width:100%; text-align: right; padding: 10px;">
+
+<!--<div style="width:100%; text-align: right; padding: 10px;">
 	<label>Nome:</label>
 	<input type="text" id="consultanome">
 	<button onclick="Consultar(consultanome.value)">PESQUISAR</button>
@@ -19,25 +27,38 @@
 
 <div>
 	<a aps-controller="Usuario" asp-action="Inserir" > INSERIR NOVO USUÁRIO</a>
+</div>-->
+
+<div class="conjuntoPesquisa">
+	<div class="divPesquisar" style="right: 115px;">
+		<input id="pesquisarUsuario" class="inputPersonalizado"></input>
+		<img src="~/gifs/search-outline.svg" class="svg-sm" title="Pesquisar">
+	</div>
+	<button onclick="novaLinha('tabelaUsuarios', JSON.stringify({nome:'', senha:'', administrador:'checkbox'}))" class="botaoNovo">Novo Usuário</button>
 </div>
 
 
-<table id="tabela">
+<table id="tabelaUsuarios">
 	<tr>
 		<th>Nome</th>
 		<th>Senha</th>
 		<th>Código</th>
 		<th>Administrador</th>
+		<th>Açoes</th>
 	</tr>
 	@{
 		foreach (var item in ViewBag.Usuarios)
 		{
 			<tr>
-				<td id="@(item.Id_usuario)">@item.Nome</td>
+				<td id="@(item.Id)">@item.Nome</td>
 				<td>@item.Senha</td>
-				<td>@item.Id_usuario</td>
+				<td>@item.Id</td>
 				<td>@item.Administrador</td>
-				<td><a href="#" onclick="Consultar('@item.Id_usuario')">trocar</a></td>
+				<td>
+					<a href="#" onclick="Consultar('@item.Id')">trocar</a>
+					<img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:'', administrador:'checkbox'}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+					<img onclick="excluirUsuario('@item.Nome', '@item.Id', this)" src="~/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
+				</td>
 			</tr>
 		}
 	}
