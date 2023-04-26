@@ -13,7 +13,7 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
 		public Boolean Inserir(Usuario usuario)
 		{
 			UsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
-			usuario.Id_usuario = Guid.NewGuid();
+			usuario.Id = Guid.NewGuid();
 			return usuarioPersistencia.Inserir(usuario);
 		}
 

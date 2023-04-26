@@ -26,11 +26,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText = "INSERT INTO[dbo].[usuario]([administrador],[nome],[senha],[Id_usuario])VALUES(@administrador,@nome,@senha,@id_usuario);";
+						comando.CommandText = "INSERT INTO[dbo].[usuario]([administrador],[nome],[senha],[Id])VALUES(@administrador,@nome,@senha,@Id);";
 						comando.Parameters.AddWithValue("administrador", usuario.Administrador);
 						comando.Parameters.AddWithValue("nome", usuario.Nome);
 						comando.Parameters.AddWithValue("senha", usuario.Senha);
-						comando.Parameters.AddWithValue("id_usuario", usuario.Id_usuario);
+						comando.Parameters.AddWithValue("Id", usuario.Id);
 						comando.ExecuteNonQuery();
 						return true;
 					}
@@ -55,7 +55,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText = "SELECT[administrador],[nome],[senha],[id_usuario]FROM[dbo].[usuario]";
+						comando.CommandText = "SELECT[administrador],[nome],[senha],[Id]FROM[dbo].[usuario]";
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
 							while (reader.Read())
@@ -65,7 +65,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 									Administrador = Convert.ToBoolean(reader["administrador"]),
 									Nome = reader["nome"].ToString(),
 									Senha = reader["senha"].ToString(),
-									Id_usuario = Guid.Parse(reader["id_usuario"].ToString())
+									Id = Guid.Parse(reader["Id"].ToString())
 								});
 							
 							}
@@ -93,10 +93,10 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText = "UPDATE[dbo].[usuario]SET[nome]=@nome,[senha]=@senha WHERE[id_usuario]=@id_usuario;";
+						comando.CommandText = "UPDATE[dbo].[usuario]SET[nome]=@nome,[senha]=@senha WHERE[Id]=@Id;";
 						comando.Parameters.AddWithValue("nome", usuario.Nome);
 						comando.Parameters.AddWithValue("senha", usuario.Senha);
-						comando.Parameters.AddWithValue("id_usuario", usuario.Id_usuario);
+						comando.Parameters.AddWithValue("Id", usuario.Id);
 						comando.ExecuteNonQuery();
 						return true;
 					}
@@ -120,8 +120,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText = "DELETE FROM[dbo].[usuario]WHERE[id_usuario]=@id_usuario;";
-						comando.Parameters.AddWithValue("id_usuario", id);
+						comando.CommandText = "DELETE FROM[dbo].[usuario]WHERE[Id]=@Id;";
+						comando.Parameters.AddWithValue("Id", id);
 						comando.ExecuteNonQuery();
 						return true;
 					}
@@ -146,7 +146,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText = "SELECT[administrador],[nome],[senha],[id_usuario]FROM[dbo].[usuario]WHERE[nome]LIKE'%@nome%'";
+						comando.CommandText = "SELECT[administrador],[nome],[senha],[Id]FROM[dbo].[usuario]WHERE[nome]LIKE'%@nome%'";
 						comando.Parameters.AddWithValue("nome", nome);
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
@@ -157,7 +157,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 									Administrador = Convert.ToBoolean(reader["administrador"]),
 									Nome = reader["nome"].ToString(),
 									Senha = reader["senha"].ToString(),
-									Id_usuario = Guid.Parse(reader["id_usuario"].ToString())
+									Id = Guid.Parse(reader["Id"].ToString())
 								});
 
 							}
