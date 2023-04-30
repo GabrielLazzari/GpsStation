@@ -58,6 +58,7 @@ namespace GpsStation.Controllers
 
 		}
 
+		[HttpPost]
 		public IActionResult Inserir(UsuarioModel usuario)
 		{
 			return RedirectToAction("Index");
@@ -81,6 +82,19 @@ namespace GpsStation.Controllers
 		public IActionResult Erro()
 		{
 			return View();
+		}
+
+		[HttpPost]
+		public IActionResult Pesquisar(string descricao)
+		{
+			List<UsuarioModel> usuarios = new List<UsuarioModel>();
+			usuarios = UsuarioFactory.GeradorMoqUsuarios(5);
+			if (!string.IsNullOrEmpty(descricao))
+			{
+				usuarios = usuarios.Where(d => d.Nome.ToLower().Contains(descricao.ToLower())).ToList();
+			}
+
+			return Json(usuarios);
 		}
 	}
 }

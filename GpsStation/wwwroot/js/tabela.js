@@ -1,16 +1,20 @@
 ﻿
-
-function excluirDispositivo(nome, id, td) {
-    if (confirm("Relamente deseja excluir o dispositivo '" + nome + "'?") == true) {
-        $.post('/Dispositivo/Excluir', { id: id }, function (retorno) {
-            td.closest("tr").remove();
-        });
+function retornarPagina() {
+    pagina = window.location.href.split('/');
+    if (pagina.length > 0) {
+        if (pagina[pagina.length - 1] != "") {
+            pagina = pagina[pagina.length - 1]
+        } else if (pagina.length > 1) {
+            pagina = pagina[pagina.length - 2]
+        }
     }
+
+    return pagina;
 }
 
-function excluirUsuario(nome, id, td) {
-    if (confirm("Relamente deseja excluir o usuário '" + nome + "'?") == true) {
-        $.post('/Usuario/Excluir', { id: id }, function (retorno) {
+function excluirItem(nome, id, td) {
+    if (confirm("Relamente deseja excluir o item '" + nome + "'?") == true) {
+        $.post('/' + retornarPagina() + '/Excluir', { id: id }, function (retorno) {
             td.closest("tr").remove();
         });
     }
@@ -49,18 +53,18 @@ function transformarLinhaEditavel(tabela, trCabecalho, trEditar, campos) {
     for (var chave in campos) {
         var posColuna = 0;
         Array.prototype.forEach.call(trCabecalho.querySelectorAll("th"), function (th) {
-            var tdLocalizada = tabela.rows[1].cells[posColuna];
+            var tdLocalizada = trEditar.cells[posColuna];
             if (th.innerHTML == "Açoes") {
-                var cloneBotoesAcao = `` + tdLocalizada.innerHTML.replaceAll('"', "aspapadupla").replaceAll("'", "aspapa").replaceAll("\n", "") + ``;
-                tdLocalizada.innerHTML = `<img onclick="salvarEdicaoLinha(this, '${cloneBotoesAcao}')" src="/gifs/checkmark-circle-outline.svg" class="svg-sm" title="Salvar Alteraçoes">
+                tdLocalizada.innerHTML = `<img onclick="salvarEdicaoLinha(this)" src="/gifs/checkmark-circle-outline.svg" class="svg-sm" title="Salvar Alteraçoes">
                                           <img onclick="cancelarEdicaoLinha('${cloneTr}', this)" src="/gifs/close-circle-outline.svg" class="svg-sm" title="Cancelar Alteraçoes">`
             } else {
                 if (th.innerText.toLowerCase().includes(chave.toLowerCase())) {
                     if (campos[chave] == "checkbox") {
-                        tdLocalizada.innerHTML = `<input type="radio" id="admin" name="admin_" value="True" checked>
-                                              <label for="admin">True</label>
-                                              <input type="radio" id="normal" name="admin_" value="False">
-                                              <label for="normal">False</label>`;
+                        var posAux = trEditar.rowIndex;
+                        tdLocalizada.innerHTML = `<input type="radio" id="admin${posAux}" name="admin_" value="True" checked>
+                                              <label for="admin${posAux}">True</label>
+                                              <input type="radio" id="normal${posAux}" name="admin_" value="False">
+                                              <label for="normal${posAux}">False</label>`;
                     } else {
                         //tdLocalizada.innerHTML = campos[chave];
                         bloquearEnter(tdLocalizada);
@@ -74,7 +78,6 @@ function transformarLinhaEditavel(tabela, trCabecalho, trEditar, campos) {
 }
 
 function cancelarEdicaoLinha(dadosAntigos, el) {
-    console.log('ddd', dadosAntigos)
     var tr = el.closest("tr");
 
     // Se o atributo abaixo estiver null entao foi clicado em uma linha para editar, senao foi criado uma nova linha
@@ -85,15 +88,11 @@ function cancelarEdicaoLinha(dadosAntigos, el) {
         trAntiga = document.createElement("tr");
         trAntiga.innerHTML = dadosAntigos;
 
-        console.log(trAntiga)
-
         // Aramazenar os valores antigos em uma lista
         var valoresAntigos = [];
         Array.prototype.forEach.call(trAntiga.querySelectorAll("td"), function (td) {
             valoresAntigos.push(`${td.innerHTML}`);
         })
-
-        console.log('vv', valoresAntigos);
 
         // Recolocar os valores antigos na tabela, isso previne se houve qualquer edicao
         var posicao = 0
@@ -108,34 +107,14 @@ function cancelarEdicaoLinha(dadosAntigos, el) {
     }
 }
 
-function salvarEdicaoLinhaUsuario(el, botoesAcao) {
-
-}
-
-function salvarEdicaoLinhaDispositivo(el, botoesAcao) {
-
-}
-
-function salvarEdicaoLinha(el, botoesAcao) {
+function salvarEdicaoLinha(el) {
     var tabela = el.closest("table")
     var trCabecalho = tabela.querySelector("tr")
     var trSalvar = el.closest("tr");
 
-    pagina = window.location.href.split('/');
-    if (pagina.length > 0) {
-        if (pagina[pagina.length - 1] != "") {
-            pagina = pagina[pagina.length - 1]
-        } else if (pagina.length > 1) {
-            pagina = pagina[pagina.length - 2]
-        }
-    }
+    pagina = retornarPagina();
 
-    console.log(pagina)
-
-    //retransformar os valores antigos que vieram em string para objeto DOM
-    botoesAcao = botoesAcao.replaceAll("aspapadupla", '"').replaceAll("aspapa", "'");
-    botoesAcaoAntigo = document.createElement("tr");
-    botoesAcaoAntigo.innerHTML = botoesAcao;
+    var novaTd = ``;
 
     parametrosCabecalho = [];
     dados = {};
@@ -144,56 +123,78 @@ function salvarEdicaoLinha(el, botoesAcao) {
         parametrosCabecalho.push(th.innerText);
     })
 
-    console.log(trSalvar)
     if (pagina == "Usuario") {
         for (var posColuna = 0; posColuna < parametrosCabecalho.length; posColuna++) {
-            Array.prototype.forEach.call(trSalvar.querySelectorAll("td"), function (td) {
-                if (parametrosCabecalho[posColuna].toLowerCase() == "nome") {
-                    dados['Nome'] = td.innerText;
-                } else if (parametrosCabecalho[posColuna].toLowerCase() == "senha") {
-                    dados['Senha'] = td.innerText;
-                } else if (parametrosCabecalho[posColuna].toLowerCase() == "codigo") {
-                    dados['Id'] = td.innerText;
-                } else if (parametrosCabecalho[posColuna].toLowerCase() == "administrador") {
-                    dados['Administrador'] = td.innerText;
-                }
-            })
+            td = trSalvar.cells[posColuna];
+            if (parametrosCabecalho[posColuna].toLowerCase() == "nome") {
+                dados['Nome'] = td.innerText;
+            } else if (parametrosCabecalho[posColuna].toLowerCase() == "senha") {
+                dados['Senha'] = td.innerText;
+            } else if (parametrosCabecalho[posColuna].toLowerCase() == "código") {
+                dados['Id'] = trSalvar.getAttribute("idUsuario");
+            } else if (parametrosCabecalho[posColuna].toLowerCase() == "administrador") {
+                valor = td.querySelector('input').checked;
+                console.log(valor)
+                dados['Administrador'] = valor;
+            }
         }
+        novaTd = `<td>
+					    <img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:'', administrador:'checkbox'}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+					    <img onclick="excluirItem('${dados['Nome']}', '${dados['Id']}', this)" src="/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
+				    </td>`;
+
     } else if (pagina == "Dispositivo") {
+
         for (var posColuna = 0; posColuna < parametrosCabecalho.length; posColuna++) {
-            Array.prototype.forEach.call(trSalvar.querySelectorAll("td"), function (td) {
-                console.log(td, parametrosCabecalho[posColuna])
-                if (parametrosCabecalho[posColuna].toLowerCase() == "dispositivo") {
-                    console.log('ok')
-                    dados['Nome'] = td.innerText;
-                } else if (parametrosCabecalho[posColuna].toLowerCase() == "status") {
-                    dados['Ativo'] = td.innerText;
-                }
-                //Como aqui recuperar id, id de usuario?
-            })
+            td = trSalvar.cells[posColuna];
+            if (parametrosCabecalho[posColuna].toLowerCase() == "dispositivo") {
+                dados['Nome'] = td.innerText;
+            } else if (parametrosCabecalho[posColuna].toLowerCase() == "status") {
+                dados['Ativo'] = td.innerText;
+            }
+            dados['Id'] = trSalvar.getAttribute("idDispositivo");
+            dados['IdUsuario'] = trSalvar.getAttribute("idUsuario");
         }
-        dados['Id'] = "";
-        dados['IdUsuario'] = "";
+        novaTd = ` <td>
+					    <a href="/Relatorio/Index">Últimos registros</a>
+					    <a href="/Mapa/Index">Visualizar localização</a>
+					    <img onclick="editarLinha('tabelaDispositivos', this, JSON.stringify({dispositivo:'', status:''}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+					    <img onclick="excluirItem('${dados['Nome']}', '${dados['Id']}', this)" src="/gifs/trash-outline.svg" class="svg-sm" title="Excluir">		
+				    </td>`;
+
         dados['Localizacao'] = "";
     }
-
-    console.log(parametrosCabecalho)
-    console.log(dados)
+    console.log('dados: ', dados)
 
     // Se o atributo abaixo estiver null entao foi clicado em uma linha para editar, senao foi criado uma nova linha
     if (trSalvar.getAttribute("novaLinha") == null) {
         //inserir
         var url = '/' + pagina + '/Inserir';
-        ados = JSON.stringify(dados);
+        console.log('ddaaa', dados)
         $.post(url, dados, function (retorno) {
-            //consolidar valores na tela
+            var pos = 0;
+            Array.prototype.forEach.call(trSalvar.querySelectorAll("td"), function (td) {
+                if (parametrosCabecalho[pos] == "Açoes") {
+                    td.innerHTML = novaTd;
+                } else {
+                    td.setAttribute("contenteditable", false);
+                }
+                pos++;
+            });
         });
     } else {
         //salvar edicao
         var url = '/' + pagina + '/Gravar';
-        var dados = JSON.stringify({});
         $.post(url, dados, function (retorno) {
-            //consolidar valores na tela
+            var pos = 0;
+            Array.prototype.forEach.call(trSalvar.querySelectorAll("td"), function (td) {
+                if (parametrosCabecalho[pos] == "Açoes") {
+                    td.innerHTML = novaTd;
+                } else {
+                    td.setAttribute("contenteditable", false);
+                }
+                pos++;
+            });
         });
     }
 }

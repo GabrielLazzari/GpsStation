@@ -19,14 +19,29 @@ namespace GpsStation.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Inserir(DispositivoModel dispositivo)
+		[HttpPost]
+		public IActionResult Inserir(DispositivoModel dispositivo)
         {
 			return RedirectToAction("Index");
 		}
 
+		[HttpPost]
 		public IActionResult Gravar(DispositivoModel dispositivoModel)
 		{
 			return RedirectToAction("Index");
+		}
+
+		[HttpPost]
+		public IActionResult Pesquisar(string descricao)
+		{
+			DispositivoRepository dispositivoRepository = new DispositivoRepository();
+			List<DispositivoModel> dispositivos = dispositivoRepository.ListarDispositivo();
+			if (!string.IsNullOrEmpty(descricao))
+			{
+				dispositivos = dispositivos.Where(d => d.Nome.ToLower().Contains(descricao.ToLower())).ToList();
+			}
+
+			return Json(dispositivos);
 		}
 	}
 }
