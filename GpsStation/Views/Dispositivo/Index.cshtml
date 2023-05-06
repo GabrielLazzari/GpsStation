@@ -22,13 +22,12 @@
 		<input id="pesquisarDispositivo" class="inputPersonalizado"></input>
 		<img src="~/gifs/search-outline.svg" class="svg-sm" title="Pesquisar">
 	</div>
-	<button onclick="novaLinha('tabelaDispositivos', JSON.stringify({dispositivo:'', status:''}))" class="botaoNovo">Novo Dispositivo</button>
+	<button onclick="novaLinha('tabelaDispositivos', JSON.stringify({dispositivo:''}))" class="botaoNovo">Novo Dispositivo</button>
 </div >
 
 <table id="tabelaDispositivos">
 	<tr>
 		<th>Dispositivo</th>
-		<th>Status</th>
 		<th>Açoes</th>
 	</tr>
 	@{
@@ -36,11 +35,10 @@
 		{
 			<tr idDispositivo="@item.Id" idUsuario="@item.IdUsuario">
 				<td>@item.Nome</td>
-				<td>@item.Ativo</td>
 				<td>
 					<a asp-controller='Relatorio' asp-action="Index">Últimos registros</a>
 					<a asp-controller="Mapa" asp-action="Index">Visualizar localização</a>
-					<img onclick="editarLinha('tabelaDispositivos', this, JSON.stringify({dispositivo:'', status:''}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+					<img onclick="editarLinha('tabelaDispositivos', this, JSON.stringify({dispositivo:''}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 					<img onclick="excluirItem('@item.Nome', '@item.Id', this)" src="~/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
 					
 				</td>

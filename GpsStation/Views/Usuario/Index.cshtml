@@ -35,7 +35,7 @@
 		<input id="pesquisarUsuario" class="inputPersonalizado"></input>
 		<img src="~/gifs/search-outline.svg" class="svg-sm" title="Pesquisar">
 	</div>
-	<button onclick="novaLinha('tabelaUsuarios', JSON.stringify({nome:'', senha:'', administrador:'checkbox'}))" class="botaoNovo">Novo Usuário</button>
+	<button onclick="novaLinha('tabelaUsuarios', JSON.stringify({nome:'', senha:''}))" class="botaoNovo">Novo Usuário</button>
 </div>
 
 
@@ -43,8 +43,6 @@
 	<tr>
 		<th>Nome</th>
 		<th>Senha</th>
-		<th>Código</th>
-		<th>Administrador</th>
 		<th>Açoes</th>
 	</tr>
 	@{
@@ -53,10 +51,8 @@
 			<tr idUsuario="@item.Id">
 				<td id="@(item.Id)">@item.Nome</td>
 				<td>@item.Senha</td>
-				<td>@item.Id</td>
-				<td>@item.Administrador</td>
 				<td>
-					<img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:'', administrador:'checkbox'}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+					<img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:''}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 					<img onclick="excluirItem('@item.Nome', '@item.Id', this)" src="~/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
 				</td>
 			</tr>

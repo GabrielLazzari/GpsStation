@@ -66,7 +66,6 @@ function transformarLinhaEditavel(tabela, trCabecalho, trEditar, campos) {
                                               <input type="radio" id="normal${posAux}" name="admin_" value="False">
                                               <label for="normal${posAux}">False</label>`;
                     } else {
-                        //tdLocalizada.innerHTML = campos[chave];
                         bloquearEnter(tdLocalizada);
                         tdLocalizada.setAttribute("contenteditable", true);
                     }
@@ -130,16 +129,10 @@ function salvarEdicaoLinha(el) {
                 dados['Nome'] = td.innerText;
             } else if (parametrosCabecalho[posColuna].toLowerCase() == "senha") {
                 dados['Senha'] = td.innerText;
-            } else if (parametrosCabecalho[posColuna].toLowerCase() == "código") {
-                dados['Id'] = trSalvar.getAttribute("idUsuario");
-            } else if (parametrosCabecalho[posColuna].toLowerCase() == "administrador") {
-                valor = td.querySelector('input').checked;
-                console.log(valor)
-                dados['Administrador'] = valor;
             }
         }
         novaTd = `<td>
-					    <img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:'', administrador:'checkbox'}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+					    <img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:''}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 					    <img onclick="excluirItem('${dados['Nome']}', '${dados['Id']}', this)" src="/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
 				    </td>`;
 
@@ -149,8 +142,6 @@ function salvarEdicaoLinha(el) {
             td = trSalvar.cells[posColuna];
             if (parametrosCabecalho[posColuna].toLowerCase() == "dispositivo") {
                 dados['Nome'] = td.innerText;
-            } else if (parametrosCabecalho[posColuna].toLowerCase() == "status") {
-                dados['Ativo'] = td.innerText;
             }
             dados['Id'] = trSalvar.getAttribute("idDispositivo");
             dados['IdUsuario'] = trSalvar.getAttribute("idUsuario");
@@ -158,7 +149,7 @@ function salvarEdicaoLinha(el) {
         novaTd = ` <td>
 					    <a href="/Relatorio/Index">Últimos registros</a>
 					    <a href="/Mapa/Index">Visualizar localização</a>
-					    <img onclick="editarLinha('tabelaDispositivos', this, JSON.stringify({dispositivo:'', status:''}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+					    <img onclick="editarLinha('tabelaDispositivos', this, JSON.stringify({dispositivo:''}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 					    <img onclick="excluirItem('${dados['Nome']}', '${dados['Id']}', this)" src="/gifs/trash-outline.svg" class="svg-sm" title="Excluir">		
 				    </td>`;
 
