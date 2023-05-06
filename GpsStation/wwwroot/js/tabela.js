@@ -67,8 +67,8 @@ function transformarLinhaEditavel(tabela, trCabecalho, trEditar, campos) {
                                               <label for="normal${posAux}">False</label>`;
                     } else {*/
                         //tdLocalizada.innerHTML = campos[chave];
-                        bloquearEnter(tdLocalizada);
                     tdLocalizada.setAttribute("contenteditable", true);
+                    tdLocalizada.setAttribute("onkeyup", "bloquearEnter(this)")
                     //}
                 }
             }
@@ -199,11 +199,34 @@ function salvarEdicaoLinha(el) {
 // O atributo contenteditable necessta bloquear o enter pois, por ser mais facil de trabalhar ele cria um item
 // como se fose um textarea e nao um input type text
 function bloquearEnter(td) {
-    td.addEventListener("keydown", function (e) {
-        if (e.keyCode === 13) {
-            e.preventDefault();
+
+    if (event.keyCode === 13) {
+        event.preventDefault();
+    }
+
+    if (td.textContent.length >= td.getAttribute("maxlength")) {
+        td.textContent = td.textContent.slice(0, td.getAttribute("maxlength") - 1);
+    }
+
+    /*if (td.getAttribute("maxlength") == 8) {
+        console.log(event.key)
+        if (td.getAttribute("value") == null) {
+            td.setAttribute("value", "");
         }
-    });
+
+        if (event.key == "Backspace") {
+            td.setAttribute("value", td.getAttribute("value").slice(0, td.getAttribute("value").length - 1))
+        } else {
+            var mascara = "qwertyuiopasdfghjklzxcvbnm1234567890\,.;ç~´[]!@#$%¨&*()-=_+/?°^~:}{ºª§|Backspace"
+            console.log(td.textContent.length, td.textContent.length < 6)
+            if (mascara.includes(event.key.toLowerCase()) && td.textContent.length < 6) {
+                td.setAttribute("value", td.getAttribute("value") + event.key);
+                console.log('ii', td.innerHTML)
+                td.innerHTML = td.innerHTML.replaceAll(event.key, "*")
+            }
+        }
+        console.log(td.getAttribute("value"))
+    }*/
 }
 
 

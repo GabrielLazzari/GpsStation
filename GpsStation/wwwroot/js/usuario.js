@@ -19,8 +19,8 @@ document.onkeyup = function () {
             $.each(retorno, function (index, value) {
                 novoHtml = novoHtml + `
 								   <tr idUsuario="${value.id}">
-										<td id="${value.id}">${value.nome}</td>
-										<td>${value.senha}</td>
+										<td id="${value.id}">${value.nome} maxlength="50"</td>
+										<td maxlength="8">${value.senha}</td>
 										<td>${value.id}</td>
 										
 										<td>

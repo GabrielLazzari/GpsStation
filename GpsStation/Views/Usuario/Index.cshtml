@@ -50,8 +50,8 @@
         foreach (var item in Model)
         {
             <tr idUsuario="@item.Id">
-                <td id="@(item.Id)">@item.Nome</td>
-                <td>@item.Senha</td>
+                <td maxlength="50" id="@(item.Id)">@item.Nome</td>
+                <td maxlength="8">@item.Senha</td>
                 <td>@item.Id</td>
                 <td>
                     <img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:''}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
