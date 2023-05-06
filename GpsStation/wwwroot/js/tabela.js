@@ -130,7 +130,7 @@ function salvarEdicaoLinha(el) {
                 dados['Nome'] = td.innerText;
                 
             } else if (parametrosCabecalho[posColuna].toLowerCase() == "senha") {
-                dados['Senha'] = td.innerText;
+                dados['Senha'] = td.getAttribute("value");
                
             } else if (parametrosCabecalho[posColuna].toLowerCase() == "código") {
                 dados['Id'] = trSalvar.getAttribute("idUsuario");
@@ -208,25 +208,27 @@ function bloquearEnter(td) {
         td.textContent = td.textContent.slice(0, td.getAttribute("maxlength") - 1);
     }
 
-    /*if (td.getAttribute("maxlength") == 8) {
+    if (td.getAttribute("maxlength") == 8) {
         console.log(event.key)
         if (td.getAttribute("value") == null) {
             td.setAttribute("value", "");
         }
 
         if (event.key == "Backspace") {
+            td.textContent = td.textContent.slice(0, td.textContent.length - 1);
             td.setAttribute("value", td.getAttribute("value").slice(0, td.getAttribute("value").length - 1))
         } else {
-            var mascara = "qwertyuiopasdfghjklzxcvbnm1234567890\,.;ç~´[]!@#$%¨&*()-=_+/?°^~:}{ºª§|Backspace"
-            console.log(td.textContent.length, td.textContent.length < 6)
-            if (mascara.includes(event.key.toLowerCase()) && td.textContent.length < 6) {
+            var mascara = "qwertyuiopasdfghjklzxcvbnm1234567890\,.;ç~´[]!@#$%¨&*()-=_+/?°^~:}{ºª§|"
+            if (mascara.includes(event.key.toLowerCase())) {
                 td.setAttribute("value", td.getAttribute("value") + event.key);
                 console.log('ii', td.innerHTML)
-                td.innerHTML = td.innerHTML.replaceAll(event.key, "*")
+                td.textContent = td.textContent.replaceAll(event.key, "*")
             }
+            td.textContent = td.textContent.slice(0, td.getAttribute("maxlength"));
+            td.setAttribute("value", td.getAttribute("value").slice(0, td.getAttribute("maxlength")));
         }
         console.log(td.getAttribute("value"))
-    }*/
+    }
 }
 
 
