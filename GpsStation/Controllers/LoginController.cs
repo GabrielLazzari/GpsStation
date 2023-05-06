@@ -1,5 +1,11 @@
-﻿using GpsStation.Models;
+﻿using Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao;
+using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
+using GpsStation.Factory;
+using GpsStation.Models;
+using GpsStation.Repository;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using Usuario = Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
 
 namespace GpsStation.Controllers
 {
@@ -17,7 +23,10 @@ namespace GpsStation.Controllers
         //método que recebe info do form login
         public void Confirmarlogin()
         {
-            if (login.username == Request.Form["username"] && login.password == Request.Form["password"])
+            UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+            Boolean autorizado = usuarioAplicacao.Login(Request.Form["usuario"], Request.Form["senha"]);
+          //  if (login.Nome == Request.Form["usuario"] && login.Senha == Request.Form["senha"])
+          if(autorizado)
             {
                 //se correto redireciona para controller Mapa action index
                 Response.Redirect("/Mapa/Index");

@@ -1,4 +1,4 @@
-﻿@model LocalizacaoModel
+﻿@model List<DispositivoModel>
 @{
 	ViewData["Title"] = "Relatório";
 }
@@ -8,32 +8,69 @@
 }
 
 @section Script{
-	<script src="/js/tabela.js"></script>
+	<script src="/js/tabela.js">	</script>
+	<script src="/js/relatorio.js"></script>
+
 }
 
 <div class="text-center">
 	<h1 class="display-4">Relatório</h1>
+</div>
+<div class="text-center">
+
+
+
+
+
+	<label>Dispositivo:</label>
+	<!--<input type="text" id="nome" name="dispositivo">-->
+
+
+
+	<select id="dispositivo">
+		@{
+			foreach (var item in Model)
+			{
+				<option value=@item.Id name="@item.Nome">@item.Nome</option>
+			}
+		}
+	</select>
+
+
+	<label>Início:</label>
+	<input type="datetime-local" id="inicio">
+
+	<label>Fim:</label>
+	<input type="datetime-local" id="fim">
+
+	@*
+	<button type="submit">PESQUISAR</button>
+	<a href="#" onclick="AtualizarEstoque('@item.Id')">Decrementar Estoque</a>*@
+	<button type="button" onclick="RelatorioLocalizacao(document.getElementById('dispositivo').value,
+			document.getElementById('inicio').value,
+			document.getElementById('fim').value)">PESQUISAR</button>
 
 </div>
 
-<table>
+<table id="tabelaRelatorio">
 	<tr>
-		<th>Dispositivo</th>
+		<th>Data/Hora</th>
 		<th>Latitude</th>
 		<th>Longitude</th>
-		<th>Data/Hora</th>
 	</tr>
-	@{
-		foreach (var item in ViewBag.localizacoes)
+	@*@{
+		foreach (var item in Model.Localizacao)
 		{
 			<tr>
-				<td>@item.IdDispositivo</td>
+				<td>@item.DataHora</td>
 				<td>@item.Latitude</td>
 				<td>@item.Longitude</td>
-				<td>@item.DataHora</td>
-
 			</tr>
 		}
-	}
+	}*@
 
 </table>
+
+
+
+

@@ -4,7 +4,7 @@ using GpsStation.Models;
 using GpsStation.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using Usuario = Ftec.ProjetosWeb.GPStation.Dominio.Entidades.Usuario;
+using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
 
 namespace GpsStation.Controllers
 {
@@ -13,11 +13,23 @@ namespace GpsStation.Controllers
 
 		public IActionResult Index()
 		{
-			List<UsuarioModel> usuarios = new List<UsuarioModel>();
-			usuarios = UsuarioFactory.GeradorMoqUsuarios(5);
-			ViewBag.Usuarios = usuarios;
-			return View();
+			List<UsuarioModel> usuariosModel = new List<UsuarioModel>();
+			UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+			var usuarios = usuarioAplicacao.Listar();
+
+			foreach (var usuario in usuarios)
+			{
+				usuariosModel.Add(new UsuarioModel()
+				{
+					Id = usuario.Id,
+					Nome = usuario.Nome,
+					Senha = usuario.Senha
+				});
+			}
+			return View(usuariosModel);
 		}
+
+
 
 		public IActionResult Consultar(string nome)
 		{
@@ -25,21 +37,25 @@ namespace GpsStation.Controllers
 			return Json(usuarioAplicacao.Consultar(nome));
 		}
 
+
+
 		public IActionResult Listar()
 		{
 			UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
 			return Json(usuarioAplicacao.Listar());
 		}
 
+
+
+
 		public IActionResult Excluir(Guid id)
 		{
-
-			//LEMBRAR QUE AQUI TEM QUE EXCLUIR TODOS OS DISPOSITIVOS VINCULADOS AO USUARIO
-
-			//UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-			//usuarioAplicacao.Excluir(id);
+			UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+			usuarioAplicacao.Excluir(id);
 			return RedirectToAction("Index");
 		}
+
+
 
 
 		[HttpPost]
@@ -48,53 +64,36 @@ namespace GpsStation.Controllers
 			UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
 			usuarioAplicacao.Inserir(new Usuario()
 			{
-				Administrador = usuario.Administrador,
 				Nome = usuario.Nome,
 				Senha = usuario.Senha,
-				Id = usuario.Id
+				Id = usuario.Id,
 			});
-
 			return RedirectToAction("Index");
-
 		}
 
-		[HttpPost]
+
+
 		public IActionResult Inserir(UsuarioModel usuario)
 		{
-			return RedirectToAction("Index");
+			return View("Inserir");
 		}
 
 
-		[HttpPost]
-		public IActionResult Editar(UsuarioModel usuario)
+
+
+		public IActionResult Editar(Guid Id)
 		{
 			UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-			usuarioAplicacao.Editar(new Usuario()
+			Usuario usuario = usuarioAplicacao.SelecionarPorId(Id);
+			UsuarioModel usuarioModel = new UsuarioModel()
 			{
-				Administrador = usuario.Administrador,
 				Nome = usuario.Nome,
 				Senha = usuario.Senha,
-				Id = usuario.Id
-			});
-			return RedirectToAction("Index");
+				Id = Id
+			};
+			return View(usuarioModel);
 		}
 
-		public IActionResult Erro()
-		{
-			return View();
-		}
-
-		[HttpPost]
-		public IActionResult Pesquisar(string descricao)
-		{
-			List<UsuarioModel> usuarios = new List<UsuarioModel>();
-			usuarios = UsuarioFactory.GeradorMoqUsuarios(5);
-			if (!string.IsNullOrEmpty(descricao))
-			{
-				usuarios = usuarios.Where(d => d.Nome.ToLower().Contains(descricao.ToLower())).ToList();
-			}
-
-			return Json(usuarios);
-		}
+		
 	}
 }

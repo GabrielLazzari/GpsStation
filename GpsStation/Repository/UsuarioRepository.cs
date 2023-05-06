@@ -29,8 +29,8 @@ namespace GpsStation.Repository
 			{
 				for (int i = 0; i < usuarios.Count; i++)
 				{
-					if (usuarios[i].Id_usuario == id)
-						return usuarios[i];
+					//if (usuarios[i].Id_usuario == id)
+					//	return usuarios[i];
 				}
 				return null;
 			}
@@ -50,10 +50,10 @@ namespace GpsStation.Repository
 			{
 				usuarios.Add(new UsuarioModel()
 				{
-					Administrador = usuario.Administrador,
+					//Administrador = usuario.Administrador,
 					Nome = usuario.Nome,
 					Senha = usuario.Senha,
-					Id_usuario = Guid.NewGuid()
+				//	Id_usuario = Guid.NewGuid()
 				});
 				return true;
 			}

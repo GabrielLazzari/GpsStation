@@ -4,11 +4,10 @@
     {
         public LoginModel()
         {
-            username = "bruno";
-            password = "123";
+            Nome =String.Empty;
+            Senha = String.Empty;
         }
-
-        public string username { get; set; }
-        public string password { get; set; }
+        public string Nome { get; set; }
+        public string Senha { get; set; }
     }
 }

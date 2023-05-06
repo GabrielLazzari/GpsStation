@@ -4,14 +4,14 @@
     {
 		public Localizacao()
 		{
-			IdDispositivo = Guid.NewGuid();
-			DataHora = DateTime.Now;
-			Latitude = 0;
-			Longitude = 0;
+			IdDispositivo = Guid.Empty;
+			DataHora = null;
+			Latitude = string.Empty;
+			Longitude = string.Empty;
 		}
-		public Guid IdDispositivo { get; set; }
-        public DateTime DataHora { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+		public Guid? IdDispositivo { get; set; }
+        public DateTime? DataHora { get; set; } //datetime nullable
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
     }
 }

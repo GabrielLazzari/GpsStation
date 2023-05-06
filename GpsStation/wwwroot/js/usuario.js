@@ -12,7 +12,7 @@ document.onkeyup = function () {
 								<th>Nome</th>
 								<th>Senha</th>
 								<th>Código</th>
-								<th>Administrador</th>
+								
 								<th>Açoes</th>
 							</tr>`;
 
@@ -22,9 +22,9 @@ document.onkeyup = function () {
 										<td id="${value.id}">${value.nome}</td>
 										<td>${value.senha}</td>
 										<td>${value.id}</td>
-										<td>${value.administrador}</td>
+										
 										<td>
-											<img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:'', administrador:'checkbox'}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+											<img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:''}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 											<img onclick="excluirItem('${value.nome}', '${value.id}', this)" src="/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
 										</td>
 									</tr>`;

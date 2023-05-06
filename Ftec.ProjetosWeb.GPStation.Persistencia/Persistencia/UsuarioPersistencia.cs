@@ -13,10 +13,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 	public class UsuarioPersistencia
 	{
 		public UsuarioPersistencia() { }
-
-		public Boolean Inserir(Usuario usuario)
+		string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+       // "Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
+        public Boolean Inserir(Usuario usuario)
 		{
-			string conexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+			string conexao = stringconexao;
 
 			using (var con = new SqlConnection(conexao))
 			{
@@ -26,8 +27,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText = "INSERT INTO[dbo].[usuario]([administrador],[nome],[senha],[Id])VALUES(@administrador,@nome,@senha,@Id);";
-						comando.Parameters.AddWithValue("administrador", usuario.Administrador);
+						comando.CommandText = "INSERT INTO[dbo].[usuario]([Nome],[Senha],[Id])VALUES(@nome,@senha,@Id);";
 						comando.Parameters.AddWithValue("nome", usuario.Nome);
 						comando.Parameters.AddWithValue("senha", usuario.Senha);
 						comando.Parameters.AddWithValue("Id", usuario.Id);
@@ -44,10 +44,12 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		public List<Usuario> Listar()
 		{
+			//throw new System.Exception("teste");
 			List<Usuario> usuarios = new List<Usuario>();
-			string conexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+			string conexao = stringconexao;
 
-			using (var con = new SqlConnection(conexao))
+
+            using (var con = new SqlConnection(conexao))
 			{
 				con.Open();
 				try
@@ -55,19 +57,18 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText = "SELECT[administrador],[nome],[senha],[Id]FROM[dbo].[usuario]";
+						comando.CommandText = "SELECT[Nome],[Senha],[Id]FROM[dbo].[usuario] ORDER BY [Nome]";
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
 							while (reader.Read())
 							{
 								usuarios.Add(new Usuario
 								{
-									Administrador = Convert.ToBoolean(reader["administrador"]),
 									Nome = reader["nome"].ToString(),
 									Senha = reader["senha"].ToString(),
 									Id = Guid.Parse(reader["Id"].ToString())
 								});
-							
+
 							}
 						}
 
@@ -83,7 +84,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		public Boolean Editar(Usuario usuario)
 		{
-			string conexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+			string conexao = stringconexao;
 
 			using (var con = new SqlConnection(conexao))
 			{
@@ -93,7 +94,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText = "UPDATE[dbo].[usuario]SET[nome]=@nome,[senha]=@senha WHERE[Id]=@Id;";
+						comando.CommandText = "UPDATE[dbo].[usuario]SET[Nome]=@nome,[Senha]=@senha WHERE[Id]=@Id;";
 						comando.Parameters.AddWithValue("nome", usuario.Nome);
 						comando.Parameters.AddWithValue("senha", usuario.Senha);
 						comando.Parameters.AddWithValue("Id", usuario.Id);
@@ -110,7 +111,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		public Boolean Excluir(Guid id)
 		{
-			string conexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+			string conexao = stringconexao;
 
 			using (var con = new SqlConnection(conexao))
 			{
@@ -121,7 +122,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					{
 						comando.Connection = con;
 						comando.CommandText = "DELETE FROM[dbo].[usuario]WHERE[Id]=@Id;";
-						comando.Parameters.AddWithValue("Id", id);
+						comando.Parameters.AddWithValue("Id", id.ToString());
 						comando.ExecuteNonQuery();
 						return true;
 					}
@@ -136,7 +137,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		public List<Usuario> Consultar(string nome)
 		{
 			List<Usuario> usuarios = new List<Usuario>();
-			string conexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+			string conexao = stringconexao;
 
 			using (var con = new SqlConnection(conexao))
 			{
@@ -146,7 +147,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText = "SELECT[administrador],[nome],[senha],[Id]FROM[dbo].[usuario]WHERE[nome]LIKE'%@nome%'";
+						comando.CommandText = "SELECT[Nome],[Senha],[Id]FROM[dbo].[usuario]WHERE[Nome]LIKE'%@nome%'ORDER BY [Nome]";
 						comando.Parameters.AddWithValue("nome", nome);
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
@@ -154,7 +155,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 							{
 								usuarios.Add(new Usuario
 								{
-									Administrador = Convert.ToBoolean(reader["administrador"]),
 									Nome = reader["nome"].ToString(),
 									Senha = reader["senha"].ToString(),
 									Id = Guid.Parse(reader["Id"].ToString())
@@ -170,6 +170,79 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
 				}
 				return usuarios;
+			}
+		}
+
+		public Boolean Login(string usuario, string senha)
+		{
+
+			List<Usuario> login = new List<Usuario>();
+			string conexao = stringconexao;
+
+			using (var con = new SqlConnection(conexao))
+			{
+				con.Open();
+				try
+				{
+					using (var comando = new SqlCommand())
+					{
+						comando.Connection = con;
+						comando.CommandText = "SELECT[Nome],[Senha]FROM[dbo].[usuario]WHERE[Nome]='@usuario' AND[Senha]='@senha'";
+						comando.Parameters.AddWithValue("usuario", usuario);
+						comando.Parameters.AddWithValue("senha", senha);
+						using (SqlDataReader reader = comando.ExecuteReader())
+						{
+							while (reader.Read())
+							{
+								login.Add(new Usuario()
+								{
+									Nome = reader["nome"].ToString(),
+									Senha = reader["senha"].ToString()
+								});
+								return true;
+							}
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					return false;
+				}
+				return false;
+			}
+		}
+
+		public Usuario SelecionarPorId(Guid Id)
+		{
+			Usuario usuario = new Usuario();
+			string conexao = stringconexao;
+
+			using (var con = new SqlConnection(conexao))
+			{
+				con.Open();
+				try
+				{
+					using (var comando = new SqlCommand())
+					{
+						comando.Connection = con;
+						comando.CommandText = "SELECT[Nome],[Senha],[Id]FROM[dbo].[usuario]WHERE[Id]=Id";
+						comando.Parameters.AddWithValue("Id", Id);
+						using (SqlDataReader reader = comando.ExecuteReader())
+						{
+							reader.Read();
+							
+								usuario.Nome = reader["nome"].ToString();
+								usuario.Senha = reader["senha"].ToString();
+								usuario.Id = Guid.Parse(reader["Id"].ToString());
+							
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+
+				}
+				return usuario;
 			}
 		}
 	}

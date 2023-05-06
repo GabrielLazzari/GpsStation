@@ -59,17 +59,17 @@ function transformarLinhaEditavel(tabela, trCabecalho, trEditar, campos) {
                                           <img onclick="cancelarEdicaoLinha('${cloneTr}', this)" src="/gifs/close-circle-outline.svg" class="svg-sm" title="Cancelar Alteraçoes">`
             } else {
                 if (th.innerText.toLowerCase().includes(chave.toLowerCase())) {
-                    if (campos[chave] == "checkbox") {
+                    /*if (campos[chave] == "checkbox") {
                         var posAux = trEditar.rowIndex;
                         tdLocalizada.innerHTML = `<input type="radio" id="admin${posAux}" name="admin_" value="True" checked>
                                               <label for="admin${posAux}">True</label>
                                               <input type="radio" id="normal${posAux}" name="admin_" value="False">
                                               <label for="normal${posAux}">False</label>`;
-                    } else {
+                    } else {*/
                         //tdLocalizada.innerHTML = campos[chave];
                         bloquearEnter(tdLocalizada);
-                        tdLocalizada.setAttribute("contenteditable", true);
-                    }
+                    tdLocalizada.setAttribute("contenteditable", true);
+                    //}
                 }
             }
             posColuna++;
@@ -128,18 +128,16 @@ function salvarEdicaoLinha(el) {
             td = trSalvar.cells[posColuna];
             if (parametrosCabecalho[posColuna].toLowerCase() == "nome") {
                 dados['Nome'] = td.innerText;
+                
             } else if (parametrosCabecalho[posColuna].toLowerCase() == "senha") {
                 dados['Senha'] = td.innerText;
+               
             } else if (parametrosCabecalho[posColuna].toLowerCase() == "código") {
                 dados['Id'] = trSalvar.getAttribute("idUsuario");
-            } else if (parametrosCabecalho[posColuna].toLowerCase() == "administrador") {
-                valor = td.querySelector('input').checked;
-                console.log(valor)
-                dados['Administrador'] = valor;
             }
         }
         novaTd = `<td>
-					    <img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:'', administrador:'checkbox'}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+					    <img onclick="editarLinha('tabelaUsuarios', this, JSON.stringify({nome:'', senha:''}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 					    <img onclick="excluirItem('${dados['Nome']}', '${dados['Id']}', this)" src="/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
 				    </td>`;
 
@@ -149,11 +147,10 @@ function salvarEdicaoLinha(el) {
             td = trSalvar.cells[posColuna];
             if (parametrosCabecalho[posColuna].toLowerCase() == "dispositivo") {
                 dados['Nome'] = td.innerText;
-            } else if (parametrosCabecalho[posColuna].toLowerCase() == "status") {
-                dados['Ativo'] = td.innerText;
-            }
+           
+            } 
             dados['Id'] = trSalvar.getAttribute("idDispositivo");
-            dados['IdUsuario'] = trSalvar.getAttribute("idUsuario");
+           
         }
         novaTd = ` <td>
 					    <a href="/Relatorio/Index">Últimos registros</a>
@@ -169,7 +166,7 @@ function salvarEdicaoLinha(el) {
     // Se o atributo abaixo estiver null entao foi clicado em uma linha para editar, senao foi criado uma nova linha
     if (trSalvar.getAttribute("novaLinha") == null) {
         //inserir
-        var url = '/' + pagina + '/Inserir';
+        var url = '/' + pagina + '/Gravar';
         console.log('ddaaa', dados)
         $.post(url, dados, function (retorno) {
             var pos = 0;
@@ -184,7 +181,7 @@ function salvarEdicaoLinha(el) {
         });
     } else {
         //salvar edicao
-        var url = '/' + pagina + '/Gravar';
+        var url = '/' + pagina + '/Gravar/';
         $.post(url, dados, function (retorno) {
             var pos = 0;
             Array.prototype.forEach.call(trSalvar.querySelectorAll("td"), function (td) {
@@ -208,3 +205,5 @@ function bloquearEnter(td) {
         }
     });
 }
+
+

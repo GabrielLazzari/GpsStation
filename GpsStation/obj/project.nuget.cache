@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nu174Po5EHTwNn/szBxExLwOc2bsmImsDPg3dTU97TVhg7gm4QS+4h15nBguVqMg/lwuD20kAZHwllXk8u+mKw==",
+  "dgSpecHash": "F+VJqhTiXrFOAd5sPSwo6P7e4klunXPoWb3CFBdNCVbgLmhM64CfRBbmsQWAbI9Hdjak271ZEn7r7a/4op4cig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bruno\\Documents\\GitHub\\G_certo\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj",
+  "projectFilePath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

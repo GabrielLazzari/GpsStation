@@ -1,21 +1,18 @@
 ﻿namespace GpsStation.Models
 {
-    public class DispositivoModel
-    {
+	public class DispositivoModel
+	{
 		public DispositivoModel()
 		{
-			Id = new Guid();
-			IdUsuario = new Guid();
+			Id = Guid.Empty;
 			Nome = string.Empty;
-			Ativo = false;
-			Localizacao = string.Empty;
+			Latitude = string.Empty;
+			Longitude = string.Empty;
 		}
-
-		public Guid Id { get; set; }
-		public Guid IdUsuario { get; set; }
+		public Guid? Id{get; set;}
 		public string Nome { get; set; }
-		public bool Ativo { get; set; }
-		public string Localizacao { get; set; }
+		public string Latitude { get; set; }
+		public string Longitude { get; set; }
 
 		/*
          {

@@ -4,13 +4,11 @@
     {
 		public Usuario()
 		{
-			Id = Guid.NewGuid();
-			Administrador = false;
+			Id = Guid.Empty;
 			Nome = string.Empty;
 			Senha = string.Empty;
 		}
 		public Guid Id { get; set; }
-		public Boolean Administrador { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
     }

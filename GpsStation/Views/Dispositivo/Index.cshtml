@@ -1,4 +1,4 @@
-﻿@model DispositivoModel
+﻿@model List<DispositivoModel>
 @{
     ViewData["Title"] = "Dispositivos";
 }
@@ -28,19 +28,17 @@
 <table id="tabelaDispositivos">
 	<tr>
 		<th>Dispositivo</th>
-		<th>Status</th>
 		<th>Açoes</th>
 	</tr>
 	@{
-		foreach (var item in ViewBag.dispositivos)
+		foreach (var item in Model)
 		{
-			<tr idDispositivo="@item.Id" idUsuario="@item.IdUsuario">
-				<td>@item.Nome</td>
-				<td>@item.Ativo</td>
+			<tr idDispositivo="@item.Id">
+				<td id=" @(item.Id)">@item.Nome</td>
 				<td>
 					<a asp-controller='Relatorio' asp-action="Index">Últimos registros</a>
 					<a asp-controller="Mapa" asp-action="Index">Visualizar localização</a>
-					<img onclick="editarLinha('tabelaDispositivos', this, JSON.stringify({dispositivo:'', status:''}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
+					<img onclick="editarLinha('tabelaDispositivos', this,JSON.stringify({dispositivo:'', status:''}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 					<img onclick="excluirItem('@item.Nome', '@item.Id', this)" src="~/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
 					
 				</td>

@@ -11,10 +11,10 @@ namespace GpsStation.Factory
             {
                 dispositivos.Add(new DispositivoModel()
                 {
-                Id_dispositivo = new Guid(),
-                IdUsuario = new Guid(),
-                Nome = "disp",
-                Ativo = false
+              //  Id_dispositivo = new Guid(),
+              //  IdUsuario = new Guid(),
+              //  Nome = "disp",
+              //  Ativo = false
             });
             }
             return dispositivos;

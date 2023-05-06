@@ -15,9 +15,9 @@ document.onkeyup = function () {
 
             $.each(retorno, function (index, value) {
                 novoHtml = novoHtml + `
-                			        <tr idDispositivo="${value.id}" idUsuario="${value.idUsuario}">
+                			        <tr idDispositivo="${value.id}">
 				                        <td>${value.nome}</td>
-				                        <td>${value.ativo}</td>
+				                       
 				                        <td>
 					                        <a href="/Relatorio/Index">Últimos registros</a>
 					                        <a href="/Mapa/Index">Visualizar localização</a>

@@ -1,0 +1,22 @@
+﻿@model DispositivoModel
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">CADASTRO DE DISPOSITIVOS</h1>
+
+   
+    <form action="\Dispositivo\gravar" method="POST">
+
+        <label>Nome:</label>
+        <input type="text" id="nome" name="dispositivo.nome" >
+        <input type="hidden" id="Id" name="dispositivo.Id"><!--cria um input oculto-->
+        <input type="hidden" id="latitude" name="dispositivo.latitude" >
+        <input type="hidden" id="longitude" name="dispositivo.longitude">
+
+
+        <button type="submit">SALVAR</button>
+    </form>
+</div>
