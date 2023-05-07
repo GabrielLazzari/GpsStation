@@ -4,7 +4,7 @@
     {
         public LoginModel()
         {
-            Nome =String.Empty;
+            Nome = String.Empty;
             Senha = String.Empty;
         }
         public string Nome { get; set; }

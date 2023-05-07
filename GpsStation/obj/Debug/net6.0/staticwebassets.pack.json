@@ -129,6 +129,10 @@
       "PackagePath": "staticwebassets\\js\\dispositivo.js"
     },
     {
+      "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
+    },
+    {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\mapa.js",
       "PackagePath": "staticwebassets\\js\\mapa.js"
     },

@@ -1,6 +1,6 @@
 ﻿@model List<DispositivoModel>
 @{
-    ViewData["Title"] = "Dispositivos";
+	ViewData["Title"] = "Dispositivos";
 }
 
 @section Estilo{
@@ -13,9 +13,11 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Dispositivos</h1>
+	<h1 class="display-4">Dispositivos</h1>
 </div>
-
+@using Microsoft.AspNetCore.Http;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContextAccessor;
+<h3 style="text-align: center;">Usuário logado:@httpContextAccessor.HttpContext.Session.GetString("usuario")</h3>
 
 <div class="conjuntoPesquisa">
 	<div class="divPesquisar" style="right: 135px;">
@@ -23,7 +25,7 @@
 		<img src="~/gifs/search-outline.svg" class="svg-sm" title="Pesquisar">
 	</div>
 	<button onclick="novaLinha('tabelaDispositivos', JSON.stringify({dispositivo:'', status:''}))" class="botaoNovo">Novo Dispositivo</button>
-</div >
+</div>
 
 <table id="tabelaDispositivos">
 	<tr>
@@ -40,7 +42,7 @@
 					<a asp-controller="Mapa" asp-action="Index">Visualizar localização</a>
 					<img onclick="editarLinha('tabelaDispositivos', this,JSON.stringify({dispositivo:'', status:''}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 					<img onclick="excluirItem('@item.Nome', '@item.Id', this)" src="~/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
-					
+
 				</td>
 
 			</tr>

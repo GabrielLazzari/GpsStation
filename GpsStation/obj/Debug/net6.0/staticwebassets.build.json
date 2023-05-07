@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wn3rOfZl8/jVRjg/FpYyoEGWmI6hrscKYuToH3dALIQ=",
+  "Hash": "rJHUX2Bl9IJYSS2v6dGwHMHAyDxEutvh6+gTBbrG2DQ=",
   "Source": "Ftec.ProjetosWeb.GPStation.MVC",
   "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
   "Mode": "Default",
@@ -576,6 +576,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\dispositivo.js"
+    },
+    {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\login.js",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "js/login.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\login.js"
     },
     {
       "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\mapa.js",

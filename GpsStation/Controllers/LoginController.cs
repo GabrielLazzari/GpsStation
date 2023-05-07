@@ -1,39 +1,43 @@
 ﻿using Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao;
 using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
-using GpsStation.Factory;
 using GpsStation.Models;
-using GpsStation.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Usuario = Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
+using Microsoft.Extensions.Configuration;
 
 namespace GpsStation.Controllers
 {
     public class LoginController : Controller
     {
-        LoginModel login = new ();
 
+        private string strConexao;
+        public LoginController(IConfiguration configuration)
+        {
+            strConexao = configuration.GetConnectionString("stringconexao");
+        }
         public IActionResult Index()
         {
-                return View();
+            return View();
         }
 
-        //tipo de retorno do form da view do login
-        [HttpPost]
-        //método que recebe info do form login
-        public void Confirmarlogin()
+
+        public IActionResult Confirmarlogin(String usuario, String senha)
         {
             UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-            Boolean autorizado = usuarioAplicacao.Login(Request.Form["usuario"], Request.Form["senha"]);
-          //  if (login.Nome == Request.Form["usuario"] && login.Senha == Request.Form["senha"])
-          if(autorizado)
+            Boolean autorizado = usuarioAplicacao.Login(usuario, senha);
+            //  if (login.Nome == Request.Form["usuario"] && login.Senha == Request.Form["senha"])
+            if (autorizado)
             {
                 //se correto redireciona para controller Mapa action index
-                Response.Redirect("/Mapa/Index");
+                return RedirectToAction("Index", "Mapa");
             }
-            else 
-                //se errado redireciona para controller Login action index
-                Response.Redirect("/Login/Index");
+            else
+            {
+                //se errado retorna mensagem de login incorreto
+                return RedirectToAction("Index", "Login");
+                //return Json(autorizado);
+            }
 
         }
     }

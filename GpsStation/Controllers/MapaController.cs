@@ -1,20 +1,21 @@
 ﻿using GpsStation.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace GpsStation.Controllers
 {
     public class MapaController : Controller
     {
-        private readonly ILogger<MapaController> _logger;
 
-        public MapaController(ILogger<MapaController> logger)
+        private string strConexao;
+        public MapaController(IConfiguration configuration)
         {
-            _logger = logger;
+            strConexao = configuration.GetConnectionString("stringconexao");
         }
-
         public IActionResult Index()
         {
+            HttpContext.Session.SetString("usuario", "Teste de usuário logado");
             return View();
         }
 

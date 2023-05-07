@@ -8,14 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 {
 	public class UsuarioPersistencia
 	{
 		public UsuarioPersistencia() { }
+
+
+
+		//******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
+
 		string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
-       // "Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
-        public Boolean Inserir(Usuario usuario)
+		//"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
+
+
+
+
+		public Boolean Inserir(Usuario usuario)
 		{
 			string conexao = stringconexao;
 
@@ -44,14 +54,16 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		public List<Usuario> Listar()
 		{
-			//throw new System.Exception("teste");
+			//*******TESTE DO EXCEPTION FILTER**********
+			//throw new System.Exception("teste"); 
 			List<Usuario> usuarios = new List<Usuario>();
 			string conexao = stringconexao;
 
 
-            using (var con = new SqlConnection(conexao))
+			using (var con = new SqlConnection(conexao))
 			{
 				con.Open();
+
 				try
 				{
 					using (var comando = new SqlCommand())
@@ -176,7 +188,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		public Boolean Login(string usuario, string senha)
 		{
 
-			List<Usuario> login = new List<Usuario>();
+			Usuario login = new Usuario();
 			string conexao = stringconexao;
 
 			using (var con = new SqlConnection(conexao))
@@ -192,15 +204,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 						comando.Parameters.AddWithValue("senha", senha);
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
-							while (reader.Read())
-							{
-								login.Add(new Usuario()
-								{
-									Nome = reader["nome"].ToString(),
-									Senha = reader["senha"].ToString()
-								});
-								return true;
-							}
+							return reader.HasRows;
 						}
 					}
 				}
@@ -208,7 +212,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 				{
 					return false;
 				}
-				return false;
 			}
 		}
 
@@ -230,11 +233,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
 							reader.Read();
-							
-								usuario.Nome = reader["nome"].ToString();
-								usuario.Senha = reader["senha"].ToString();
-								usuario.Id = Guid.Parse(reader["Id"].ToString());
-							
+
+							usuario.Nome = reader["nome"].ToString();
+							usuario.Senha = reader["senha"].ToString();
+							usuario.Id = Guid.Parse(reader["Id"].ToString());
+
 						}
 					}
 				}

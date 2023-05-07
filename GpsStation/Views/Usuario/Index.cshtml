@@ -16,6 +16,9 @@
 <div class="text-center">
     <h1 class="display-4">Usuários</h1>
 </div>
+@using Microsoft.AspNetCore.Http;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContextAccessor;
+<h3 style="text-align: center;">Usuário logado:@httpContextAccessor.HttpContext.Session.GetString("usuario")</h3>
 @*<p><a href="\produto\inserir">Pesquisar</a></p>*@
 
 

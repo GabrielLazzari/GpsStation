@@ -13,9 +13,18 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 	public class DispositivoPersistencia
 	{
 		public DispositivoPersistencia() { }
-        string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
-      //  "Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
-        public List<Dispositivo> Consultar(string nome)
+
+
+
+		//******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
+
+		string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+		//"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
+
+
+
+
+		public List<Dispositivo> Consultar(string nome)
 
 		{
 			List<Dispositivo> dispositivos = new List<Dispositivo>();
@@ -106,7 +115,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 				}
 			}
 		}
-	
+
 		//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		public Boolean Inserir(Dispositivo dispositivo)
 		{
@@ -199,7 +208,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 							dispositivo.Nome = reader["Nome"].ToString();
 							dispositivo.Latitude = reader["Latitude"].ToString();
 							dispositivo.Longitude = reader["Longitude"].ToString();
-							
+
 						}
 					}
 				}

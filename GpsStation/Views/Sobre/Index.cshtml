@@ -2,6 +2,9 @@
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
+@using Microsoft.AspNetCore.Http;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContextAccessor;
+<h3 style="text-align: center;">Usuário logado:@httpContextAccessor.HttpContext.Session.GetString("usuario")</h3>
 
 <p>Use this page to detail your site's privacy policy.</p>
 

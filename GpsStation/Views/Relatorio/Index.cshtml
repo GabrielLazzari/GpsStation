@@ -18,7 +18,9 @@
 </div>
 <div class="text-center">
 
-
+	@using Microsoft.AspNetCore.Http;
+	@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContextAccessor;
+	<h3 style="text-align: center;">Usuário logado:@httpContextAccessor.HttpContext.Session.GetString("usuario")</h3>
 
 
 
@@ -48,7 +50,9 @@
 	<a href="#" onclick="AtualizarEstoque('@item.Id')">Decrementar Estoque</a>*@
 	<button type="button" onclick="RelatorioLocalizacao(document.getElementById('dispositivo').value,
 			document.getElementById('inicio').value,
-			document.getElementById('fim').value)">PESQUISAR</button>
+			document.getElementById('fim').value)">
+		PESQUISAR
+	</button>
 
 </div>
 
@@ -59,14 +63,14 @@
 		<th>Longitude</th>
 	</tr>
 	@*@{
-		foreach (var item in Model.Localizacao)
-		{
-			<tr>
-				<td>@item.DataHora</td>
-				<td>@item.Latitude</td>
-				<td>@item.Longitude</td>
-			</tr>
-		}
+	foreach (var item in Model.Localizacao)
+	{
+	<tr>
+	<td>@item.DataHora</td>
+	<td>@item.Latitude</td>
+	<td>@item.Longitude</td>
+	</tr>
+	}
 	}*@
 
 </table>
