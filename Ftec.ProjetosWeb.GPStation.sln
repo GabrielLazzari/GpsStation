@@ -19,6 +19,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ftec.ProjetosWeb.GPStation.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ftec.ProjetosWeb.GPStation.Persistencia", "Ftec.ProjetosWeb.GPStation.Persistencia\Ftec.ProjetosWeb.GPStation.Persistencia.csproj", "{B4035262-CB3A-47D9-8561-C150711EE479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ftec.ProjetosWeb.GPStation.API", "Ftec.ProjetosWeb.GPStation.API\Ftec.ProjetosWeb.GPStation.API.csproj", "{BE62140D-1F0A-43AF-8E83-2B3CE33E87C2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{287FD310-52F8-428F-85E8-FD68F77A4F64} = {287FD310-52F8-428F-85E8-FD68F77A4F64}
+		{FDE28DA1-01DA-4569-81B0-6419FF14E646} = {FDE28DA1-01DA-4569-81B0-6419FF14E646}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +47,10 @@ Global
 		{B4035262-CB3A-47D9-8561-C150711EE479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4035262-CB3A-47D9-8561-C150711EE479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4035262-CB3A-47D9-8561-C150711EE479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE62140D-1F0A-43AF-8E83-2B3CE33E87C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE62140D-1F0A-43AF-8E83-2B3CE33E87C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE62140D-1F0A-43AF-8E83-2B3CE33E87C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE62140D-1F0A-43AF-8E83-2B3CE33E87C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

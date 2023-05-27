@@ -48,26 +48,26 @@ namespace GpsStation.Controllers
 
 
 
-        public IActionResult Inserir(DispositivoModel dispositivo)
-        {
-            return View("Inserir");
-        }
+        //public IActionResult Inserir(DispositivoModel dispositivo)
+        //{
+        //    return View("Inserir");
+        //}
 
 
 
-        public IActionResult Editar(Guid Id)
-        {
-            DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
-            Dispositivo dispositivo = dispositivoAplicacao.SelecionarPorId(Id);
-            DispositivoModel dispositivoModel = new DispositivoModel()
-            {
-                Id = dispositivo.Id,
-                Nome = dispositivo.Nome,
-                Latitude = dispositivo.Latitude,
-                Longitude = dispositivo.Longitude
-            };
-            return View(dispositivoModel);
-        }
+        //public IActionResult Editar(Guid Id)
+        //{
+        //    DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
+        //    Dispositivo dispositivo = dispositivoAplicacao.SelecionarPorId(Id);
+        //    DispositivoModel dispositivoModel = new DispositivoModel()
+        //    {
+        //        Id = dispositivo.Id,
+        //        Nome = dispositivo.Nome,
+        //        Latitude = dispositivo.Latitude,
+        //        Longitude = dispositivo.Longitude
+        //    };
+        //    return View(dispositivoModel);
+        //}
 
 
 

@@ -12,13 +12,17 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 {
 	public class DispositivoPersistencia
 	{
-		public DispositivoPersistencia() { }
+		public DispositivoPersistencia()
+		{
+			
+        }
+        List<Dispositivo> dispositivos = null;
+		Dispositivo dispositivo = null;
 
 
+        //******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
 
-		//******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
-
-		string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+        string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
 		//"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
 
 
@@ -27,7 +31,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		public List<Dispositivo> Consultar(string nome)
 
 		{
-			List<Dispositivo> dispositivos = new List<Dispositivo>();
 			string conexao = stringconexao;
 
 			using (var con = new SqlConnection(conexao))
@@ -39,13 +42,14 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					{
 						comando.Connection = con;
 						comando.CommandText =
-							"SELECT[Id],[Nome],[Latitude],[Longitude]FROM[dbo].[dispositivo]WHERE[Nome]LIKE'%@Nome%'ORDER BY [Nome]";
+							"SELECT[Id],[Nome],[Latitude],[Longitude]FROM[dbo].[dispositivo]WHERE[Nome]=@Nome ORDER BY [Nome]";//like '%@nome%' nao recupera nenhum registro
 						comando.Parameters.AddWithValue("Nome", nome);
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
-							while (reader.Read())
-							{
-								dispositivos.Add(new Dispositivo
+                            dispositivos = new List<Dispositivo>();
+                            while (reader.Read())
+                            {
+                                dispositivos.Add(new Dispositivo
 								{
 									Id = Guid.Parse(reader["Id"].ToString()),
 									Nome = reader["Nome"].ToString(),
@@ -53,14 +57,15 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 									Longitude = reader["Longitude"].ToString()
 								});
 							}
-						}
+                            return dispositivos;
+                        }
 					}
 				}
 				catch (Exception ex)
 				{
-
+					return null;
 				}
-				return dispositivos;
+				
 			}
 		}
 		//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -76,8 +81,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText =
-"UPDATE[dbo].[dispositivo]SET[Nome]=@Nome WHERE[Id]=@Id;";
+						comando.CommandText ="UPDATE[dbo].[dispositivo]SET[Nome]=@Nome WHERE[Id]=@Id;";
 						comando.Parameters.AddWithValue("Id", dispositivo.Id);
 						comando.Parameters.AddWithValue("Nome", dispositivo.Nome);
 						comando.ExecuteNonQuery();
@@ -149,7 +153,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		public List<Dispositivo> Listar()
 		{
-			List<Dispositivo> dispositivos = new List<Dispositivo>();
 			string conexao = stringconexao;
 
 			using (var con = new SqlConnection(conexao))
@@ -163,6 +166,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 						comando.CommandText = "SELECT[Id],[Nome],[Latitude],[Longitude]FROM[dbo].[dispositivo]ORDER BY [Nome]";
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
+							dispositivos = new List<Dispositivo>();
 							while (reader.Read())
 							{
 								dispositivos.Add(new Dispositivo
@@ -173,20 +177,20 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 									Longitude = reader["Longitude"].ToString()
 								});
 							}
-						}
+                            return dispositivos;
+                        }
 					}
 				}
 				catch (Exception ex)
 				{
-
+					return null;
 				}
-				return dispositivos;
 			}
 		}
 
 		public Dispositivo SelecionarPorId(Guid Id)
 		{
-			Dispositivo dispositivo = new Dispositivo();
+			
 			string conexao = stringconexao;
 
 			using (var con = new SqlConnection(conexao))
@@ -202,21 +206,25 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 						comando.Parameters.AddWithValue("Id", Id);
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
-							reader.Read();
-
-							dispositivo.Id = Guid.Parse(reader["Id"].ToString());
-							dispositivo.Nome = reader["Nome"].ToString();
-							dispositivo.Latitude = reader["Latitude"].ToString();
-							dispositivo.Longitude = reader["Longitude"].ToString();
-
-						}
+							if (reader.Read())
+							{
+								dispositivo = new Dispositivo();
+								dispositivo.Id = Guid.Parse(reader["Id"].ToString());
+								dispositivo.Nome = reader["Nome"].ToString();
+								dispositivo.Latitude = reader["Latitude"].ToString();
+								dispositivo.Longitude = reader["Longitude"].ToString();
+                                return dispositivo;
+                            }
+							else
+                            return null;
+                        }
 					}
 				}
 				catch (Exception ex)
 				{
-
+					return null;
 				}
-				return dispositivo;
+				
 			}
 		}
 	}
