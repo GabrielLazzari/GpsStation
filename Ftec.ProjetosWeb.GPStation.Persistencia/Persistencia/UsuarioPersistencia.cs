@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,21 +22,19 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         //******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
 
-        string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+        string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 12345;";
         //"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
-
-
 
 
         public Boolean Inserir(Usuario usuario)
         {
-            string conexao = stringconexao;
-
-            using (var con = new SqlConnection(conexao))
+            try
             {
-                con.Open();
-                try
+                string conexao = stringconexao;
+
+                using (var con = new SqlConnection(conexao))
                 {
+                    con.Open();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -47,27 +46,34 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         return true;
                     }
                 }
-                catch (Exception ex)
-                {
-                    return false;
-                }
             }
+            catch (Exception ex)
+            {
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return false;
+            }
+
         }
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         public List<Usuario> Listar()
         {
-            //*******TESTE DO EXCEPTION FILTER**********
-            //throw new System.Exception("teste"); 
-
-            string conexao = stringconexao;
-
-
-            using (var con = new SqlConnection(conexao))
+            try
             {
-                con.Open();
+                //*******TESTE DO EXCEPTION FILTER**********
+                //throw new System.Exception("teste"); 
 
-                try
+                string conexao = stringconexao;
+
+                using (var con = new SqlConnection(conexao))
                 {
+
+                    con.Open();
+                    //throw new System.Exception("teste");
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -89,22 +95,30 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
                     }
                 }
-                catch (Exception ex)
-                {
-                    return null;
-                }
             }
+            catch (Exception ex)
+            {
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return null;
+            }
+
         }
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         public Boolean Editar(Usuario usuario)
         {
-            string conexao = stringconexao;
-
-            using (var con = new SqlConnection(conexao))
+            try
             {
-                con.Open();
-                try
+                string conexao = stringconexao;
+
+                using (var con = new SqlConnection(conexao))
                 {
+
+                    con.Open();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -116,22 +130,30 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         return true;
                     }
                 }
-                catch (Exception ex)
-                {
-                    return false;
-                }
             }
+            catch (Exception ex)
+            {
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return false;
+            }
+
         }
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         public Boolean Excluir(Guid id)
         {
-            string conexao = stringconexao;
-
-            using (var con = new SqlConnection(conexao))
+            try
             {
-                con.Open();
-                try
+                string conexao = stringconexao;
+
+                using (var con = new SqlConnection(conexao))
                 {
+
+                    con.Open();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -141,22 +163,30 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         return true;
                     }
                 }
-                catch (Exception ex)
-                {
-                    return false;
-                }
             }
+            catch (Exception ex)
+            {
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return false;
+            }
+
         }
         //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         public List<Usuario> Consultar(string nome)
         {
-            string conexao = stringconexao;
-
-            using (var con = new SqlConnection(conexao))
+            try
             {
-                con.Open();
-                try
+                string conexao = stringconexao;
+
+                using (var con = new SqlConnection(conexao))
                 {
+
+                    con.Open();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -180,24 +210,31 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
                     }
                 }
-                catch (Exception ex)
-                {
-                    return null;
-                }
             }
+            catch (Exception ex)
+            {
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return null;
+            }
+
         }
 
         public Boolean Login(string usuario, string senha)
         {
-
-            Usuario login = new Usuario();
-            string conexao = stringconexao;
-
-            using (var con = new SqlConnection(conexao))
+            try
             {
-                con.Open();
-                try
+                Usuario login = new Usuario();
+                string conexao = stringconexao;
+
+                using (var con = new SqlConnection(conexao))
                 {
+
+                    con.Open();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -210,22 +247,31 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    return false;
-                }
             }
+            catch (Exception ex)
+            {
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return false;
+            }
+
         }
 
         public Usuario SelecionarPorId(Guid Id)
         {
-            string conexao = stringconexao;
-
-            using (var con = new SqlConnection(conexao))
+            try
             {
-                con.Open();
-                try
+                string conexao = stringconexao;
+
+                using (var con = new SqlConnection(conexao))
                 {
+
+
+                    con.Open();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -247,11 +293,16 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    return null;
-                }
-
+            }
+            catch (Exception ex)
+            {
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return null;
             }
         }
     }

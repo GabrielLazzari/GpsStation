@@ -1,0 +1,7 @@
+
+Data/Hora: 27/05/2023 19:11:57 | Mensagem: Login failed for user 'user'. | Classe: Listar | Metodo: UsuarioPersistencia |  
+ 
+Data/Hora: 27/05/2023 19:12:09 | Mensagem: Login failed for user 'user'. | Classe: Listar | Metodo: UsuarioPersistencia |  
+ 
+Data/Hora: 27/05/2023 19:12:23 | Mensagem: Login failed for user 'user'. | Classe: Listar | Metodo: UsuarioPersistencia |  
+ 

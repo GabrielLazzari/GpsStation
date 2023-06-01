@@ -27,16 +27,15 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
 
         public List<Localizacao> Consultar(String inicio, String fim, String dispositivo)
-
         {
-          
-            string conexao = stringconexao;
-
-            using (var con = new SqlConnection(conexao))
+            try
             {
-                con.Open();
-                try
+                string conexao = stringconexao;
+
+                using (var con = new SqlConnection(conexao))
                 {
+
+                    con.Open();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -61,22 +60,30 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    return null;
-                }
             }
+            catch (Exception ex)
+            {
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return null;
+            }
+
         }
 
         public void Inserir(Localizacao localizacao)
         {
-            string conexao = stringconexao;
-
-            using (var con = new SqlConnection(conexao))
+            try
             {
-                con.Open();
-                try
+                string conexao = stringconexao;
+
+                using (var con = new SqlConnection(conexao))
                 {
+
+                    con.Open();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -91,11 +98,17 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
                     }
                 }
-                catch (Exception ex)
-                {
-                    // registrar log de erro na inserção
-                }
             }
+            catch (Exception ex)
+            {
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+            }
+
         }
 
 
@@ -103,14 +116,15 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         public Localizacao LocalizacaoAtual(Guid dispositivo)
         {
-            string conexao = stringconexao;
-            Localizacao localizacao = null;
-
-            using (var con = new SqlConnection(conexao))
+            try
             {
-                con.Open();
-                try
+                string conexao = stringconexao;
+                Localizacao localizacao = null;
+
+                using (var con = new SqlConnection(conexao))
                 {
+
+                    con.Open();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -131,19 +145,20 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
                     }
                 }
-                catch (Exception ex)
-                {
-                    return null;
-                }
+            }
+            catch (Exception ex)
+            {
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
                 return null;
             }
+            return null;
+
         }
-
-
-
-
-
-
 
     }
 }
