@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Ftec.ProjetosWeb.GPStation.Aplicacao\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj" />
+    <ProjectReference Include="..\Ftec.ProjetosWeb.GPStation.Dominio\Ftec.ProjetosWeb.GPStation.Dominio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="Views\Dispositivo\Index.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

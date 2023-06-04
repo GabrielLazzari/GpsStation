@@ -1,10 +1,15 @@
-﻿using Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao;
+﻿using Ftec.ProjetosWeb.GPStation.API.Models;
+using Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao;
 using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
+using GpsStation.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 {
+    //cria a rota com o nome da controler que for passada como parâmetro na chamada do apihttpclient do MVC
+    [Route("[controller]")]
+    [ApiController]
     public class UsuarioController : ControllerBase
     {
         public UsuarioController() { }
@@ -18,13 +23,29 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
 
         [HttpGet]
-        [Route("usuario/listar")]
-        public String Listar()
+        public IActionResult Get()
         {
-            List<Usuario> usuarios = new List<Usuario>();
-            UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-            usuarios = usuarioAplicacao.Listar();
-            return JsonConvert.SerializeObject(usuarios);
+            try
+            {
+                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+                List<UsuarioModel> usuariosModel = new List<UsuarioModel>();
+                var usuarios = usuarioAplicacao.Listar();
+                foreach (var usuario in usuarios)
+                {
+                    usuariosModel.Add(new UsuarioModel()
+                    {
+                        Id = usuario.Id,
+                        Nome = usuario.Nome,
+                        Senha = usuario.Senha
+                    });
+                }
+                return Ok(usuariosModel);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
 
@@ -35,14 +56,30 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
 
 
-        [HttpGet]
-        [Route("usuario/consultar")]
-        public String Consultar(string nome)
+        [HttpGet("{nome}")]
+        public IActionResult Get(String nome)
         {
-            List<Usuario> usuarios = new List<Usuario>();
-            UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-            usuarios = usuarioAplicacao.Consultar(nome);
-            return JsonConvert.SerializeObject(usuarios);
+            try
+            {
+                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+                List<UsuarioModel> usuariosModel = new List<UsuarioModel>();
+                var usuarios = usuarioAplicacao.Consultar(nome);
+                foreach (var usuario in usuarios)
+                {
+                    usuariosModel.Add(new UsuarioModel()
+                    {
+                        Id = usuario.Id,
+                        Nome = usuario.Nome,
+                        Senha = usuario.Senha
+                    });
+                }
+                return Ok(usuariosModel);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
 
@@ -52,15 +89,29 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
 
         [HttpPost]
-        [Route("usuario/inserir")]
-        public Boolean Inserir(string nome, string senha, Guid id)
+        public IActionResult Post([FromBody] UsuarioModel usuarioModel)
         {
-            Usuario usuario = new Usuario();
-            usuario.Nome = nome;
-            usuario.Senha = senha;
-            usuario.Id = id;
-            UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-            return usuarioAplicacao.Inserir(usuario);
+            try
+            {
+                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+
+                Usuario usuario = new Usuario()
+                {
+                    Nome = usuarioModel.Nome,
+                    Senha = usuarioModel.Senha,
+                    Id = usuarioModel.Id
+                };
+                if (usuarioAplicacao.Inserir(usuario))
+                    return Ok();
+                else
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+
         }
 
 
@@ -72,12 +123,22 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
 
 
-        [HttpDelete]
-        [Route("usuario/excluir")]
-        public Boolean Excluir(Guid Id)
+        [HttpDelete("{Id}")]
+        public IActionResult Delete(Guid Id)
         {
-            UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-            return usuarioAplicacao.Excluir(Id);
+            
+            try
+            {
+                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+                if (usuarioAplicacao.Excluir(Id))
+                    return Ok();
+                else
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
 

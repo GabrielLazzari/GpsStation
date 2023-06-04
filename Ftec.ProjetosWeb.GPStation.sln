@@ -5,6 +5,7 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ftec.ProjetosWeb.GPStation.MVC", "GpsStation\Ftec.ProjetosWeb.GPStation.MVC.csproj", "{43F2FCD2-4831-4426-90E5-56F6F112F0EF}"
 	ProjectSection(ProjectDependencies) = postProject
+		{287FD310-52F8-428F-85E8-FD68F77A4F64} = {287FD310-52F8-428F-85E8-FD68F77A4F64}
 		{FDE28DA1-01DA-4569-81B0-6419FF14E646} = {FDE28DA1-01DA-4569-81B0-6419FF14E646}
 	EndProjectSection
 EndProject

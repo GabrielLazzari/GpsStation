@@ -3,10 +3,15 @@ using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
 using GpsStation.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
+using Ftec.ProjetosWeb.GPStation.API.Models;
 
 namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 {
-    public class DispositivoController
+    //cria a rota com o nome da controler que for passada como parâmetro na chamada do apihttpclient do MVC
+    [Route("[controller]")]
+    [ApiController]
+    public class DispositivoController : ControllerBase
     {
         public DispositivoController() { }
 
@@ -14,15 +19,32 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
 
 
-
         [HttpGet]
-        [Route("dispositivo/listar")]
-        public String Listar()
+        public IActionResult Get()
         {
-            List<Dispositivo> dispositivos = new List<Dispositivo>();
-            DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
-            dispositivos = dispositivoAplicacao.Listar();
-             return JsonConvert.SerializeObject(dispositivos); 
+            try
+            {
+                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
+                List<DispositivoModel> dispositivoModel = new List<DispositivoModel>();
+
+                var dispositivos = dispositivoAplicacao.Listar();
+                foreach (var dispositivo in dispositivos)
+                {
+                    dispositivoModel.Add(new DispositivoModel()
+                    {
+                        Id = dispositivo.Id,
+                        Nome = dispositivo.Nome,
+                        Latitude = dispositivo.Latitude,
+                        Longitude = dispositivo.Longitude
+                    });
+                }
+                return Ok(dispositivoModel);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+;
         }
 
 
@@ -33,14 +55,31 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
 
 
-        [HttpGet]
-        [Route("dispositivo/consultar")]
-        public String Consultar(string nome)
+        [HttpGet("{nome}")]
+        public IActionResult Get(String nome)
         {
-            List<Dispositivo> dispositivos = new List<Dispositivo>();
-            DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
-            dispositivos = dispositivoAplicacao.Consultar(nome);
-            return JsonConvert.SerializeObject(dispositivos);
+            try
+            {
+                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
+                List<DispositivoModel> dispositivoModel = new List<DispositivoModel>();
+
+                var dispositivos = dispositivoAplicacao.Consultar(nome);
+                foreach (var dispositivo in dispositivos)
+                {
+                    dispositivoModel.Add(new DispositivoModel()
+                    {
+                        Id = dispositivo.Id,
+                        Nome = dispositivo.Nome,
+                        Latitude = dispositivo.Latitude,
+                        Longitude = dispositivo.Longitude
+                    });
+                }
+                return Ok(dispositivoModel);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
 
@@ -48,18 +87,71 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
 
 
+
+        //[HttpPost]
+        //[Route("dispositivo/inserir")]
+        //public Boolean Inserir(Guid id, string nome, string latitude, string longitude)
+        //{
+        //    Dispositivo dispositivo = new Dispositivo();
+        //    dispositivo.Id = id;
+        //    dispositivo.Longitude = longitude;
+        //    dispositivo.Latitude = latitude;
+        //    dispositivo.Nome = nome;
+        //    DispositivoAplicacao dispositivoAplicação = new DispositivoAplicacao();
+        //    return dispositivoAplicação.Inserir(dispositivo);
+        //}
 
         [HttpPost]
-        [Route("dispositivo/inserir")]
-        public Boolean Inserir(Guid id, string nome, string latitude, string longitude)
+        public IActionResult Post([FromBody] DispositivoModel dispositivoModel)
         {
-            Dispositivo dispositivo = new Dispositivo();
-            dispositivo.Id = id;
-            dispositivo.Longitude = longitude;
-            dispositivo.Latitude = latitude;
-            dispositivo.Nome = nome;
-            DispositivoAplicacao dispositivoAplicação = new DispositivoAplicacao();
-            return dispositivoAplicação.Inserir(dispositivo);
+            try
+            {
+                DispositivoAplicacao dispositivoAplicação = new DispositivoAplicacao();
+                Dispositivo dispositivo = new Dispositivo()
+                {
+                    Id = dispositivoModel.Id,
+                    Longitude = dispositivoModel.Longitude,
+                    Latitude = dispositivoModel.Latitude,
+                    Nome = dispositivoModel.Nome,
+                };
+                if (dispositivoAplicação.Inserir(dispositivo))
+                    return Ok();
+                else 
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+
+
+
+
+
+
+ 
+
+
+        [HttpDelete("{Id}")]
+        public IActionResult Delete(Guid Id)
+        {
+            try
+            {
+                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
+                if (dispositivoAplicacao.Excluir(Id))
+                    return Ok();
+                else
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+
         }
 
 
@@ -69,35 +161,18 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
 
 
-
-
-        [HttpDelete]
-        [Route("dispositivo/excluir")]
-        public Boolean Excluir(Guid Id)
-        {
-            DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
-            return dispositivoAplicacao.Excluir(Id);
-        }
-
-
-
-
-
-
-
-
-        [HttpPut]
-        [Route("dispositivo/editar")]
-        public Boolean Editar(Guid id, string nome, string latitude, string longitude)
-        {
-            Dispositivo dispositivo = new Dispositivo();
-            dispositivo.Id = id;
-            dispositivo.Longitude = longitude;
-            dispositivo.Latitude = latitude;
-            dispositivo.Nome = nome;
-            DispositivoAplicacao dispositivoAplicação = new DispositivoAplicacao();
-            return dispositivoAplicação.Editar(dispositivo);
-        }
+        //[HttpPut]
+        //[Route("dispositivo/editar")]
+        //public Boolean Editar(Guid id, string nome, string latitude, string longitude)
+        //{
+        //    Dispositivo dispositivo = new Dispositivo();
+        //    dispositivo.Id = id;
+        //    dispositivo.Longitude = longitude;
+        //    dispositivo.Latitude = latitude;
+        //    dispositivo.Nome = nome;
+        //    DispositivoAplicacao dispositivoAplicação = new DispositivoAplicacao();
+        //    return dispositivoAplicação.Editar(dispositivo);
+        //}
 
 
 

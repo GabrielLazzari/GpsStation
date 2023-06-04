@@ -69,7 +69,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                 return null;
             }
         }
-        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+       
+
+
+
+
         public Boolean Editar(Dispositivo dispositivo)
         {
             try
@@ -102,7 +106,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+       
+
+
+
+
         public Boolean Excluir(Guid id)
         {
             try
@@ -135,7 +143,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         }
 
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+
+
+
+
         public Boolean Inserir(Dispositivo dispositivo)
         {
             try
@@ -172,7 +184,13 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+       
+
+
+
+
+
+
         public List<Dispositivo> Listar()
         {
             try
@@ -217,6 +235,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
+
+
+
+
+
 
         public Dispositivo SelecionarPorId(Guid Id)
         {

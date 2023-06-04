@@ -1701,6 +1701,51 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
+      },
+      "Ftec.ProjetosWeb.GPStation.Aplicacao/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Ftec.ProjetosWeb.GPStation.Dominio": "1.0.0",
+          "Ftec.ProjetosWeb.GPStation.Persistencia": "1.0.0",
+          "Microsoft.AspNet.WebApi.Client": "5.2.9",
+          "System.Data.SqlClient": "4.8.5"
+        },
+        "compile": {
+          "bin/placeholder/Ftec.ProjetosWeb.GPStation.Aplicacao.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ftec.ProjetosWeb.GPStation.Aplicacao.dll": {}
+        }
+      },
+      "Ftec.ProjetosWeb.GPStation.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.9",
+          "System.Data.SqlClient": "4.8.5"
+        },
+        "compile": {
+          "bin/placeholder/Ftec.ProjetosWeb.GPStation.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ftec.ProjetosWeb.GPStation.Dominio.dll": {}
+        }
+      },
+      "Ftec.ProjetosWeb.GPStation.Persistencia/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Ftec.ProjetosWeb.GPStation.Dominio": "1.0.0",
+          "Microsoft.AspNet.WebApi.Client": "5.2.9",
+          "System.Data.SqlClient": "4.8.5"
+        },
+        "compile": {
+          "bin/placeholder/Ftec.ProjetosWeb.GPStation.Persistencia.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ftec.ProjetosWeb.GPStation.Persistencia.dll": {}
+        }
       }
     }
   },
@@ -5832,10 +5877,27 @@
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
       ]
+    },
+    "Ftec.ProjetosWeb.GPStation.Aplicacao/1.0.0": {
+      "type": "project",
+      "path": "../Ftec.ProjetosWeb.GPStation.Aplicacao/Ftec.ProjetosWeb.GPStation.Aplicacao.csproj",
+      "msbuildProject": "../Ftec.ProjetosWeb.GPStation.Aplicacao/Ftec.ProjetosWeb.GPStation.Aplicacao.csproj"
+    },
+    "Ftec.ProjetosWeb.GPStation.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../Ftec.ProjetosWeb.GPStation.Dominio/Ftec.ProjetosWeb.GPStation.Dominio.csproj",
+      "msbuildProject": "../Ftec.ProjetosWeb.GPStation.Dominio/Ftec.ProjetosWeb.GPStation.Dominio.csproj"
+    },
+    "Ftec.ProjetosWeb.GPStation.Persistencia/1.0.0": {
+      "type": "project",
+      "path": "../Ftec.ProjetosWeb.GPStation.Persistencia/Ftec.ProjetosWeb.GPStation.Persistencia.csproj",
+      "msbuildProject": "../Ftec.ProjetosWeb.GPStation.Persistencia/Ftec.ProjetosWeb.GPStation.Persistencia.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Ftec.ProjetosWeb.GPStation.Aplicacao >= 1.0.0",
+      "Ftec.ProjetosWeb.GPStation.Dominio >= 1.0.0",
       "Microsoft.AspNet.WebApi.Client >= 5.2.9",
       "System.Data.SqlClient >= 4.8.5"
     ]
@@ -5871,7 +5933,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj": {
+              "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj"
+            },
+            "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj": {
+              "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

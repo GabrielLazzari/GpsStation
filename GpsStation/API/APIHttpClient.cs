@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web;
-
+using Ftec.ProjetosWeb.GPStation.MVC;
+using GpsStation.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Ftec.ProjetosWeb.GPStation.MVC.API
 {
@@ -32,7 +35,9 @@ namespace Ftec.ProjetosWeb.GPStation.MVC.API
                 }
                 else
                 {
+
                     throw new Exception(response.Content.ReadAsStringAsync().Result);
+                  
                 }
             }
         }
@@ -44,6 +49,7 @@ namespace Ftec.ProjetosWeb.GPStation.MVC.API
                 client.BaseAddress = new Uri(baseAPI);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
 
                 HttpResponseMessage response = client.PostAsJsonAsync(action, data).Result;
                 if (response.IsSuccessStatusCode)
@@ -66,6 +72,7 @@ namespace Ftec.ProjetosWeb.GPStation.MVC.API
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+
                 HttpResponseMessage response = client.GetAsync(actionUri).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -81,7 +88,7 @@ namespace Ftec.ProjetosWeb.GPStation.MVC.API
             }
         }
 
-        public T Delete<T>(string action, Guid id)
+        public T Delete<T>(string actionUri)
         {
             using (var client = new HttpClient())
             {
@@ -89,7 +96,7 @@ namespace Ftec.ProjetosWeb.GPStation.MVC.API
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = client.DeleteAsync(action + id.ToString()).Result;
+                HttpResponseMessage response = client.DeleteAsync(actionUri).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var sucesso = response.Content.ReadAsAsync<T>().Result;

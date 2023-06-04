@@ -130,3 +130,6 @@ C:\Users\bruno.viapiana\source\repos\GpsStation\GpsStation\obj\Debug\net6.0\refi
 C:\Users\bruno.viapiana\source\repos\GpsStation\GpsStation\obj\Debug\net6.0\Ftec.ProjetosWeb.GPStation.MVC.pdb
 C:\Users\bruno.viapiana\source\repos\GpsStation\GpsStation\obj\Debug\net6.0\Ftec.ProjetosWeb.GPStation.MVC.genruntimeconfig.cache
 C:\Users\bruno.viapiana\source\repos\GpsStation\GpsStation\obj\Debug\net6.0\ref\Ftec.ProjetosWeb.GPStation.MVC.dll
+C:\Users\Bruno\Documents\GitHub\GpsStation\GpsStation\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\Bruno\Documents\GitHub\GpsStation\GpsStation\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Bruno\Documents\GitHub\GpsStation\GpsStation\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

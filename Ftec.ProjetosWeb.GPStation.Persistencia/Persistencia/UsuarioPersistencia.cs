@@ -22,7 +22,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         //******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
 
-        string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 12345;";
+        string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
         //"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
 
 
@@ -59,7 +59,12 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
         public List<Usuario> Listar()
         {
             try
@@ -108,7 +113,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
         public Boolean Editar(Usuario usuario)
         {
             try
@@ -143,7 +152,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
         public Boolean Excluir(Guid id)
         {
             try
@@ -176,7 +189,10 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-        //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
         public List<Usuario> Consultar(string nome)
         {
             try
@@ -224,6 +240,10 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         }
 
+
+
+
+
         public Boolean Login(string usuario, string senha)
         {
             try
@@ -260,6 +280,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
+
+
+
+
+
 
         public Usuario SelecionarPorId(Guid Id)
         {

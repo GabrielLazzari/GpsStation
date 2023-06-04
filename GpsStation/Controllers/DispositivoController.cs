@@ -4,46 +4,71 @@ using GpsStation.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using Ftec.ProjetosWeb.GPStation.MVC.API;
+using System.Reflection.Metadata;
+using System;
 
 namespace GpsStation.Controllers
 {
     public class DispositivoController : Controller
     {
-        private string strConexao;
-        public DispositivoController(IConfiguration configuration)
-        {
-            strConexao = configuration.GetConnectionString("stringconexao");
-        }
+        private APIHttpClient httpClient = new APIHttpClient(@"http://localhost:5135/");
+        private string controller = "dispositivo";
+
+        public DispositivoController(IConfiguration configuration) { }
 
 
+
+
+        // LISTAR - INDEX
         public IActionResult Index()
         {
-            HttpContext.Session.SetString("usuario", "Teste de usuário logado");
-            DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
-            List<DispositivoModel> dispositivoModel = new List<DispositivoModel>();
-            var dispositivos = dispositivoAplicacao.Listar();
-            foreach (var dispositivo in dispositivos)
-            {
-                dispositivoModel.Add(new DispositivoModel()
-                {
-                    Id = dispositivo.Id,
-                    Nome = dispositivo.Nome,
-                    Latitude = dispositivo.Latitude,
-                    Longitude = dispositivo.Longitude
-                });
-            }
+            //chama a classe httpget, método get sem parâmetro e passa a controler dispositivo como parâmetro
+            //direciona a chamada para a controller dispositivo do backend que possua um método get sem parâmetro
+            var dispositivoModel = httpClient.Get<List<DispositivoModel>>(controller);
             return View(dispositivoModel);
         }
 
+        //public IActionResult Index()
+        //{
+        //    HttpContext.Session.SetString("usuario", "Teste de usuário logado");
+        //    DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
+        //    List<DispositivoModel> dispositivoModel = new List<DispositivoModel>();
+        //    var dispositivos = dispositivoAplicacao.Listar();
+        //    foreach (var dispositivo in dispositivos)
+        //    {
+        //        dispositivoModel.Add(new DispositivoModel()
+        //        {
+        //            Id = dispositivo.Id,
+        //            Nome = dispositivo.Nome,
+        //            Latitude = dispositivo.Latitude,
+        //            Longitude = dispositivo.Longitude
+        //        });
+        //    }
+        //    return View(dispositivoModel);
+        //}
 
 
 
+
+
+
+
+
+
+
+
+
+        // CONSULTAR
         public IActionResult Consultar(String nome)
         {
-            DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
-            dispositivoAplicacao.Consultar(nome);
-            return Json(dispositivoAplicacao.Consultar(nome));
+            nome = "inserir";
+            //DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
+            //dispositivoAplicacao.Consultar(nome);
 
+            string url = $"{controller}/{nome}";
+            var dispositivoModel = httpClient.Get<List<DispositivoModel>>(url);
+            return View(dispositivoModel);
         }
 
 
@@ -71,30 +96,48 @@ namespace GpsStation.Controllers
 
 
 
-        [HttpPost]
-        public IActionResult Gravar(DispositivoModel dispositivo)
+
+
+
+
+
+        //GRAVAR
+        public IActionResult Gravar()//DispositivoModel dispositivo
         {
-            if (ModelState.IsValid)
+            DispositivoModel dispositivo = new DispositivoModel();
+            dispositivo.Id = Guid.Empty;
+            dispositivo.Longitude = "888";
+            dispositivo.Latitude = "9999";
+            dispositivo.Nome = "inserir";
+
+            var objeto = new DispositivoModel()
             {
-                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
-                dispositivoAplicacao.Inserir(new Dispositivo()
-                {
-                    Id = dispositivo.Id,
-                    Nome = dispositivo.Nome,
-                    Latitude = dispositivo.Latitude,
-                    Longitude = dispositivo.Longitude
-                });
-            }
+                Id = dispositivo.Id,
+                Latitude = dispositivo.Latitude,
+                Longitude = dispositivo.Longitude,
+                Nome = dispositivo.Nome
+            };
+            httpClient.Post<DispositivoModel>(controller, objeto);
             return RedirectToAction("Index");
         }
 
 
 
-        public IActionResult Excluir(Guid Id)
+
+
+
+
+
+
+
+        //EXCLUIR
+        public IActionResult Excluir()//Guid Id
         {
-            DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
-            dispositivoAplicacao.Excluir(Id);
+            Guid Id = Guid.Parse("403B71AB-1146-461C-B68D-EABFD008537D");
+            string url = $"{controller}/{Id}";
+            httpClient.Delete<Object>(url);
             return RedirectToAction("Index");
+
         }
     }
 }
