@@ -54,7 +54,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                                     DataHora = (DateTime)reader["DataHora"],
                                     Latitude = reader["Latitude"].ToString(),
                                     Longitude = reader["Longitude"].ToString(),
-                                });
+                                    IdDispositivo = Guid.Parse(dispositivo),
+                                }); 
                             }
                             return relatorio;
                         }

@@ -10,14 +10,14 @@ using System;
 
 namespace GpsStation.Controllers
 {
-    public class RelatorioController : Controller
+    public class LocalizacaoController : Controller
     {
 
         private APIHttpClient httpClient = new APIHttpClient(@"http://localhost:5135/");
-        private string controller = "relatorio";
+        private string controller = "localizacao";
 
 
-        public RelatorioController(IConfiguration configuration) {}
+        public LocalizacaoController(IConfiguration configuration) {}
 
 
 
@@ -35,11 +35,13 @@ namespace GpsStation.Controllers
 
         public IActionResult Consultar(DateTime inicio, DateTime fim, String dispositivo)
         {
-            controller = "relatorio";
+            controller = "localizacao";
+            string stringinicio = inicio.ToString("yyyy-MM-dd HH:mm:ss");
+            string stringfim = fim.ToString("yyyy-MM-dd HH:mm:ss");
 
-            string url = $"{controller}/{inicio},{fim},{dispositivo}";
+            string url = $"{controller}/{stringinicio},{stringfim},{dispositivo}";
             var localizacaoModel = httpClient.Get<List<LocalizacaoModel>>(url);
-            return View(localizacaoModel);
+            return Json(localizacaoModel);
         }
 
 
@@ -47,10 +49,10 @@ namespace GpsStation.Controllers
 
 
 
-
-        public void Inserir()
+        /******* O MÉTODO INSERIR FOI UTILIZADO APENAS PARA TESTE, SERÁ SUBSTITUÍDO PELA API************/
+        public IActionResult Inserir()
         {
-            controller = "relatorio";
+            controller = "localizacao";
            LocalizacaoModel localizacao = new LocalizacaoModel()
             {
                 IdDispositivo = Guid.Parse("DAD64957-59CF-434C-A907-F7127EB7A36A".ToString()),
@@ -60,7 +62,7 @@ namespace GpsStation.Controllers
             };
 
             httpClient.Post<LocalizacaoModel>(controller, localizacao);
-            RedirectToAction("Index");
+            return RedirectToAction("Index");
         }
 
 

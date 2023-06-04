@@ -12,21 +12,24 @@
         fim: fim,
         dispositivo: dispositivo
     }
-    $.post("/relatorio/Consultar/", dados, CallBackRelatorioLocalizacao);
+    $.post("/localizacao/Consultar/", dados, CallBackRelatorioLocalizacao);
 
 }
 
-function CallBackRelatorioLocalizacao(retorno) {
+function CallBackRelatorioLocalizacao(retorno)
+{
     var tabela = document.querySelector("#tabelaRelatorio");
     var contalinhas = tabela.rows.length;
 
-    for (var i = contalinhas - 1; i > 0; i--) {
+    for (var i = contalinhas - 1; i > 0; i--)
+    {
         tabela.deleteRow(i);
     }
 
 
 
-    for (var i = 0; i < retorno.length; i++) {
+    for (var i = 0; i < retorno.length; i++)
+    {
         var objeto = retorno[i];
         var linha = document.createElement("tr");
         var coluna1 = document.createElement("td");

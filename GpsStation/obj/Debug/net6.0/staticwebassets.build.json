@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rJHUX2Bl9IJYSS2v6dGwHMHAyDxEutvh6+gTBbrG2DQ=",
+  "Hash": "MEKYwkmeJhVmZDbI2BMu1Lu0rCE0rhdbqCBReW7zwKo=",
   "Source": "Ftec.ProjetosWeb.GPStation.MVC",
   "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
   "Mode": "Default",
@@ -578,6 +578,23 @@
       "OriginalItemSpec": "wwwroot\\js\\dispositivo.js"
     },
     {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\localizacao.js",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "js/localizacao.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\localizacao.js"
+    },
+    {
       "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\login.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
@@ -610,23 +627,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\mapa.js"
-    },
-    {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\relatorio.js",
-      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
-      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
-      "RelativePath": "js/relatorio.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\relatorio.js"
     },
     {
       "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\site.js",

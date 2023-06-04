@@ -17,3 +17,5 @@ Data/Hora: 03/06/2023 23:39:36 | Mensagem: A connection was successfully establi
  
 Data/Hora: 03/06/2023 23:41:33 | Mensagem: A connection was successfully established with the server, but then an error occurred during the login process. (provider: Shared Memory Provider, error: 0 - Não há processo no outro extremo do pipe.) | Classe: Listar | Metodo: UsuarioPersistencia |  
  
+Data/Hora: 04/06/2023 19:13:09 | Mensagem: IdDispositivo | Classe: Consultar | Metodo: LocalizcaoPersistencia |  
+ 

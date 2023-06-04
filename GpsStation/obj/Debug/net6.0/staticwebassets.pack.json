@@ -129,16 +129,16 @@
       "PackagePath": "staticwebassets\\js\\dispositivo.js"
     },
     {
+      "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\localizacao.js",
+      "PackagePath": "staticwebassets\\js\\localizacao.js"
+    },
+    {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\login.js",
       "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\mapa.js",
       "PackagePath": "staticwebassets\\js\\mapa.js"
-    },
-    {
-      "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\relatorio.js",
-      "PackagePath": "staticwebassets\\js\\relatorio.js"
     },
     {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\site.js",
