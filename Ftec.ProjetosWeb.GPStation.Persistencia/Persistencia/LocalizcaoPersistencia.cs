@@ -28,11 +28,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         public List<Localizacao> Consultar(String inicio, String fim, String dispositivo)
         {
+            var con = new SqlConnection(stringconexao);
+            SqlTransaction sqlTransaction = con.BeginTransaction();
             try
             {
-                string conexao = stringconexao;
-
-                using (var con = new SqlConnection(conexao))
+                using (con)
                 {
 
                     con.Open();
@@ -55,8 +55,9 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                                     Latitude = reader["Latitude"].ToString(),
                                     Longitude = reader["Longitude"].ToString(),
                                     IdDispositivo = Guid.Parse(dispositivo),
-                                }); 
+                                });
                             }
+                            sqlTransaction.Commit();
                             return relatorio;
                         }
                     }
@@ -64,6 +65,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
             catch (Exception ex)
             {
+                sqlTransaction.Rollback();
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -77,11 +79,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         public void Inserir(Localizacao localizacao)
         {
+            var con = new SqlConnection(stringconexao);
+            SqlTransaction sqlTransaction = con.BeginTransaction();
             try
             {
-                string conexao = stringconexao;
-
-                using (var con = new SqlConnection(conexao))
+                using (con)
                 {
 
                     con.Open();
@@ -96,12 +98,14 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         comando.Parameters.AddWithValue("Latitude", localizacao.Latitude);
                         comando.Parameters.AddWithValue("Longitude", localizacao.Longitude);
                         comando.ExecuteNonQuery();
+                        sqlTransaction.Commit();
 
                     }
                 }
             }
             catch (Exception ex)
             {
+                sqlTransaction.Rollback();
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -117,14 +121,14 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         public Localizacao LocalizacaoAtual(Guid dispositivo)
         {
+            var con = new SqlConnection(stringconexao);
+            SqlTransaction sqlTransaction = con.BeginTransaction();
             try
             {
-                string conexao = stringconexao;
                 Localizacao localizacao = null;
 
-                using (var con = new SqlConnection(conexao))
+                using (con)
                 {
-
                     con.Open();
                     using (var comando = new SqlCommand())
                     {
@@ -141,6 +145,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                                 localizacao.Latitude = reader["Latitude"].ToString();
                                 localizacao.Longitude = reader["Longitude"].ToString();
                             }
+                            sqlTransaction.Commit();
                             return localizacao;
                         }
 
@@ -149,6 +154,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
             catch (Exception ex)
             {
+                sqlTransaction.Rollback();
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
