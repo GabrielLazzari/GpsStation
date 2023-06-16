@@ -1,21 +1,17 @@
 ﻿using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
+using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 {
-    public class UsuarioPersistencia
+    public class UsuarioPersistencia : IUsuarioPersistencia
     {
-        public UsuarioPersistencia() { }
-
         List<Usuario> usuarios = null;
         Usuario usuario = null;
 
@@ -25,8 +21,128 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
         //"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
 
+        public List<Usuario> Consultar(string nome)
+        {
+            var con = new SqlConnection(stringconexao);
+            SqlTransaction sqlTransaction = con.BeginTransaction();
+            try
+            {
+                using (con)
+                {
 
-        public Boolean Inserir(Usuario usuario)
+                    con.Open();
+                    using (var comando = new SqlCommand())
+                    {
+                        comando.Connection = con;
+                        comando.CommandText =
+                            "SELECT[Nome],[Senha],[Id]FROM[dbo].[usuario]WHERE[Nome]=@nome ORDER BY [Nome]";//like '%@nome%' nao recupera nenhum registro
+                        comando.Parameters.AddWithValue("nome", nome);
+                        using (SqlDataReader reader = comando.ExecuteReader())
+                        {
+                            usuarios = new List<Usuario>();
+                            while (reader.Read())
+                            {
+                                usuarios.Add(new Usuario
+                                {
+                                    Nome = reader["nome"].ToString(),
+                                    Senha = reader["senha"].ToString(),
+                                    Id = Guid.Parse(reader["Id"].ToString())
+                                });
+                            }
+                            sqlTransaction.Commit();
+                            return usuarios;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                sqlTransaction.Rollback();
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return null;
+            }
+
+        }
+
+        public bool Editar(Usuario usuario)
+        {
+            var con = new SqlConnection(stringconexao);
+            SqlTransaction sqlTransaction = con.BeginTransaction();
+            try
+            {
+                using (con)
+                {
+
+                    con.Open();
+                    using (var comando = new SqlCommand())
+                    {
+                        comando.Connection = con;
+                        comando.CommandText = "UPDATE[dbo].[usuario]SET[Nome]=@nome,[Senha]=@senha WHERE[Id]=@Id;";
+                        comando.Parameters.AddWithValue("nome", usuario.Nome);
+                        comando.Parameters.AddWithValue("senha", usuario.Senha);
+                        comando.Parameters.AddWithValue("Id", usuario.Id);
+                        comando.ExecuteNonQuery();
+                        sqlTransaction.Commit();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                sqlTransaction.Rollback();
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return false;
+            }
+
+        }
+
+        public bool Excluir(Guid id)
+        {
+            var con = new SqlConnection(stringconexao);
+            SqlTransaction sqlTransaction = con.BeginTransaction();
+            try
+            {
+                using (con)
+                {
+
+                    con.Open();
+                    using (var comando = new SqlCommand())
+                    {
+                        comando.Connection = con;
+                        comando.CommandText = "DELETE FROM[dbo].[usuario]WHERE[Id]=@Id;";
+                        comando.Parameters.AddWithValue("Id", id.ToString());
+                        comando.ExecuteNonQuery();
+                        sqlTransaction.Commit();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                sqlTransaction.Rollback();
+                string Mensagem = ex.Message;
+                string Metodo = MethodBase.GetCurrentMethod().Name;
+                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                DateTime dateTime = DateTime.Now;
+                ErroPersistencia erro = new ErroPersistencia();
+                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return false;
+            }
+
+        }
+
+        public bool Inserir(Usuario usuario)
         {
             var con = new SqlConnection(stringconexao);
             SqlTransaction sqlTransaction = con.BeginTransaction();
@@ -61,11 +177,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-
-
-
-
-
 
         public List<Usuario> Listar()
         {
@@ -118,143 +229,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         }
 
-
-
-
-
-        public Boolean Editar(Usuario usuario)
-        {
-            var con = new SqlConnection(stringconexao);
-            SqlTransaction sqlTransaction = con.BeginTransaction();
-            try
-            {
-                using (con)
-                {
-
-                    con.Open();
-                    using (var comando = new SqlCommand())
-                    {
-                        comando.Connection = con;
-                        comando.CommandText = "UPDATE[dbo].[usuario]SET[Nome]=@nome,[Senha]=@senha WHERE[Id]=@Id;";
-                        comando.Parameters.AddWithValue("nome", usuario.Nome);
-                        comando.Parameters.AddWithValue("senha", usuario.Senha);
-                        comando.Parameters.AddWithValue("Id", usuario.Id);
-                        comando.ExecuteNonQuery();
-                        sqlTransaction.Commit();
-                        return true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sqlTransaction.Rollback();
-                string Mensagem = ex.Message;
-                string Metodo = MethodBase.GetCurrentMethod().Name;
-                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
-                DateTime dateTime = DateTime.Now;
-                ErroPersistencia erro = new ErroPersistencia();
-                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
-                return false;
-            }
-
-        }
-
-
-
-
-
-        public Boolean Excluir(Guid id)
-        {
-            var con = new SqlConnection(stringconexao);
-            SqlTransaction sqlTransaction = con.BeginTransaction();
-            try
-            {
-                using (con)
-                {
-
-                    con.Open();
-                    using (var comando = new SqlCommand())
-                    {
-                        comando.Connection = con;
-                        comando.CommandText = "DELETE FROM[dbo].[usuario]WHERE[Id]=@Id;";
-                        comando.Parameters.AddWithValue("Id", id.ToString());
-                        comando.ExecuteNonQuery();
-                        sqlTransaction.Commit();
-                        return true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sqlTransaction.Rollback();
-                string Mensagem = ex.Message;
-                string Metodo = MethodBase.GetCurrentMethod().Name;
-                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
-                DateTime dateTime = DateTime.Now;
-                ErroPersistencia erro = new ErroPersistencia();
-                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
-                return false;
-            }
-
-        }
-
-
-
-
-        public List<Usuario> Consultar(string nome)
-        {
-            var con = new SqlConnection(stringconexao);
-            SqlTransaction sqlTransaction = con.BeginTransaction();
-            try
-            {
-                using (con)
-                {
-
-                    con.Open();
-                    using (var comando = new SqlCommand())
-                    {
-                        comando.Connection = con;
-                        comando.CommandText =
-                            "SELECT[Nome],[Senha],[Id]FROM[dbo].[usuario]WHERE[Nome]=@nome ORDER BY [Nome]";//like '%@nome%' nao recupera nenhum registro
-                        comando.Parameters.AddWithValue("nome", nome);
-                        using (SqlDataReader reader = comando.ExecuteReader())
-                        {
-                            usuarios = new List<Usuario>();
-                            while (reader.Read())
-                            {
-                                usuarios.Add(new Usuario
-                                {
-                                    Nome = reader["nome"].ToString(),
-                                    Senha = reader["senha"].ToString(),
-                                    Id = Guid.Parse(reader["Id"].ToString())
-                                });
-                            }
-                            sqlTransaction.Commit();
-                            return usuarios;
-                        }
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                sqlTransaction.Rollback();
-                string Mensagem = ex.Message;
-                string Metodo = MethodBase.GetCurrentMethod().Name;
-                string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
-                DateTime dateTime = DateTime.Now;
-                ErroPersistencia erro = new ErroPersistencia();
-                erro.Inserir(Mensagem, Metodo, Classe, dateTime);
-                return null;
-            }
-
-        }
-
-
-
-
-
-        public Boolean Login(string usuario, string senha)
+        public bool Login(string usuario, string senha)
         {
             var con = new SqlConnection(stringconexao);
             SqlTransaction sqlTransaction = con.BeginTransaction();
@@ -293,11 +268,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-
-
-
-
-
 
         public Usuario SelecionarPorId(Guid Id)
         {
@@ -347,5 +317,3 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         }
     }
 }
-
-

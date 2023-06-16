@@ -17,7 +17,7 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
 
 
-
+        [HttpPost]
         public IActionResult Post([FromBody]Guid id, DateTime dateTime, string latitude, string longitude)
         {
             try

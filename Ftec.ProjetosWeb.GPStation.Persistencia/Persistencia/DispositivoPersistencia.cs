@@ -1,8 +1,7 @@
-﻿using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
+﻿using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
 using GpsStation.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -11,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 {
-    public class DispositivoPersistencia
+    public class DispositivoPersistencia : IDispositivoPersistencia
     {
         public DispositivoPersistencia() { }
         List<Dispositivo> dispositivos = null;
@@ -23,11 +22,10 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
         //"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
 
-
         public List<Dispositivo> Consultar(string nome)
         {
             var con = new SqlConnection(stringconexao);
-            SqlTransaction sqlTransaction=con.BeginTransaction();
+            SqlTransaction sqlTransaction = con.BeginTransaction();
             try
             {
                 using (con)
@@ -71,12 +69,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                 return null;
             }
         }
-       
 
-
-
-
-        public Boolean Editar(Dispositivo dispositivo)
+        public bool Editar(Dispositivo dispositivo)
         {
             var con = new SqlConnection(stringconexao);
             SqlTransaction sqlTransaction = con.BeginTransaction();
@@ -110,12 +104,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-       
 
-
-
-
-        public Boolean Excluir(Guid id)
+        public bool Excluir(Guid id)
         {
             var con = new SqlConnection(stringconexao);
             SqlTransaction sqlTransaction = con.BeginTransaction();
@@ -149,12 +139,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         }
 
-        
-
-
-
-
-        public Boolean Inserir(Dispositivo dispositivo)
+        public bool Inserir(Dispositivo dispositivo)
         {
             var con = new SqlConnection(stringconexao);
             SqlTransaction sqlTransaction = con.BeginTransaction();
@@ -192,12 +177,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-       
-
-
-
-
-
 
         public List<Dispositivo> Listar()
         {
@@ -245,11 +224,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
-
-
-
-
-
 
         public Dispositivo SelecionarPorId(Guid Id)
         {

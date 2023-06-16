@@ -11,16 +11,19 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
 {
 	public class DispositivoAplicacao
 	{
-		private DispositivoPersistencia dispositivoPersistencia;
+		private DispositivoPersistencia_ dispositivoPersistencia;
+		private DispositivoData DispositivoData;
 		public DispositivoAplicacao()
 		{
-			dispositivoPersistencia = new DispositivoPersistencia();
+			dispositivoPersistencia = new DispositivoPersistencia_();
+			DispositivoData = new DispositivoData();
 		}
 
 		public List<Dispositivo> Listar()
 		{
 
-			return dispositivoPersistencia.Listar();
+			//return dispositivoPersistencia.Listar();
+			return DispositivoData.Listar();
 		}
 
 		public Boolean Inserir(Dispositivo dispositivo)
@@ -57,7 +60,7 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
 
 		public Dispositivo SelecionarPorId(Guid Id)
 		{
-			DispositivoPersistencia dispositivoPersistencia = new DispositivoPersistencia();
+			DispositivoPersistencia_ dispositivoPersistencia = new DispositivoPersistencia_();
 			return dispositivoPersistencia.SelecionarPorId(Id);
 		}
 	}
