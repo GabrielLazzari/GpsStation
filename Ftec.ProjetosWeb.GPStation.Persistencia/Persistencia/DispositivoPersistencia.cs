@@ -1,5 +1,6 @@
 ﻿using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
 using GpsStation.Models;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -12,15 +13,26 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 {
     public class DispositivoPersistencia : IDispositivoPersistencia
     {
-        public DispositivoPersistencia() { }
-        List<Dispositivo> dispositivos = null;
-        Dispositivo dispositivo = null;
+        public DispositivoPersistencia()
+        {
+            conectar();
+        }
+        private List<Dispositivo> dispositivos = null;
+        private Dispositivo dispositivo = null;
+        private readonly IConfiguration conexao;
+        private string stringconexao;
 
 
         //******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
 
-        string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+        //string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
         //"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
+
+        public void conectar()
+        {
+            stringconexao = conexao.GetConnectionString("conexao");
+        }
+
 
         public List<Dispositivo> Consultar(string nome)
         {

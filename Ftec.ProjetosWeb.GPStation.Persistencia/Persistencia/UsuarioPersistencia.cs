@@ -1,5 +1,6 @@
 ﻿using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
 using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -14,11 +15,18 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
     {
         List<Usuario> usuarios = null;
         Usuario usuario = null;
+        private string stringconexao;
+        private readonly IConfiguration conexao;
+
+        public void conectar()
+        {
+            stringconexao = conexao.GetConnectionString("conexao");
+        }
 
 
         //******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
 
-        string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+        //string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
         //"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
 
         public List<Usuario> Consultar(string nome)
