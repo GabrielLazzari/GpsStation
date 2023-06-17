@@ -1,4 +1,5 @@
 ﻿using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
+using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
 using Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,14 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
 {
 	public class UsuarioAplicacao
 	{
+		IUsuarioPersistencia usuarioPersistencia;
+
+		public UsuarioAplicacao()
+		{
+			usuarioPersistencia = new UsuarioPersistencia();
+		}
 		public Boolean Inserir(Usuario usuario)
 		{
-			UsuarioPersistencia_ usuarioPersistencia = new UsuarioPersistencia_();
 			if (usuario.Id == Guid.Empty)
 			{
 				usuario.Id = Guid.NewGuid();
@@ -26,38 +32,32 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
 
 		public List<Usuario> Consultar(string nome)
 		{
-			UsuarioPersistencia_ usuarioPersistencia = new UsuarioPersistencia_();
 			return usuarioPersistencia.Consultar(nome);
 		}
 
 		public List<Usuario> Listar()
 		{
-			UsuarioPersistencia_ usuarioPersistencia = new UsuarioPersistencia_();
 			return usuarioPersistencia.Listar();
 		}
 
 		public Boolean Editar(Usuario usuario)
 		{
-			UsuarioPersistencia_ usuarioPersistencia = new UsuarioPersistencia_();
 			return usuarioPersistencia.Editar(usuario);
 		}
 
 		public Boolean Excluir(Guid id)
 		{
-			UsuarioPersistencia_ usuarioPersistencia = new UsuarioPersistencia_();
 			return usuarioPersistencia.Excluir(id);
 
 		}
 
 		public Boolean Login(String usuario, String senha)
 		{
-			UsuarioPersistencia_ usuarioPersistencia = new UsuarioPersistencia_();
 			return usuarioPersistencia.Login(usuario, senha);
 		}
 
 		public Usuario SelecionarPorId(Guid Id)
 		{
-			UsuarioPersistencia_ usuarioPersistencia = new UsuarioPersistencia_();
 			return usuarioPersistencia.SelecionarPorId(Id);
 		}
 	}
