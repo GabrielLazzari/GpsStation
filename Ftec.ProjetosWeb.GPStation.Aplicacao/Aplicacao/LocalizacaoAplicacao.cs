@@ -27,14 +27,14 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
 
         public void Inserir(Localizacao localizacao)
         {
-            localizcaoPersistencia.Inserir(localizacao);
+            localizacaoPersistencia.Inserir(localizacao);
         }
 
        
 
         public Localizacao LocalizacaoAtual(Guid Id)
         {
-          return  localizcaoPersistencia.LocalizacaoAtual(Id);
+          return  localizacaoPersistencia.LocalizacaoAtual(Id);
         }
     }
 }
