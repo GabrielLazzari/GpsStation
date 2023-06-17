@@ -11,7 +11,7 @@ namespace Ftec.ProjetosWeb.GPStation.Dominio.Interfaces
     {
         public List<Localizacao> Consultar(String inicio, String fim, String dispositivo);
 
-        public void Inserir(Localizacao localizacao);
+        public bool Inserir(Localizacao localizacao);
 
         public Localizacao LocalizacaoAtual(Guid dispositivo);
 

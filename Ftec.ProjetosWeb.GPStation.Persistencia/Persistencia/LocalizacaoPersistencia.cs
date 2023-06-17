@@ -77,7 +77,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         }
 
-        public void Inserir(Localizacao localizacao)
+        public bool Inserir(Localizacao localizacao)
         {
             var con = new SqlConnection(stringconexao);
            
@@ -98,7 +98,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         comando.Parameters.AddWithValue("Latitude", localizacao.Latitude);
                         comando.Parameters.AddWithValue("Longitude", localizacao.Longitude);
                         comando.ExecuteNonQuery();
-                 
+                 return true;
 
                     }
                 }
@@ -112,6 +112,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                 DateTime dateTime = DateTime.Now;
                 ErroPersistencia erro = new ErroPersistencia();
                 erro.Inserir(Mensagem, Metodo, Classe, dateTime);
+                return false;
             }
 
         }

@@ -29,3 +29,15 @@ Data/Hora: 17/06/2023 16:01:16 | Mensagem: The ConnectionString property has not
  
 Data/Hora: 17/06/2023 16:03:35 | Mensagem: The ConnectionString property has not been initialized. | Classe: Listar | Metodo: UsuarioPersistencia |  
  
+Data/Hora: 17/06/2023 16:57:17 | Mensagem: Violation of PRIMARY KEY constraint 'PK__localiza__B1EDB8E4C0102C0F'. Cannot insert duplicate key in object 'dbo.localizacao'. The duplicate key value is (DAD64957-59CF-434C-A907-F7127EB7A36A).
+The statement has been terminated. | Classe: Inserir | Metodo: LocalizacaoPersistencia |  
+ 
+Data/Hora: 17/06/2023 16:58:05 | Mensagem: Violation of PRIMARY KEY constraint 'PK__localiza__B1EDB8E4C0102C0F'. Cannot insert duplicate key in object 'dbo.localizacao'. The duplicate key value is (DAD64957-59CF-434C-A907-F7127EB7A36A).
+The statement has been terminated. | Classe: Inserir | Metodo: LocalizacaoPersistencia |  
+ 
+Data/Hora: 17/06/2023 16:58:44 | Mensagem: Violation of PRIMARY KEY constraint 'PK__localiza__B1EDB8E4C0102C0F'. Cannot insert duplicate key in object 'dbo.localizacao'. The duplicate key value is (DAD64957-59CF-434C-A907-F7127EB7A36A).
+The statement has been terminated. | Classe: Inserir | Metodo: LocalizacaoPersistencia |  
+ 
+Data/Hora: 17/06/2023 17:01:17 | Mensagem: Violation of PRIMARY KEY constraint 'PK__localiza__B1EDB8E4C0102C0F'. Cannot insert duplicate key in object 'dbo.localizacao'. The duplicate key value is (DAD64957-59CF-434C-A907-F7127EB7A36A).
+The statement has been terminated. | Classe: Inserir | Metodo: LocalizacaoPersistencia |  
+ 

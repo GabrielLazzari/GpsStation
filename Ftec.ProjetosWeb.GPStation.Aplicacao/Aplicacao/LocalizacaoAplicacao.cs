@@ -25,9 +25,9 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
             return localizacaoPersistencia.Consultar(inicio.ToString("yyyy-MM-dd HH:mm:ss"), fim.ToString("yyyy-MM-dd HH:mm:ss"), dispositivo);
         }
 
-        public void Inserir(Localizacao localizacao)
+        public bool Inserir(Localizacao localizacao)
         {
-            localizacaoPersistencia.Inserir(localizacao);
+          return  localizacaoPersistencia.Inserir(localizacao);
         }
 
        

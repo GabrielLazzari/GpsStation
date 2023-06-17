@@ -23,15 +23,18 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
             try
             {
                 LocalizacaoAplicacao localizacaoAplicacao = new LocalizacaoAplicacao();
-                localizacaoAplicacao.Inserir(new Localizacao()
+
+              if(  localizacaoAplicacao.Inserir(new Localizacao()
                 {
                     IdDispositivo = Guid.Parse("DAD64957-59CF-434C-A907-F7127EB7A36A".ToString()),
                     DataHora = DateTime.Parse("05 / 12 / 2023 22:51:00"),
                     Latitude = "444",
                     Longitude = "555",
-                });
-
+                }))
+                
                 return Ok();
+              else
+                    return BadRequest();
             }
             catch (Exception ex)
             {
