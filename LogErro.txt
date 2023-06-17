@@ -19,3 +19,13 @@ Data/Hora: 03/06/2023 23:41:33 | Mensagem: A connection was successfully establi
  
 Data/Hora: 04/06/2023 19:13:09 | Mensagem: IdDispositivo | Classe: Consultar | Metodo: LocalizcaoPersistencia |  
  
+Data/Hora: 17/06/2023 15:54:05 | Mensagem: ExecuteReader requires the command to have a transaction when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized. | Classe: Listar | Metodo: DispositivoPersistencia |  
+ 
+Data/Hora: 17/06/2023 15:59:37 | Mensagem: The ConnectionString property has not been initialized. | Classe: Excluir | Metodo: UsuarioPersistencia |  
+ 
+Data/Hora: 17/06/2023 16:00:33 | Mensagem: The ConnectionString property has not been initialized. | Classe: Excluir | Metodo: UsuarioPersistencia |  
+ 
+Data/Hora: 17/06/2023 16:01:16 | Mensagem: The ConnectionString property has not been initialized. | Classe: Excluir | Metodo: UsuarioPersistencia |  
+ 
+Data/Hora: 17/06/2023 16:03:35 | Mensagem: The ConnectionString property has not been initialized. | Classe: Listar | Metodo: UsuarioPersistencia |  
+ 

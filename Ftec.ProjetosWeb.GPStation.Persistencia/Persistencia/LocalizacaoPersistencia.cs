@@ -15,26 +15,21 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
     {
         public LocalizacaoPersistencia() 
         {
-            conectar();
+            
         }
         private List<Localizacao> relatorio = null;
-        private string stringconexao;
-        private readonly IConfiguration conexao;
-
-        public void conectar()
-        {
-            stringconexao = conexao.GetConnectionString("conexao");
-        }
+  
+     
 
         //******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
 
-        //string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
+       private  string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
         //"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
 
         public List<Localizacao> Consultar(string inicio, string fim, string dispositivo)
         {
             var con = new SqlConnection(stringconexao);
-            SqlTransaction sqlTransaction = con.BeginTransaction();
+      
             try
             {
                 using (con)
@@ -62,7 +57,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                                     IdDispositivo = Guid.Parse(dispositivo),
                                 });
                             }
-                            sqlTransaction.Commit();
+                           
                             return relatorio;
                         }
                     }
@@ -70,7 +65,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
             catch (Exception ex)
             {
-                sqlTransaction.Rollback();
+        
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -85,7 +80,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         public void Inserir(Localizacao localizacao)
         {
             var con = new SqlConnection(stringconexao);
-            SqlTransaction sqlTransaction = con.BeginTransaction();
+           
             try
             {
                 using (con)
@@ -103,14 +98,14 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         comando.Parameters.AddWithValue("Latitude", localizacao.Latitude);
                         comando.Parameters.AddWithValue("Longitude", localizacao.Longitude);
                         comando.ExecuteNonQuery();
-                        sqlTransaction.Commit();
+                 
 
                     }
                 }
             }
             catch (Exception ex)
             {
-                sqlTransaction.Rollback();
+               
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -124,7 +119,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         public Localizacao LocalizacaoAtual(Guid dispositivo)
         {
             var con = new SqlConnection(stringconexao);
-            SqlTransaction sqlTransaction = con.BeginTransaction();
+ ;
             try
             {
                 Localizacao localizacao = null;
@@ -147,7 +142,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                                 localizacao.Latitude = reader["Latitude"].ToString();
                                 localizacao.Longitude = reader["Longitude"].ToString();
                             }
-                            sqlTransaction.Commit();
+                           
                             return localizacao;
                         }
 
@@ -156,7 +151,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
             catch (Exception ex)
             {
-                sqlTransaction.Rollback();
+             
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;

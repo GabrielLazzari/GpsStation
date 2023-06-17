@@ -20,7 +20,7 @@ namespace GpsStation.Controllers
 
 
 
-        public IActionResult Index_()
+        public IActionResult Index()
         {
             HttpContext.Session.SetString("usuario", "Teste de usuário logado");
 
@@ -89,7 +89,7 @@ namespace GpsStation.Controllers
 
 
 
-        public IActionResult Index()//Guid id
+        public IActionResult Put(Guid id)//Guid id
         {
             Guid Id = Guid.Parse("D526AC0B-AE5C-4B68-9F24-DC93D3EBFA3A");
             string url = $"{controller}/{Id}";
