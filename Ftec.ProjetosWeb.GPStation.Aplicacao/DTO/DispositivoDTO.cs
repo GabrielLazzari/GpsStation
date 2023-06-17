@@ -8,5 +8,9 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.DTO
 {
     public class DispositivoDTO
     {
+        public Guid? Id { get; set; }
+        public string Nome { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
     }
 }
