@@ -19,6 +19,12 @@ namespace GpsStation.Controllers
             return View();
         }
 
+        public IActionResult VisualizarLocalizacao(Guid Id)
+        {
+
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

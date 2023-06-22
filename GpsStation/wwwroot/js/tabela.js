@@ -154,7 +154,7 @@ function salvarEdicaoLinha(el) {
         }
         novaTd = ` <td>
 					    <a href="/Relatorio/Index">Últimos registros</a>
-					    <a href="/Mapa/Index">Visualizar localização</a>
+					    <a href="/Mapa/VisualizarLocalizacao?Id=${dados['Id']}">Visualizar localização</a>
 					    <img onclick="editarLinha('tabelaDispositivos', this, JSON.stringify({dispositivo:'', status:''}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 					    <img onclick="excluirItem('${dados['Nome']}', '${dados['Id']}', this)" src="/gifs/trash-outline.svg" class="svg-sm" title="Excluir">		
 				    </td>`;
