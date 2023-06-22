@@ -5,6 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 using Ftec.ProjetosWeb.GPStation.API.Models;
+using NLog.Web;
+using Microsoft.AspNetCore;
+using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
+using Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia;
+using Ftec.ProjetosWeb.GPStation.Aplicacao.DTO;
 
 namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 {
@@ -15,7 +20,12 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
     {
         public DispositivoController() { }
 
+        private readonly ILogger<DispositivoController> _logger;
 
+        public DispositivoController(ILogger<DispositivoController> logger)
+        {
+            _logger = logger;
+        }
 
 
 
@@ -24,7 +34,8 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
         {
             try
             {
-                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
+                IDispositivoPersistencia dispositivoPersistencia = new DispositivoPersistencia();
+                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao(dispositivoPersistencia);
                 List<DispositivoModel> dispositivoModel = new List<DispositivoModel>();
 
                 var dispositivos = dispositivoAplicacao.Listar();
@@ -38,6 +49,7 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
                         Longitude = dispositivo.Longitude
                     });
                 }
+                _logger.LogInformation("HomeController.Index method called!!!");
                 return Ok(dispositivoModel);
             }
             catch (Exception ex)
@@ -60,7 +72,8 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
         {
             try
             {
-                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
+                IDispositivoPersistencia dispositivoPersistencia = new DispositivoPersistencia();
+                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao(dispositivoPersistencia);
                 List<DispositivoModel> dispositivoModel = new List<DispositivoModel>();
 
                 var dispositivos = dispositivoAplicacao.Consultar(nome);
@@ -106,15 +119,16 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
         {
             try
             {
-                DispositivoAplicacao dispositivoAplicação = new DispositivoAplicacao();
-                Dispositivo dispositivo = new Dispositivo()
+                IDispositivoPersistencia dispositivoPersistencia = new DispositivoPersistencia();
+                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao(dispositivoPersistencia);
+                DispositivoDTO dispositivo = new DispositivoDTO()
                 {
                     Id = dispositivoModel.Id,
                     Longitude = dispositivoModel.Longitude,
                     Latitude = dispositivoModel.Latitude,
                     Nome = dispositivoModel.Nome,
                 };
-                if (dispositivoAplicação.Inserir(dispositivo))
+                if (dispositivoAplicacao.Inserir(dispositivo))
                     return Ok();
                 else 
                     return BadRequest();
@@ -140,7 +154,8 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
         {
             try
             {
-                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
+                IDispositivoPersistencia dispositivoPersistencia = new DispositivoPersistencia();
+                DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao(dispositivoPersistencia);
                 if (dispositivoAplicacao.Excluir(Id))
                     return Ok();
                 else

@@ -23,7 +23,7 @@ namespace GpsStation.Controllers
         // LISTAR - INDEX
         public IActionResult Index()
         {
-            //chama a classe httpget, método get sem parâmetro e passa a controler dispositivo como parâmetro
+            //chama a classe httpclient, método get sem parâmetro e passa a controler dispositivo como parâmetro
             //direciona a chamada para a controller dispositivo do backend que possua um método get sem parâmetro
             var dispositivoModel = httpClient.Get<List<DispositivoModel>>(controller);
             return View(dispositivoModel);
