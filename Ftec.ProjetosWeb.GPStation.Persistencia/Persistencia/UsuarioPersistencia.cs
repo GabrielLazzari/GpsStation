@@ -15,7 +15,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
     {
         List<Usuario> usuarios = null;
         Usuario usuario = null;
- 
+        private SqlTransaction transacao;
 
         //******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
 
@@ -25,13 +25,12 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         public List<Usuario> Consultar(string nome)
         {
             var con = new SqlConnection(stringconexao);
-           
+
+            con.Open();
             try
             {
                 using (con)
                 {
-
-                    con.Open();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -72,13 +71,13 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         public bool Editar(Usuario usuario)
         {
             var con = new SqlConnection(stringconexao);
-     
+
+            con.Open();
             try
             {
                 using (con)
                 {
-
-                    con.Open();
+                    transacao = con.BeginTransaction();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -87,12 +86,14 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         comando.Parameters.AddWithValue("senha", usuario.Senha);
                         comando.Parameters.AddWithValue("Id", usuario.Id);
                         comando.ExecuteNonQuery();
+                        transacao.Commit();
                         return true;
                     }
                 }
             }
             catch (Exception ex)
             {
+                transacao.Rollback();
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -107,27 +108,27 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         public bool Excluir(Guid id)
         {
             var con = new SqlConnection(stringconexao);
-           
+
+            con.Open();
             try
             {
                 using (con)
                 {
-
-                    con.Open();
+                    transacao = con.BeginTransaction();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
                         comando.CommandText = "DELETE FROM[dbo].[usuario]WHERE[Id]=@Id;";
                         comando.Parameters.AddWithValue("Id", id.ToString());
                         comando.ExecuteNonQuery();
-                       
+                       transacao.Commit() ;
                         return true;
                     }
                 }
             }
             catch (Exception ex)
             {
-               
+               transacao.Rollback() ;
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -142,12 +143,12 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         public bool Inserir(Usuario usuario)
         {
             var con = new SqlConnection(stringconexao);
-      
+            con.Open();
             try
             {
                 using (con)
                 {
-                    con.Open();
+                    transacao = con.BeginTransaction();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -156,14 +157,14 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         comando.Parameters.AddWithValue("senha", usuario.Senha);
                         comando.Parameters.AddWithValue("Id", usuario.Id);
                         comando.ExecuteNonQuery();
-                       
+                       transacao.Commit();
                         return true;
                     }
                 }
             }
             catch (Exception ex)
             {
-                
+                transacao.Rollback();
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;

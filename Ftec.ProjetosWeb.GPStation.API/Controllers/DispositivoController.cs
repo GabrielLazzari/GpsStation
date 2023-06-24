@@ -18,7 +18,7 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
     [ApiController]
     public class DispositivoController : ControllerBase
     {
-        public DispositivoController() { }
+        //public DispositivoController() { }
 
         private readonly ILogger<DispositivoController> _logger;
 

@@ -13,12 +13,9 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 {
     public class LocalizacaoPersistencia : ILocalizacaoPersistencia
     {
-        public LocalizacaoPersistencia() 
-        {
-            
-        }
+        public LocalizacaoPersistencia(){ }
         private List<Localizacao> relatorio = null;
-  
+        private SqlTransaction transacao;
      
 
         //******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
@@ -80,13 +77,13 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         public bool Inserir(Localizacao localizacao)
         {
             var con = new SqlConnection(stringconexao);
-           
+
+            con.Open();
             try
             {
                 using (con)
                 {
-
-                    con.Open();
+                    transacao = con.BeginTransaction();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -98,6 +95,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                         comando.Parameters.AddWithValue("Latitude", localizacao.Latitude);
                         comando.Parameters.AddWithValue("Longitude", localizacao.Longitude);
                         comando.ExecuteNonQuery();
+                        transacao.Commit();
                  return true;
 
                     }
@@ -105,7 +103,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
             catch (Exception ex)
             {
-               
+               transacao.Rollback();
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -120,14 +118,14 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         public Localizacao LocalizacaoAtual(Guid dispositivo)
         {
             var con = new SqlConnection(stringconexao);
- ;
+            con.Open();
             try
             {
                 Localizacao localizacao = null;
 
                 using (con)
                 {
-                    con.Open();
+                    transacao = con.BeginTransaction();
                     using (var comando = new SqlCommand())
                     {
                         comando.Connection = con;
@@ -143,7 +141,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                                 localizacao.Latitude = reader["Latitude"].ToString();
                                 localizacao.Longitude = reader["Longitude"].ToString();
                             }
-                           
+                           transacao.Commit();
                             return localizacao;
                         }
 
@@ -152,7 +150,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
             catch (Exception ex)
             {
-             
+                transacao.Rollback();
                 string Mensagem = ex.Message;
                 string Metodo = MethodBase.GetCurrentMethod().Name;
                 string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
