@@ -45,10 +45,10 @@ namespace GpsStation.Controllers
                 if (tipo == "ponto")
                 {
                     string url = $"Dispositivo/{id}";
-                    //var dispositivoModel = httpClient.Get<DispositivoModel>(url);
+                    var dispositivoModel = httpClient.Get<DispositivoModel>(url);
 
-                    latitude = "10";
-                    longitude = "20";
+                    latitude = dispositivoModel.Latitude;
+                    longitude = dispositivoModel.Longitude;
                 }
                 else if(tipo == "linha")
                 {
