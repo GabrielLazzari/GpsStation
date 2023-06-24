@@ -1,0 +1,28 @@
+﻿
+.areaItemPesquisa {
+    display: inline;
+    border: rgb(200, 200, 200) solid 1px;
+    padding: 10px;
+}
+
+.areaBotaoPesquisa {
+    padding: 5px;
+    padding-top: 0px;
+    padding-bottom: 8px;
+}
+
+.areaAjuste {
+    margin-left: 5px;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.iconFiltro {
+    position: relative;
+    top: 5px;
+}
+
+.iconBotao {
+    position: relative;
+    top: 7px;
+}

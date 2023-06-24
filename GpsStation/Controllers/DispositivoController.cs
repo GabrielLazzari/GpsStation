@@ -71,7 +71,16 @@ namespace GpsStation.Controllers
             return View(dispositivoModel);
         }
 
+        // CONSULTAR
+        public IActionResult Consultar(Guid id)
+        {
+            //DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
+            //dispositivoAplicacao.Consultar(nome);
 
+            string url = $"{controller}/{id}";
+            var dispositivoModel = httpClient.Get<DispositivoModel>(url);
+            return View(dispositivoModel);
+        }
 
         //public IActionResult Inserir(DispositivoModel dispositivo)
         //{

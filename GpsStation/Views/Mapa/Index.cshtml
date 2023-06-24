@@ -21,13 +21,26 @@
 }
 
 @using Microsoft.AspNetCore.Http;
+@using Newtonsoft.Json;
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContextAccessor;
-<h3 style="text-align: center;">Usuário logado:@httpContextAccessor.HttpContext.Session.GetString(" usuario")</h3>
 
 <div class="folium-map" id="map_55bbce51b6ab60a6b4c85363dc2540ad"></div>
 
+<p class="usuarioLogado">Usuário logado:@httpContextAccessor.HttpContext.Session.GetString(" usuario")</p>
+
 
 <script src="/js/mapa.js"></script>
+<script>
 
+	latitude = @Html.Raw(Json.Serialize(@ViewBag.Latitude))
+	longitude = @Html.Raw(Json.Serialize(@ViewBag.Longitude))
+	tipo = @Html.Raw(Json.Serialize(@ViewBag.Tipo))
 
+	localStorage.setItem("latitude", latitude)
+	localStorage.setItem("longitude", longitude)
+	localStorage.setItem("tipo", tipo)
+
+	adicionarDadosMapa();
+
+</script>
 

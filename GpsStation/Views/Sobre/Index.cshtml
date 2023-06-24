@@ -1,24 +1,63 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
+
+@section Estilo{
+    <link rel="stylesheet" href="~/css/sobre.css" />
+}
+
 <h1>@ViewData["Title"]</h1>
 @using Microsoft.AspNetCore.Http;
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContextAccessor;
 <h3 style="text-align: center;">Usuário logado:@httpContextAccessor.HttpContext.Session.GetString("usuario")</h3>
 
-<p>Use this page to detail your site's privacy policy.</p>
 
 
-<a href="https://www.flaticon.com/br/icones-animados-gratis/mapa" title="mapa ícones animados">Mapa ícones animados criados por Freepik - Flaticon</a>
-<br />
-<a href="https://www.flaticon.com/br/icones-animados-gratis/configuracoes" title="configurações ícones animados">Configurações ícones animados criados por Freepik - Flaticon</a>
-<br />
-<a href="https://www.flaticon.com/br/icones-animados-gratis/do-utilizador" title="do utilizador ícones animados">Do utilizador ícones animados criados por Freepik - Flaticon</a>
-<br />
-<a href="https://www.flaticon.com/br/icones-animados-gratis/em-formacao" title="em formação ícones animados">Em formação ícones animados criados por Freepik - Flaticon</a>
-<br />
-<a href="https://www.flaticon.com/br/icones-animados-gratis/configuracoes" title="configurações ícones animados">Configurações ícones animados criados por Freepik - Flaticon</a>
-<br />
-<a href="https://www.flaticon.com/br/icones-animados-gratis/jornal" title="jornal ícones animados">Jornal ícones animados criados por Freepik - Flaticon</a>
-<br />
-<a href="https://www.flaticon.com/br/icones-animados-gratis/telefone" title="telefone ícones animados">Telefone ícones animados criados por Freepik - Flaticon</a>
+
+<div class="areaSobre">
+    <p class="titulo">Informações do Projeto</p>
+        <div class="conteudo">
+        <p>Disciplina: Projetos para Sistemas Web</p>
+        <p>Curso: Análise e Desenvolvimento de Sistemas</p>
+        <p>Professor: Juliano P. Menzen</p>
+        <p>Período: 1/2023</p>
+        <p>Integrantes: Bruno Viapiana e Gabriel Lazzari</p>
+    </div>
+</div>
+
+<div class="areaSobre">
+    <p class="titulo">Ícones Animados</p>
+
+    <div class="conteudo">
+        <a href="https://www.flaticon.com/br/icones-animados-gratis/mapa" title="mapa ícones animados">Mapa ícones animados criados por Freepik - Flaticon</a>
+        <br />
+        <a href="https://www.flaticon.com/br/icones-animados-gratis/configuracoes" title="configurações ícones animados">Configurações ícones animados criados por Freepik - Flaticon</a>
+        <br />
+        <a href="https://www.flaticon.com/br/icones-animados-gratis/do-utilizador" title="do utilizador ícones animados">Do utilizador ícones animados criados por Freepik - Flaticon</a>
+        <br />
+        <a href="https://www.flaticon.com/br/icones-animados-gratis/em-formacao" title="em formação ícones animados">Em formação ícones animados criados por Freepik - Flaticon</a>
+        <br />
+        <a href="https://www.flaticon.com/br/icones-animados-gratis/jornal" title="jornal ícones animados">Jornal ícones animados criados por Freepik - Flaticon</a>
+        <br />
+        <a href="https://www.flaticon.com/br/icones-animados-gratis/telefone" title="telefone ícones animados">Telefone ícones animados criados por Freepik - Flaticon</a>
+    </div>
+
+
+    <p class="titulo">Ícones Gerais</p>
+    <div class="conteudo">
+        <a href="https://ionic.io/ionicons">Ioicons</a>
+    </div>
+    
+</div>
+
+<div class="areaSobre">
+    <p class="titulo">Estilo</p>
+    <div class="conteudo">
+        <p>Canal do Youtube Online Tutoriais</p>
+        <a href="https://www.youtube.com/watch?v=_UUyhW2EgRI">Sidebar Menu using Html CSS & Javascript | How To Create Side Navigation Menu</a>
+        <br />
+        <a href="https://www.youtube.com/watch?v=m5LvqOVltlA&t=1026s">Sidebar Menu using Html CSS & Javascript | How To Create Curved Outside Navigation</a>
+    </div>
+</div>
+
+

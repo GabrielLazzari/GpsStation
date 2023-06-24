@@ -20,43 +20,74 @@ var tile_layer_dab421bc9de218ab2d83e9c8544b0bb6 = L.tileLayer(
 ).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
 
 
-// Estrutura GeoJson para colocar pontos no mapa
-var myGeojsonData = {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "S�o Paulo"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-46.6333, -23.5505]
+
+
+function adicionarDadosMapa() {
+    latitude = localStorage.getItem("latitude");
+    longitude = localStorage.getItem("longitude");
+    tipoSalvo = localStorage.getItem("tipo");
+
+    console.log('aa', latitude);
+    console.log('bb', longitude)
+
+    tipo = "ponto";
+    console.log(tipoSalvo, tipoSalvo != null, tipoSalvo != undefined, tipoSalvo === null)
+    if (tipoSalvo != "") {
+        tipo = tipoSalvo;
+    }
+
+    if ((latitude.trim() != "" && longitude.trim() != "")) {
+        console.log('b', latitude, longitude);
+
+
+        latitudes = latitude.split(',');
+        longitudes = longitude.split(',');
+
+        console.log(latitudes, longitudes)
+        if (tipo === "ponto") {
+
+            // Estrutura GeoJson para colocar pontos no mapa
+            var myGeojsonData = {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "name": "Você"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [+latitudes[0], +longitude[1]]
+                        }
+                    }
+                ]
+            };
+
+            // adiciona o ponto da a camada GeoJSON
+            var geojsonLayer = L.geoJSON(myGeojsonData).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
+
+            // adiciona um marcador
+            var marker = L.marker([+longitude[1], +latitudes[0]]).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
+
+            // adiciona um pop-up ao marcador
+            marker.bindPopup("Você está aqui.").openPopup();
+
+        } else if (tipo === "linha") {
+            console.log('ok')
+            // Cria polyline com coordenadas informadas
+
+
+            // define as coordenadas da polyline
+            var polylinePoints = [];
+            for (var c in latitudes) {
+                if (latitudes[c].trim() != "") {
+                    polylinePoints.push([+latitudes[c], +longitudes[c]])
+                }
             }
+            console.log(polylinePoints)
+
+            // desenha as linhas no mapa
+            var polyline = L.polyline(polylinePoints, { color: 'red' }).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad)
         }
-    ]
-};
-
-
-// adiciona a camada GeoJSON
-var geojsonLayer = L.geoJSON(myGeojsonData).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
-
-// adiciona um marcador
-var marker = L.marker([-23.5505, -46.6333]).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
-
-// adiciona um pop-up ao marcador
-marker.bindPopup("<b>S�o Paulo</b><br>Capital do estado de S�o Paulo.").openPopup();
-
-
-// Cria polyline com coordenadas informadas 
-
-// define as coordenadas da polyline
-var polylinePoints = [
-    [-30.6333, -50.09],
-    [-32.6333, -50.3],
-    [-32.6333, -48.3],
-];
-
-// desenha as linhas no mapa
-var polyline = L.polyline(polylinePoints, { color: 'red' }).addTo(map_55bbce51b6ab60a6b4c85363dc2540ad);
-
+    }
+}

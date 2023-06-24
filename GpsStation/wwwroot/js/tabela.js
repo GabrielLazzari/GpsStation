@@ -123,14 +123,24 @@ function salvarEdicaoLinha(el) {
         parametrosCabecalho.push(th.innerText);
     })
 
+    var permitirSalvar = true;
+
     if (pagina == "Usuario") {
         for (var posColuna = 0; posColuna < parametrosCabecalho.length; posColuna++) {
             td = trSalvar.cells[posColuna];
             if (parametrosCabecalho[posColuna].toLowerCase() == "nome") {
                 dados['Nome'] = td.innerText;
+                if (td.innerText.length > +td.getAttribute("maxlength")) {
+                    permitirSalvar = false;
+                    alert("O comprimento máximo para Nome é: " + td.getAttribute("maxlength"));
+                }
                 
             } else if (parametrosCabecalho[posColuna].toLowerCase() == "senha") {
                 dados['Senha'] = td.getAttribute("value");
+                if (td.innerText.length > +td.getAttribute("maxlength")) {
+                    permitirSalvar = false;
+                    alert("O comprimento máximo para Senha é: " + td.getAttribute("maxlength"));
+                }
                
             } else if (parametrosCabecalho[posColuna].toLowerCase() == "código") {
                 dados['Id'] = trSalvar.getAttribute("idUsuario");
@@ -147,8 +157,11 @@ function salvarEdicaoLinha(el) {
             td = trSalvar.cells[posColuna];
             if (parametrosCabecalho[posColuna].toLowerCase() == "dispositivo") {
                 dados['Nome'] = td.innerText;
-           
-            } 
+                if (dados['Nome'] > 50) {
+                    permitirSalvar = false;
+                    alert("O comprimento máximo para Dispositivo é: 50");
+                }
+            }
             dados['Id'] = trSalvar.getAttribute("idDispositivo");
            
         }
@@ -161,38 +174,39 @@ function salvarEdicaoLinha(el) {
 
         dados['Localizacao'] = "";
     }
-    console.log('dados: ', dados)
 
-    // Se o atributo abaixo estiver null entao foi clicado em uma linha para editar, senao foi criado uma nova linha
-    if (trSalvar.getAttribute("novaLinha") == null) {
-        //inserir
-        var url = '/' + pagina + '/Gravar';
-        console.log('ddaaa', dados)
-        $.post(url, dados, function (retorno) {
-            var pos = 0;
-            Array.prototype.forEach.call(trSalvar.querySelectorAll("td"), function (td) {
-                if (parametrosCabecalho[pos] == "Açoes") {
-                    td.innerHTML = novaTd;
-                } else {
-                    td.setAttribute("contenteditable", false);
-                }
-                pos++;
+    if (permitirSalvar) {
+        // Se o atributo abaixo estiver null entao foi clicado em uma linha para editar, senao foi criado uma nova linha
+        if (trSalvar.getAttribute("novaLinha") == null) {
+            //inserir
+            var url = '/' + pagina + '/Gravar';
+            console.log('ddaaa', dados)
+            $.post(url, dados, function (retorno) {
+                var pos = 0;
+                Array.prototype.forEach.call(trSalvar.querySelectorAll("td"), function (td) {
+                    if (parametrosCabecalho[pos] == "Açoes") {
+                        td.innerHTML = novaTd;
+                    } else {
+                        td.setAttribute("contenteditable", false);
+                    }
+                    pos++;
+                });
             });
-        });
-    } else {
-        //salvar edicao
-        var url = '/' + pagina + '/Gravar/';
-        $.post(url, dados, function (retorno) {
-            var pos = 0;
-            Array.prototype.forEach.call(trSalvar.querySelectorAll("td"), function (td) {
-                if (parametrosCabecalho[pos] == "Açoes") {
-                    td.innerHTML = novaTd;
-                } else {
-                    td.setAttribute("contenteditable", false);
-                }
-                pos++;
+        } else {
+            //salvar edicao
+            var url = '/' + pagina + '/Gravar/';
+            $.post(url, dados, function (retorno) {
+                var pos = 0;
+                Array.prototype.forEach.call(trSalvar.querySelectorAll("td"), function (td) {
+                    if (parametrosCabecalho[pos] == "Açoes") {
+                        td.innerHTML = novaTd;
+                    } else {
+                        td.setAttribute("contenteditable", false);
+                    }
+                    pos++;
+                });
             });
-        });
+        }
     }
 }
 
@@ -204,7 +218,7 @@ function bloquearEnter(td) {
         event.preventDefault();
     }
 
-    if (td.textContent.length >= td.getAttribute("maxlength")) {
+    /*if (td.textContent.length >= td.getAttribute("maxlength")) {
         td.textContent = td.textContent.slice(0, td.getAttribute("maxlength") - 1);
     }
 
@@ -228,7 +242,7 @@ function bloquearEnter(td) {
             td.setAttribute("value", td.getAttribute("value").slice(0, td.getAttribute("maxlength")));
         }
         console.log(td.getAttribute("value"))
-    }
+    }*/
 }
 
 
