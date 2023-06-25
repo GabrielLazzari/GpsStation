@@ -49,7 +49,7 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
                         Longitude = dispositivo.Longitude
                     });
                 }
-                _logger.LogInformation("HomeController.Index method called!!!");
+                _logger.LogInformation("teste do Nlog");
                 return Ok(dispositivoModel);
             }
             catch (Exception ex)
@@ -128,6 +128,7 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
                     Latitude = dispositivoModel.Latitude,
                     Nome = dispositivoModel.Nome,
                 };
+
                 if (dispositivoAplicacao.Inserir(dispositivo))
                     return Ok();
                 else 

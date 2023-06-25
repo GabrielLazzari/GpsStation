@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MEKYwkmeJhVmZDbI2BMu1Lu0rCE0rhdbqCBReW7zwKo=",
+  "Hash": "p5cmQbcz7Llw4dzEDVRAzOxHhdrP/zqlfj0uxCvm6l8=",
   "Source": "Ftec.ProjetosWeb.GPStation.MVC",
   "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Ftec.ProjetosWeb.GPStation.MVC\\wwwroot",
       "Source": "Ftec.ProjetosWeb.GPStation.MVC",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Ftec.ProjetosWeb.GPStation.MVC.styles.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Ftec.ProjetosWeb.GPStation.MVC.styles.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "Ftec.ProjetosWeb.GPStation.MVC.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Ftec.ProjetosWeb.GPStation.MVC.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Ftec.ProjetosWeb.GPStation.MVC.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Ftec.ProjetosWeb.GPStation.MVC.bundle.scp.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Ftec.ProjetosWeb.GPStation.MVC.bundle.scp.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "Ftec.ProjetosWeb.GPStation.MVC.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Ftec.ProjetosWeb.GPStation.MVC.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Ftec.ProjetosWeb.GPStation.MVC.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\configuracao.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\css\\configuracao.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "css/configuracao.css",
       "AssetKind": "All",
@@ -68,10 +68,27 @@
       "OriginalItemSpec": "wwwroot\\css\\configuracao.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\mapa.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\css\\localizacao.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "css/localizacao.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\localizacao.css"
+    },
+    {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\css\\mapa.css",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "css/mapa.css",
       "AssetKind": "All",
@@ -85,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\mapa.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\relatorio.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\css\\relatorio.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "css/relatorio.css",
       "AssetKind": "All",
@@ -102,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\relatorio.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\css\\site.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -119,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\sobre.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\css\\sobre.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "css/sobre.css",
       "AssetKind": "All",
@@ -136,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\sobre.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\tabela.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\css\\tabela.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "css/tabela.css",
       "AssetKind": "All",
@@ -153,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\tabela.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\usuario.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\css\\usuario.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "css/usuario.css",
       "AssetKind": "All",
@@ -170,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\usuario.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\favicon.ico",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -187,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\favicon_.ico",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\favicon_.ico",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "favicon_.ico",
       "AssetKind": "All",
@@ -204,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\favicon_.ico"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\brush-outline.svg",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\brush-outline.svg",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/brush-outline.svg",
       "AssetKind": "All",
@@ -221,10 +238,27 @@
       "OriginalItemSpec": "wwwroot\\gifs\\brush-outline.svg"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\checkmark-circle-outline.svg",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\calendar-number-outline.svg",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "gifs/calendar-number-outline.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\gifs\\calendar-number-outline.svg"
+    },
+    {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\checkmark-circle-outline.svg",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/checkmark-circle-outline.svg",
       "AssetKind": "All",
@@ -238,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\checkmark-circle-outline.svg"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\cliente.gif",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\cliente.gif",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/cliente.gif",
       "AssetKind": "All",
@@ -255,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\cliente.gif"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\cliente_parado.png",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\cliente_parado.png",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/cliente_parado.png",
       "AssetKind": "All",
@@ -272,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\cliente_parado.png"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\close-circle-outline.svg",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\close-circle-outline.svg",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/close-circle-outline.svg",
       "AssetKind": "All",
@@ -289,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\close-circle-outline.svg"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\configuracoes.gif",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\configuracoes.gif",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/configuracoes.gif",
       "AssetKind": "All",
@@ -306,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\configuracoes.gif"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\configuracoes.png",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\configuracoes.png",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/configuracoes.png",
       "AssetKind": "All",
@@ -323,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\configuracoes.png"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\definicoes.gif",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\definicoes.gif",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/definicoes.gif",
       "AssetKind": "All",
@@ -340,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\definicoes.gif"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\definicoes_parado.png",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\definicoes_parado.png",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/definicoes_parado.png",
       "AssetKind": "All",
@@ -357,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\definicoes_parado.png"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\earth.ico",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\earth.ico",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/earth.ico",
       "AssetKind": "All",
@@ -374,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\earth.ico"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\earth.png",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\earth.png",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/earth.png",
       "AssetKind": "All",
@@ -391,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\earth.png"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\em-formacao.gif",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\em-formacao.gif",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/em-formacao.gif",
       "AssetKind": "All",
@@ -408,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\em-formacao.gif"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\em-formacao.png",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\em-formacao.png",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/em-formacao.png",
       "AssetKind": "All",
@@ -425,10 +459,27 @@
       "OriginalItemSpec": "wwwroot\\gifs\\em-formacao.png"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\jornal.gif",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\id-card-outline.svg",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "gifs/id-card-outline.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\gifs\\id-card-outline.svg"
+    },
+    {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\jornal.gif",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/jornal.gif",
       "AssetKind": "All",
@@ -442,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\jornal.gif"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\jornal.png",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\jornal.png",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/jornal.png",
       "AssetKind": "All",
@@ -459,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\jornal.png"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\mapa.gif",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\mapa.gif",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/mapa.gif",
       "AssetKind": "All",
@@ -476,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\mapa.gif"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\mapa.png",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\mapa.png",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/mapa.png",
       "AssetKind": "All",
@@ -493,10 +544,27 @@
       "OriginalItemSpec": "wwwroot\\gifs\\mapa.png"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\responsivo.gif",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\map-outline.svg",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "gifs/map-outline.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\gifs\\map-outline.svg"
+    },
+    {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\responsivo.gif",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/responsivo.gif",
       "AssetKind": "All",
@@ -510,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\responsivo.gif"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\responsivo.png",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\responsivo.png",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/responsivo.png",
       "AssetKind": "All",
@@ -527,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\responsivo.png"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\search-outline.svg",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\search-outline.svg",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/search-outline.svg",
       "AssetKind": "All",
@@ -544,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\search-outline.svg"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\trash-outline.svg",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\gifs\\trash-outline.svg",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "gifs/trash-outline.svg",
       "AssetKind": "All",
@@ -561,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\gifs\\trash-outline.svg"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\dispositivo.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\js\\dispositivo.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "js/dispositivo.js",
       "AssetKind": "All",
@@ -578,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\js\\dispositivo.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\localizacao.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\js\\localizacao.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "js/localizacao.js",
       "AssetKind": "All",
@@ -595,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\js\\localizacao.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\login.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\js\\login.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "js/login.js",
       "AssetKind": "All",
@@ -612,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\js\\login.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\mapa.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\js\\mapa.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "js/mapa.js",
       "AssetKind": "All",
@@ -629,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\js\\mapa.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\js\\site.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -646,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\tabela.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\js\\tabela.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "js/tabela.js",
       "AssetKind": "All",
@@ -663,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\js\\tabela.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\js\\usuario.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\js\\usuario.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "js/usuario.js",
       "AssetKind": "All",
@@ -680,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\js\\usuario.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -697,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -714,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -731,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -748,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -765,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -782,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -799,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -816,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -833,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -850,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -867,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -884,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -901,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -918,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -935,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -952,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -969,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -986,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1003,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1020,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -1037,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -1054,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -1071,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -1088,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -1105,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -1122,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -1139,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -1156,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -1173,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -1190,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1207,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1224,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1241,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1258,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1275,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1292,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1309,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1326,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1343,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1360,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1377,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1394,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1411,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1428,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1445,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1462,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1479,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1496,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1513,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1530,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1547,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1564,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1581,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1598,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1615,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1632,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\wwwroot\\",
       "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

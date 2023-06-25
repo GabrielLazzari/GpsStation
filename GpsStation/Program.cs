@@ -1,7 +1,13 @@
+using Ftec.ProjetosWeb.GPStation.MVC.Filters;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add<Filtro>();
+});
 
 //serviço e sessão
 builder.Services.AddSession(options =>

@@ -1,6 +1,9 @@
 ﻿using Ftec.ProjetosWeb.GPStation.API.Models;
 using Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao;
+using Ftec.ProjetosWeb.GPStation.Aplicacao.DTO;
 using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
+using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
+using Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia;
 using GpsStation.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -27,7 +30,8 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
         {
             try
             {
-                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+                IUsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao(usuarioPersistencia);
                 List<UsuarioModel> usuariosModel = new List<UsuarioModel>();
                 var usuarios = usuarioAplicacao.Listar();
                 foreach (var usuario in usuarios)
@@ -61,19 +65,43 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
         {
             try
             {
-                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+                IUsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao(usuarioPersistencia);
                 List<UsuarioModel> usuariosModel = new List<UsuarioModel>();
                 var usuarios = usuarioAplicacao.Consultar(nome);
-                foreach (var usuario in usuarios)
-                {
-                    usuariosModel.Add(new UsuarioModel()
+
+                    foreach (var usuario in usuarios)
                     {
-                        Id = usuario.Id,
-                        Nome = usuario.Nome,
-                        Senha = usuario.Senha
-                    });
-                }
-                return Ok(usuariosModel);
+                        usuariosModel.Add(new UsuarioModel()
+                        {
+                            Id = usuario.Id,
+                            Nome = usuario.Nome,
+                            Senha = usuario.Senha
+                        });
+                    }
+                    return Ok(usuariosModel);
+                
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+
+
+
+        [HttpGet("{usuario},{senha}")]
+        public IActionResult Get(string usuario, string senha)
+        {
+            try
+            {
+                IUsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao(usuarioPersistencia);
+                Guid token = usuarioAplicacao.Login(usuario,senha);
+                return Ok(token);
+
             }
             catch (Exception ex)
             {
@@ -88,20 +116,25 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
 
 
+
+
+
+
         [HttpPost]
         public IActionResult Post([FromBody] UsuarioModel usuarioModel)
         {
             try
             {
-                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+                IUsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao(usuarioPersistencia);
 
-                Usuario usuario = new Usuario()
+                UsuarioDTO usuarioDTO = new UsuarioDTO()
                 {
                     Nome = usuarioModel.Nome,
                     Senha = usuarioModel.Senha,
                     Id = usuarioModel.Id
                 };
-                if (usuarioAplicacao.Inserir(usuario))
+                if (usuarioAplicacao.Inserir(usuarioDTO))
                     return Ok();
                 else
                     return BadRequest();
@@ -126,10 +159,11 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
         [HttpDelete("{Id}")]
         public IActionResult Delete(Guid Id)
         {
-            
+
             try
             {
-                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+                IUsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao(usuarioPersistencia);
                 if (usuarioAplicacao.Excluir(Id))
                     return Ok();
                 else
@@ -150,17 +184,29 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
         [HttpPut]
         [Route("usuario/editar")]
-        public Boolean Editar(string nome, string senha, Guid id)
+        public IActionResult Editar(string nome, string senha, Guid id)
         {
-            Usuario usuario = new Usuario();
-            usuario.Nome = nome;
-            usuario.Senha = senha;
-            usuario.Id = id;
-            UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-            return usuarioAplicacao.Editar(usuario);
+            try
+            {
+                IUsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+                UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao(usuarioPersistencia);
+
+                UsuarioDTO usuarioDTO = new UsuarioDTO();
+                usuarioDTO.Nome = nome;
+                usuarioDTO.Senha = senha;
+                usuarioDTO.Id = id;
+
+                if (usuarioAplicacao.Editar(usuarioDTO))
+                    return Ok();
+                else
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
-
-
 
     }
 }

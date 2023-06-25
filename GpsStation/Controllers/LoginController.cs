@@ -5,6 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Usuario = Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
 using Microsoft.Extensions.Configuration;
+using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
+using Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia;
+using System.Net.Http;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using Ftec.ProjetosWeb.GPStation.MVC.API;
 
 namespace GpsStation.Controllers
 {
@@ -12,6 +17,8 @@ namespace GpsStation.Controllers
     {
 
         private string strConexao;
+        private APIHttpClient httpClient = new APIHttpClient(@"http://localhost:5135/");
+        private string controller = "usuario";
         public LoginController(IConfiguration configuration)
         {
             strConexao = configuration.GetConnectionString("stringconexao");
@@ -24,19 +31,21 @@ namespace GpsStation.Controllers
 
         public IActionResult Confirmarlogin(String usuario, String senha)
         {
-            UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
-            Boolean autorizado = usuarioAplicacao.Login(usuario, senha);
+            string url = $"{controller}/{usuario},{senha}";
+            Guid token = httpClient.Get<Guid>(url);
+
+
+            //Boolean autorizado = usuarioAplicacao.Login(usuario, senha);
             //  if (login.Nome == Request.Form["usuario"] && login.Senha == Request.Form["senha"])
-            if (autorizado)
+            if (token == Guid.Empty)
             {
-                //se correto redireciona para controller Mapa action index
-                return RedirectToAction("Index", "Mapa");
+                //se errado retorna para index
+                return RedirectToAction("Index", "Login");
             }
             else
             {
-                //se errado retorna mensagem de login incorreto
-                return RedirectToAction("Index", "Login");
-                //return Json(autorizado);
+                //se correto redireciona para controller Mapa action index
+                return RedirectToAction("Index", "Mapa");
             }
 
         }

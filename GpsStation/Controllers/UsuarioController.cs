@@ -34,7 +34,7 @@ namespace GpsStation.Controllers
 
         public IActionResult Consultar(string nome)
         {
-            nome = "bruno";
+            //nome = "bruno";
             //DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
             //dispositivoAplicacao.Consultar(nome);
 
@@ -57,22 +57,22 @@ namespace GpsStation.Controllers
 
 
 
-        public IActionResult Gravar()//UsuarioModel usuario
+        public IActionResult Gravar(UsuarioModel usuario)
         {
 
-            UsuarioModel usuario = new UsuarioModel();
-            usuario.Id = Guid.Empty;
-            usuario.Senha = "888";
-            usuario.Nome = "bruno";
+            //UsuarioModel usuarioModel = new UsuarioModel();
+            //usuarioModel.Id = //Guid.Empty;
+            //usuarioModel.Senha = //"888";
+            //usuarioModel.Nome = //"bruno";
 
-            var objeto = new UsuarioModel()
-            {
-                Id = usuario.Id,
-                Nome = usuario.Nome,
-                Senha = usuario.Senha
-            };
+            //var objeto = new UsuarioModel()
+            //{
+            //    Id = usuario.Id,
+            //    Nome = usuario.Nome,
+            //    Senha = usuario.Senha
+            //};
 
-            httpClient.Post<UsuarioModel>(controller, objeto);
+            httpClient.Post<UsuarioModel>(controller, usuario);
             return RedirectToAction("Index");
         }
 
@@ -91,8 +91,8 @@ namespace GpsStation.Controllers
 
         public IActionResult Put(Guid id)//Guid id
         {
-            Guid Id = Guid.Parse("D526AC0B-AE5C-4B68-9F24-DC93D3EBFA3A");
-            string url = $"{controller}/{Id}";
+            //Guid.Parse("D526AC0B-AE5C-4B68-9F24-DC93D3EBFA3A");
+            string url = $"{controller}/{id}";
             httpClient.Delete<Object>(url);
             return RedirectToAction("Index");
         }

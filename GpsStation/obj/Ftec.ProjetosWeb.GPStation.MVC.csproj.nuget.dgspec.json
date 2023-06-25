@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj": {}
+    "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj": {
+    "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj",
+        "projectUniqueName": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj",
         "projectName": "Ftec.ProjetosWeb.GPStation.Aplicacao",
-        "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj",
+        "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj",
         "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\obj\\",
+        "outputPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj": {
-                "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj"
+              "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj"
               },
-              "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\Ftec.ProjetosWeb.GPStation.Persistencia.csproj": {
-                "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\Ftec.ProjetosWeb.GPStation.Persistencia.csproj"
+              "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\Ftec.ProjetosWeb.GPStation.Persistencia.csproj": {
+                "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\Ftec.ProjetosWeb.GPStation.Persistencia.csproj"
               }
             }
           }
@@ -96,14 +96,14 @@
         }
       }
     },
-    "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj": {
+    "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj",
         "projectName": "Ftec.ProjetosWeb.GPStation.Dominio",
-        "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj",
+        "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj",
         "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\obj\\",
+        "outputPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -185,14 +185,14 @@
         }
       }
     },
-    "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\Ftec.ProjetosWeb.GPStation.Persistencia.csproj": {
+    "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\Ftec.ProjetosWeb.GPStation.Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\Ftec.ProjetosWeb.GPStation.Persistencia.csproj",
+        "projectUniqueName": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\Ftec.ProjetosWeb.GPStation.Persistencia.csproj",
         "projectName": "Ftec.ProjetosWeb.GPStation.Persistencia",
-        "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\Ftec.ProjetosWeb.GPStation.Persistencia.csproj",
+        "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\Ftec.ProjetosWeb.GPStation.Persistencia.csproj",
         "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\obj\\",
+        "outputPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -213,8 +213,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj": {
-                "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj"
+              "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj"
               }
             }
           }
@@ -290,14 +290,14 @@
         }
       }
     },
-    "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj": {
+    "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj",
+        "projectUniqueName": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj",
         "projectName": "Ftec.ProjetosWeb.GPStation.MVC",
-        "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj",
+        "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj",
         "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\obj\\",
+        "outputPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -318,11 +318,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj": {
-                "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj"
+              "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj": {
+                "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Aplicacao\\Ftec.ProjetosWeb.GPStation.Aplicacao.csproj"
               },
-              "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj": {
-                "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj"
+              "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.Dominio\\Ftec.ProjetosWeb.GPStation.Dominio.csproj"
               }
             }
           }

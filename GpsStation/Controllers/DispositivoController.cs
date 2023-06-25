@@ -62,7 +62,7 @@ namespace GpsStation.Controllers
         // CONSULTAR
         public IActionResult Consultar(String nome)
         {
-            nome = "inserir";
+            //nome = "inserir";
             //DispositivoAplicacao dispositivoAplicacao = new DispositivoAplicacao();
             //dispositivoAplicacao.Consultar(nome);
 
@@ -111,22 +111,23 @@ namespace GpsStation.Controllers
 
 
         //GRAVAR
-        public IActionResult Gravar()//DispositivoModel dispositivo
+        public IActionResult Gravar(DispositivoModel dispositivo)
         {
-            DispositivoModel dispositivo = new DispositivoModel();
-            dispositivo.Id = Guid.Empty;
-            dispositivo.Longitude = "888";
-            dispositivo.Latitude = "9999";
-            dispositivo.Nome = "inserir";
+            //DispositivoModel dispositivo = new DispositivoModel();
+            //dispositivo.Id = Guid.Empty;
+            //dispositivo.Longitude = "888";
+            //dispositivo.Latitude = "9999";
+            //dispositivo.Nome = "inserir";
 
-            var objeto = new DispositivoModel()
-            {
-                Id = dispositivo.Id,
-                Latitude = dispositivo.Latitude,
-                Longitude = dispositivo.Longitude,
-                Nome = dispositivo.Nome
-            };
-            httpClient.Post<DispositivoModel>(controller, objeto);
+            //var objeto = new DispositivoModel()
+            //{
+            //    Id = dispositivo.Id,
+            //    Latitude = dispositivo.Latitude,
+            //    Longitude = dispositivo.Longitude,
+            //    Nome = dispositivo.Nome
+            //};
+
+            httpClient.Post<DispositivoModel>(controller, dispositivo);
             return RedirectToAction("Index");
         }
 
@@ -140,10 +141,10 @@ namespace GpsStation.Controllers
 
 
         //EXCLUIR
-        public IActionResult Excluir()//Guid Id
+        public IActionResult Excluir(Guid id)
         {
-            Guid Id = Guid.Parse("403B71AB-1146-461C-B68D-EABFD008537D");
-            string url = $"{controller}/{Id}";
+            // Guid.Parse("403B71AB-1146-461C-B68D-EABFD008537D");
+            string url = $"{controller}/{id}";
             httpClient.Delete<Object>(url);
             return RedirectToAction("Index");
 

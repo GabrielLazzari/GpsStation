@@ -50,15 +50,15 @@ namespace GpsStation.Controllers
 
 
         /******* O MÉTODO INSERIR FOI UTILIZADO APENAS PARA TESTE, SERÁ SUBSTITUÍDO PELA API************/
-        public IActionResult Inserir()
+        public IActionResult Inserir(Guid id, DateTime dateTime, string latitude, string longitude)
         {
             controller = "localizacao";
-           LocalizacaoModel localizacao = new LocalizacaoModel()
+            LocalizacaoModel localizacao = new LocalizacaoModel()
             {
-                IdDispositivo = Guid.Parse("DAD64957-59CF-434C-A907-F7127EB7A36A".ToString()),
-                DataHora = DateTime.Parse("05 / 03 / 2023 22:51:00"),
-                Latitude = "2",
-                Longitude = "3",
+                IdDispositivo = id, //Guid.Parse("DAD64957-59CF-434C-A907-F7127EB7A36A".ToString()),
+                DataHora = dateTime, //DateTime.Parse("05 / 03 / 2023 22:51:00"),
+                Latitude = latitude, // "2",
+                Longitude = longitude //"3",
             };
 
             httpClient.Post<LocalizacaoModel>(controller, localizacao);

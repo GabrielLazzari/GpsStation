@@ -26,7 +26,7 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Adapters
             {
                 Id = usuario.Id,
                 Nome = usuario.Nome,
-                Senha = usuario.Senha
+                Senha = "******"
             };
         }
     }
