@@ -41,3 +41,7 @@ The statement has been terminated. | Classe: Inserir | Metodo: LocalizacaoPersis
 Data/Hora: 17/06/2023 17:01:17 | Mensagem: Violation of PRIMARY KEY constraint 'PK__localiza__B1EDB8E4C0102C0F'. Cannot insert duplicate key in object 'dbo.localizacao'. The duplicate key value is (DAD64957-59CF-434C-A907-F7127EB7A36A).
 The statement has been terminated. | Classe: Inserir | Metodo: LocalizacaoPersistencia |  
  
+Data/Hora: 24/06/2023 21:10:30 | Mensagem: Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=89; handshake=14926;  | Classe: Listar | Metodo: UsuarioPersistencia |  
+ 
+Data/Hora: 24/06/2023 21:47:20 | Mensagem: Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=24; handshake=25; [Login] initialization=14; authentication=14; [Post-Login] complete=14012;  | Classe: Listar | Metodo: UsuarioPersistencia |  
+ 

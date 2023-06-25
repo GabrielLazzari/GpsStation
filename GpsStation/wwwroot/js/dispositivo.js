@@ -20,7 +20,7 @@ document.onkeyup = function () {
 				                       
 				                        <td>
 					                        <a href="/Relatorio/Index">Últimos registros</a>
-					                        <a href="/Mapa/Index">Visualizar localização</a>
+					                        <a href="/Mapa/VisualizarLocalizacao?Id=${value.id}">Visualizar localização</a>
 					                        <img onclick="editarLinha('tabelaDispositivos', this, JSON.stringify({dispositivo:'', status:''}))" src="/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 					                        <img onclick="excluirItem('${value.nome}', '${value.id}', this)" src="/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
 				                        </td>

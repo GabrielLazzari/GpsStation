@@ -1,6 +1,5 @@
 C:\Users\Bruno\Documents\GitHub\GpsStation\Ftec.ProjetosWeb.GPStation.API\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\Bruno\Documents\GitHub\GpsStation\Ftec.ProjetosWeb.GPStation.API\bin\Debug\net6.0\appsettings.json
-C:\Users\Bruno\Documents\GitHub\GpsStation\Ftec.ProjetosWeb.GPStation.API\bin\Debug\net6.0\Ftec.ProjetosWeb.GPStation.API.staticwebassets.runtime.json
 C:\Users\Bruno\Documents\GitHub\GpsStation\Ftec.ProjetosWeb.GPStation.API\bin\Debug\net6.0\Ftec.ProjetosWeb.GPStation.API.exe
 C:\Users\Bruno\Documents\GitHub\GpsStation\Ftec.ProjetosWeb.GPStation.API\bin\Debug\net6.0\Ftec.ProjetosWeb.GPStation.API.deps.json
 C:\Users\Bruno\Documents\GitHub\GpsStation\Ftec.ProjetosWeb.GPStation.API\bin\Debug\net6.0\Ftec.ProjetosWeb.GPStation.API.runtimeconfig.json

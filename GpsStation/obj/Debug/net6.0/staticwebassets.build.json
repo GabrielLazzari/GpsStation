@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MEKYwkmeJhVmZDbI2BMu1Lu0rCE0rhdbqCBReW7zwKo=",
+  "Hash": "mjPPRH/er3qe9V2S4Nkp5LtmFAzWfSO1Y8ceYBxRyTw=",
   "Source": "Ftec.ProjetosWeb.GPStation.MVC",
   "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\configuracao.css"
+    },
+    {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\localizacao.css",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "css/localizacao.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\localizacao.css"
     },
     {
       "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\mapa.css",
@@ -219,6 +236,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\gifs\\brush-outline.svg"
+    },
+    {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\calendar-number-outline.svg",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "gifs/calendar-number-outline.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\gifs\\calendar-number-outline.svg"
     },
     {
       "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\checkmark-circle-outline.svg",
@@ -425,6 +459,23 @@
       "OriginalItemSpec": "wwwroot\\gifs\\em-formacao.png"
     },
     {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\id-card-outline.svg",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "gifs/id-card-outline.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\gifs\\id-card-outline.svg"
+    },
+    {
       "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\jornal.gif",
       "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
       "SourceType": "Discovered",
@@ -491,6 +542,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\gifs\\mapa.png"
+    },
+    {
+      "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\map-outline.svg",
+      "SourceId": "Ftec.ProjetosWeb.GPStation.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\",
+      "BasePath": "_content/Ftec.ProjetosWeb.GPStation.MVC",
+      "RelativePath": "gifs/map-outline.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\gifs\\map-outline.svg"
     },
     {
       "Identity": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\responsivo.gif",

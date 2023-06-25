@@ -29,11 +29,16 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
         {
             var dispositivos =  dispositivoPersistencia.Listar();
             var dispositivosDTO = new List<DispositivoDTO>();
-            foreach (var dispositivo in dispositivos)
+            if (dispositivos is not null)
             {
-                dispositivosDTO.Add(DispositivoAdapter.ToDispositivoDTO(dispositivo));
+                foreach (var dispositivo in dispositivos)
+                {
+                    dispositivosDTO.Add(DispositivoAdapter.ToDispositivoDTO(dispositivo));
+                }
+                return dispositivosDTO;
             }
-            return dispositivosDTO;
+            else
+                return null;
         }
 
         public Boolean Inserir(DispositivoDTO dispositivoDTO)
@@ -58,11 +63,16 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
         {
             var dispositivos = dispositivoPersistencia.Consultar(nome);
             var dispositivosDTO = new List<DispositivoDTO>();
-            foreach (var dispositivo in dispositivos)
+            if (dispositivos is not null)
             {
-                dispositivosDTO.Add(DispositivoAdapter.ToDispositivoDTO(dispositivo));
+                foreach (var dispositivo in dispositivos)
+                {
+                    dispositivosDTO.Add(DispositivoAdapter.ToDispositivoDTO(dispositivo));
+                }
+                return dispositivosDTO;
             }
-            return dispositivosDTO;
+            else
+                return null;
         }
 
         public Boolean Editar(Dispositivo dispositivo)

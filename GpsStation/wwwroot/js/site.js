@@ -3,6 +3,7 @@ const tamanhoControle = 520;
 var menuToggle = document.querySelector('.menuToggle');
 var navigation = document.querySelector('.navigation');
 var pagina = document.querySelector('.pagina');
+var usuarioLogadoMapa = document.getElementsByClassName("usuarioLogado")[0];
 
 // Mostra ou esconde o menu esquerdo
 menuToggle.onclick = function () {
@@ -30,6 +31,10 @@ function redmin() {
     larguraTela = window.innerWidth;
     if (larguraTela < tamanhoControle) {
         navigation.classList.add('barraSuperior');
+        if (usuarioLogadoMapa != null) {
+            usuarioLogadoMapa.classList.add('barraSuperior');
+        }
+
         if (pagina != null) {
             pagina.style.top = "45px";
             pagina.style.left = "0px";
@@ -38,6 +43,10 @@ function redmin() {
         }
     } else {
         navigation.classList.remove('barraSuperior');
+        if (usuarioLogadoMapa != null) {
+            usuarioLogadoMapa.classList.remove('barraSuperior');
+        }
+
         if (pagina != null) {
             pagina.style.top = "0px";
             pagina.style.left = "45px";
@@ -49,7 +58,7 @@ function redmin() {
 
 function corrigirNavigationUlPadding() {
     var path = window.location.pathname.split("/");
-    if (path.length == 2 || path.includes("Mapa")) {
+    if (path.includes("Mapa")) {
         navigation.classList.add('mapaEmTela');
     } else {
         navigation.classList.remove('mapaEmTela');

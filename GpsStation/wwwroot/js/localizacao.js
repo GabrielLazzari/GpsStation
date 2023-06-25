@@ -1,11 +1,8 @@
-﻿function RelatorioLocalizacao(dispositivo, inicio, fim) {
+﻿function RelatorioLocalizacao() {
+    var dispositivo = document.getElementById('dispositivo').value;
+    var inicio = document.getElementById('inicio').value;
+    var fim = document.getElementById('fim').value;
 
-    // var inicio = //JSON.stringify({ inicio: inicio.toISOString() });
-
-
-
-    //"testeini" //document.getElementsByName("inicio").values;
-    //var fim = "testefim" //document.getElementsByName("fim").values;
     var dados = {
 
         inicio: inicio,
@@ -13,11 +10,10 @@
         dispositivo: dispositivo
     }
     $.post("/localizacao/Consultar/", dados, CallBackRelatorioLocalizacao);
-
 }
 
-function CallBackRelatorioLocalizacao(retorno)
-{
+function CallBackRelatorioLocalizacao(retorno) {
+
     var tabela = document.querySelector("#tabelaRelatorio");
     var contalinhas = tabela.rows.length;
 
@@ -25,8 +21,6 @@ function CallBackRelatorioLocalizacao(retorno)
     {
         tabela.deleteRow(i);
     }
-
-
 
     for (var i = 0; i < retorno.length; i++)
     {
@@ -43,10 +37,12 @@ function CallBackRelatorioLocalizacao(retorno)
         linha.appendChild(coluna3);
         tabela.appendChild(linha);
     }
+}
 
+function RelatorioLocalizacaoMapa() {
+    var id = document.getElementById('dispositivo').value;
+    var inicio = document.getElementById('inicio').value;
+    var fim = document.getElementById('fim').value;
 
-
-
-
-
+    location.href = `/Mapa/VisualizarLocalizacaoRelatorio?Id=${id}&inicio=${inicio}&fim=${fim}`;
 }

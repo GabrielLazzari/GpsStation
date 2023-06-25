@@ -39,7 +39,7 @@
 				<td id=" @(item.Id)">@item.Nome</td>
 				<td>
 					<a asp-controller='Relatorio' asp-action="Index">Últimos registros</a>
-					<a asp-controller="Mapa" asp-action="Index">Visualizar localização</a>
+					<a href="/Mapa/VisualizarLocalizacao?Id=@item.Id">Visualizar Localizacao</a>
 					<img onclick="editarLinha('tabelaDispositivos', this,JSON.stringify({dispositivo:'', status:''}))" src="~/gifs/brush-outline.svg" class="svg-sm" title="Editar">
 					<img onclick="excluirItem('@item.Nome', '@item.Id', this)" src="~/gifs/trash-outline.svg" class="svg-sm" title="Excluir">
 

@@ -5,6 +5,7 @@
 
 @section Estilo{
 	<link rel="stylesheet" href="~/css/tabela.css" />
+	<link rel="stylesheet" href="~/css/localizacao.css" />
 }
 
 @section Script{
@@ -16,44 +17,43 @@
 <div class="text-center">
 	<h1 class="display-4">Relatório</h1>
 </div>
-<div class="text-center">
 
+<div class="text-center">
 	@using Microsoft.AspNetCore.Http;
 	@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContextAccessor;
 	<h3 style="text-align: center;">Usuário logado:@httpContextAccessor.HttpContext.Session.GetString("usuario")</h3>
+</div>
 
-
-
-	<label>Dispositivo:</label>
-	<!--<input type="text" id="nome" name="dispositivo">-->
-
-
-
-	<select id="dispositivo">
-		@{
-			foreach (var item in Model)
-			{
-				<option value=@item.Id name="@item.Nome">@item.Nome</option>
+<div class="conjuntoPesquisa" style="padding-top: 0px;">
+	<div class="areaItemPesquisa areaAjuste">
+		<img src="~/gifs/id-card-outline.svg" class="svg-sm iconFiltro" title="Pesquisar">
+		<label>Dispositivo:</label>
+		<select id="dispositivo">
+			@{
+				foreach (var item in Model)
+				{
+					<option value=@item.Id name="@item.Nome">@item.Nome</option>
+				}
 			}
-		}
-	</select>
+		</select>
+	</div>
 
+	<div class="areaItemPesquisa areaAjuste">
+		<img src="~/gifs/calendar-number-outline.svg" class="svg-sm iconFiltro" title="Pesquisar">
+		<label>Início:</label>
+		<input type="datetime-local" id="inicio">
 
-	<label>Início:</label>
-	<input type="datetime-local" id="inicio">
-
-	<label>Fim:</label>
-	<input type="datetime-local" id="fim">
-
-	@*
-	<button type="submit">PESQUISAR</button>
-	<a href="#" onclick="AtualizarEstoque('@item.Id')">Decrementar Estoque</a>*@
-	<button type="button" onclick="RelatorioLocalizacao(document.getElementById('dispositivo').value,
-			document.getElementById('inicio').value,
-			document.getElementById('fim').value)">
-		PESQUISAR
+		<label>Fim:</label>
+		<input type="datetime-local" id="fim">
+	</div>
+	
+	<button type="button" onclick="RelatorioLocalizacao()" class="areaBotaoPesquisa areaAjuste">
+		<img src="~/gifs/search-outline.svg" class="svg-sm iconBotao" title="Pesquisar"> PESQUISAR
 	</button>
 
+	<button type="button" onclick="RelatorioLocalizacaoMapa()" class="areaBotaoPesquisa areaAjuste">
+		<img src="~/gifs/map-outline.svg" class="svg-sm iconBotao" title="Pesquisar"> VER NO MAPA
+	</button>
 </div>
 
 <table id="tabelaRelatorio">

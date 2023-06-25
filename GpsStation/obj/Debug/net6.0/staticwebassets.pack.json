@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\configuracao.css"
     },
     {
+      "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\localizacao.css",
+      "PackagePath": "staticwebassets\\css\\localizacao.css"
+    },
+    {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\css\\mapa.css",
       "PackagePath": "staticwebassets\\css\\mapa.css"
     },
@@ -43,6 +47,10 @@
     {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\brush-outline.svg",
       "PackagePath": "staticwebassets\\gifs\\brush-outline.svg"
+    },
+    {
+      "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\calendar-number-outline.svg",
+      "PackagePath": "staticwebassets\\gifs\\calendar-number-outline.svg"
     },
     {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\checkmark-circle-outline.svg",
@@ -93,12 +101,20 @@
       "PackagePath": "staticwebassets\\gifs\\em-formacao.png"
     },
     {
+      "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\id-card-outline.svg",
+      "PackagePath": "staticwebassets\\gifs\\id-card-outline.svg"
+    },
+    {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\jornal.gif",
       "PackagePath": "staticwebassets\\gifs\\jornal.gif"
     },
     {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\jornal.png",
       "PackagePath": "staticwebassets\\gifs\\jornal.png"
+    },
+    {
+      "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\map-outline.svg",
+      "PackagePath": "staticwebassets\\gifs\\map-outline.svg"
     },
     {
       "Id": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\wwwroot\\gifs\\mapa.gif",

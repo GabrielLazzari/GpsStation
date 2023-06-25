@@ -1,3 +1,12 @@
-﻿.navigation ul {
-    left: 0px;
+﻿
+.areaSobre{
+    padding: 10px;
+}
+
+.titulo{
+    font-weight: bold;
+}
+
+.conteudo{
+    padding-left: 20px;
 }

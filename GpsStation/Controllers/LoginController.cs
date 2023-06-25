@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Usuario = Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
 using Microsoft.Extensions.Configuration;
+using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
+using Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia;
 
 namespace GpsStation.Controllers
 {
@@ -24,7 +26,8 @@ namespace GpsStation.Controllers
 
         public IActionResult Confirmarlogin(String usuario, String senha)
         {
-            UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao();
+            IUsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
+            UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao(usuarioPersistencia);
             Boolean autorizado = usuarioAplicacao.Login(usuario, senha);
             //  if (login.Nome == Request.Form["usuario"] && login.Senha == Request.Form["senha"])
             if (autorizado)
