@@ -144,3 +144,4 @@ C:\Users\Bruno\Documents\GitHub\Nova pasta\GpsStation\Ftec.ProjetosWeb.GPStation
 C:\Users\Bruno\Documents\GitHub\Nova pasta\GpsStation\Ftec.ProjetosWeb.GPStation.API\obj\Debug\net6.0\Ftec.ProjetosWeb.GPStation.API.pdb
 C:\Users\Bruno\Documents\GitHub\Nova pasta\GpsStation\Ftec.ProjetosWeb.GPStation.API\obj\Debug\net6.0\Ftec.ProjetosWeb.GPStation.API.genruntimeconfig.cache
 C:\Users\Bruno\Documents\GitHub\Nova pasta\GpsStation\Ftec.ProjetosWeb.GPStation.API\obj\Debug\net6.0\ref\Ftec.ProjetosWeb.GPStation.API.dll
+C:\Users\Bruno\Documents\GitHub\GpsStation\Ftec.ProjetosWeb.GPStation.API\bin\Debug\net6.0\Ftec.ProjetosWeb.GPStation.API.staticwebassets.runtime.json

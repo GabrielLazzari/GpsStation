@@ -14,7 +14,7 @@ namespace GpsStation.Models
         public Guid? IdDispositivo { get; set; }
 
         [DataType(DataType.DateTime)]
-        public DateTime? DataHora { get; set; } //datetime nullable
+        public DateTime? DataHora { get; set; } 
         public string Latitude { get; set; }
         public string Longitude { get; set; }
     }

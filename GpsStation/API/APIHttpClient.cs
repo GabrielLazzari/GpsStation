@@ -35,9 +35,7 @@ namespace Ftec.ProjetosWeb.GPStation.MVC.API
                 }
                 else
                 {
-
                     throw new Exception(response.Content.ReadAsStringAsync().Result);
-                  
                 }
             }
         }
@@ -49,7 +47,6 @@ namespace Ftec.ProjetosWeb.GPStation.MVC.API
                 client.BaseAddress = new Uri(baseAPI);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
 
                 HttpResponseMessage response = client.PostAsJsonAsync(action, data).Result;
                 if (response.IsSuccessStatusCode)
@@ -72,7 +69,6 @@ namespace Ftec.ProjetosWeb.GPStation.MVC.API
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-
                 HttpResponseMessage response = client.GetAsync(actionUri).Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -81,8 +77,6 @@ namespace Ftec.ProjetosWeb.GPStation.MVC.API
                 }
                 else
                 {
-                    //Pode-se registrar as falhas neste local
-                    //joga para o cliente a falha
                     throw new Exception(response.Content.ReadAsStringAsync().Result);
                 }
             }

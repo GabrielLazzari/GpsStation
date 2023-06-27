@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pKiEywRU5/ncQE7Wu9YnXRkvDqjOP0RgqBDaYfPQcB2R2se4ASOSgCFa47lQGPG90x+UjZh3GfuPkiwSwnNuWQ==",
+  "dgSpecHash": "M3miaBcTH1A1fV2hqTTJzOrZQGrgq58etxBiJYxWndRgtFuOsjgtLJjQShqXsnvDBOwayVNRcxsOi61ifKpgzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\Ftec.ProjetosWeb.GPStation.API\\Ftec.ProjetosWeb.GPStation.API.csproj",
+  "projectFilePath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\Ftec.ProjetosWeb.GPStation.API\\Ftec.ProjetosWeb.GPStation.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.1\\microsoft.aspnetcore.authentication.abstractions.2.1.1.nupkg.sha512",

@@ -14,8 +14,8 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
 {
     public class DispositivoAplicacao
     {
-        //cria variável do tipo da interface
         IDispositivoPersistencia dispositivoPersistencia;
+
 
         public DispositivoAplicacao(IDispositivoPersistencia dispositivoPersistencia)
         {
@@ -24,6 +24,9 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
             //não diretamente pela classe
             this.dispositivoPersistencia = dispositivoPersistencia;
         }
+
+
+
 
         public List<DispositivoDTO> Listar()
         {
@@ -40,6 +43,9 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
             else
                 return null;
         }
+
+
+
 
         public Boolean Inserir(DispositivoDTO dispositivoDTO)
         {
@@ -59,6 +65,9 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
             }
         }
 
+
+
+
         public List<DispositivoDTO> Consultar(string nome)
         {
             var dispositivos = dispositivoPersistencia.Consultar(nome);
@@ -75,16 +84,21 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
                 return null;
         }
 
+
+
         public Boolean Editar(Dispositivo dispositivo)
         {
             return dispositivoPersistencia.Editar(dispositivo);
         }
 
+
+
         public Boolean Excluir(Guid id)
         {
             return dispositivoPersistencia.Excluir(id);
-
         }
+
+
 
         public DispositivoDTO SelecionarPorId(Guid Id)
         {

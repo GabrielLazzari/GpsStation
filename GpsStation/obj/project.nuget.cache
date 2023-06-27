@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ukyXJhkIlpAchtFgTGJnX4ma6UPhHe4suYXrZMA2dX74jrymwt5ZCLlFmrCi4nwZSd22pj+mTKaCTrpW5jHDAw==",
+  "dgSpecHash": "Pn8lotlXsJlsnYLWiVE/vMMIUyc7/omdhr9lrbUOIfWfKDjrXMUeg0aLtcnQ489CHe/jU1t23Lx43kY7a/uduA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bruno\\Documents\\GitHub\\Nova pasta\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj",
+  "projectFilePath": "C:\\Users\\Bruno\\Documents\\GitHub\\GpsStation\\GpsStation\\Ftec.ProjetosWeb.GPStation.MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\Bruno\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

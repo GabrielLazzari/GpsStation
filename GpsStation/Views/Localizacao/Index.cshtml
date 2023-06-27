@@ -46,7 +46,7 @@
 		<label>Fim:</label>
 		<input type="datetime-local" id="fim">
 	</div>
-	
+
 	<button type="button" onclick="RelatorioLocalizacao()" class="areaBotaoPesquisa areaAjuste">
 		<img src="~/gifs/search-outline.svg" class="svg-sm iconBotao" title="Pesquisar"> PESQUISAR
 	</button>
@@ -62,17 +62,6 @@
 		<th>Latitude</th>
 		<th>Longitude</th>
 	</tr>
-	@*@{
-	foreach (var item in Model.Localizacao)
-	{
-	<tr>
-	<td>@item.DataHora</td>
-	<td>@item.Latitude</td>
-	<td>@item.Longitude</td>
-	</tr>
-	}
-	}*@
-
 </table>
 
 

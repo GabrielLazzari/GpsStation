@@ -1,16 +1,8 @@
 ﻿using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
 using GpsStation.Models;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
+
 
 namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 {
@@ -19,8 +11,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
         public List<Dispositivo> dispositivos;
         public Dispositivo dispositivo;
         SqlTransaction transacao;
-
-        //******* LEMBRAR DE SUBSTITUIR PELA STRING QUE JÁ ESTÁ SALVA NO appsettings.json ********
 
         private string stringconexao = "Server = ACER_B\\TEW_SQLEXPRESS; Database = gpsstation; User Id = user; Password = 1234;";
         //"Server = sdb; Database = teste_bruno; User Id = sa; Password = 217799;";
@@ -39,7 +29,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
                         comando.Connection = con;
                         comando.CommandText =
-                            "SELECT[Id],[Nome],[Latitude],[Longitude]FROM[dbo].[dispositivo]WHERE[Nome]=@Nome ORDER BY [Nome]";//like '%@nome%' nao recupera nenhum registro
+                            "SELECT[Id],[Nome],[Latitude],[Longitude]FROM[dbo].[dispositivo]WHERE[Nome]=@Nome ORDER BY [Nome]";
                         comando.Parameters.AddWithValue("Nome", nome);
                         using (SqlDataReader reader = comando.ExecuteReader())
                         {
@@ -70,6 +60,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                 return null;
             }
         }
+
+
 
         public bool Editar(Dispositivo dispositivo)
         {
@@ -107,6 +99,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         }
 
+
+
         public bool Excluir(Guid id)
         {
             var con = new SqlConnection(stringconexao);
@@ -141,6 +135,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
             }
 
         }
+
+
 
         public bool Inserir(Dispositivo dispositivo)
         {
@@ -182,6 +178,9 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
         }
 
+
+
+
         public List<Dispositivo> Listar()
         {
             using (var con = new SqlConnection(stringconexao))
@@ -221,12 +220,11 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
                     erro.Inserir(Mensagem, Metodo, Classe, dateTime);
                     return null;
                 }
-                finally
-                {
-                    con.Close();
-                }
             }
         }
+
+
+
 
 
         public Dispositivo SelecionarPorId(Guid Id)

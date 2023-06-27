@@ -1,12 +1,9 @@
 ﻿using Ftec.ProjetosWeb.GPStation.API.Models;
 using Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao;
 using Ftec.ProjetosWeb.GPStation.Aplicacao.DTO;
-using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
 using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
 using Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia;
-using GpsStation.Models;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 {
@@ -30,10 +27,10 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
                 if (localizacaoAplicacao.Inserir(new LocalizacaoDTO()
                 {
-                    IdDispositivo = id, // Guid.Parse("DAD64957-59CF-434C-A907-F7127EB7A36A".ToString()),
-                    DataHora = dateTime, // DateTime.Parse("05 / 12 / 2023 22:51:00"),
-                    Latitude = latitude, //"444",
-                    Longitude = longitude // "555",
+                    IdDispositivo = id, 
+                    DataHora = dateTime, 
+                    Latitude = latitude, 
+                    Longitude = longitude 
                 }))
                 
                 return Ok();
@@ -46,24 +43,6 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
             }
             
         }
-
-
-
-
-
-
-
-
-        //[HttpGet]
-        //[Route("localizacao/localizacaoatual")]
-        //public String LocalizacaoAtual(Guid Id)
-        //{
-        //   Localizacao localizacao = new Localizacao();
-        //    LocalizacaoAplicacao localizacaoAplicacao = new LocalizacaoAplicacao();
-        //    localizacao = localizacaoAplicacao.LocalizacaoAtual(Id);
-        //        return JsonConvert.SerializeObject(localizacao);
-        //}
-
 
 
 
@@ -97,9 +76,6 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-
-
 
     }
 }

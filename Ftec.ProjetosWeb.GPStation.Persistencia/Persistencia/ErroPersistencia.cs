@@ -1,12 +1,4 @@
-﻿using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.Intrinsics.X86;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 {

@@ -10,7 +10,7 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Adapters
             return new Localizacao
             {
                 IdDispositivo = localizacaoDTO.IdDispositivo,
-                DataHora = localizacaoDTO.DataHora ?? default(DateTime), // Caso seja nulo, define o valor padrão do DateTime
+                DataHora = localizacaoDTO.DataHora ?? default(DateTime), 
                 Latitude = localizacaoDTO.Latitude,
                 Longitude = localizacaoDTO.Longitude
             };

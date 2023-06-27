@@ -1,10 +1,6 @@
 ﻿using Ftec.ProjetosWeb.GPStation.Aplicacao.DTO;
 using GpsStation.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Adapter
 {
