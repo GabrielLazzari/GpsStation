@@ -26,6 +26,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 				{
 					using (var comando = new SqlCommand())
 					{
+
 						comando.Connection = con;
 						comando.CommandText =
 							"SELECT[Nome],[Senha],[Id]FROM[dbo].[usuario]WHERE[Nome]=@nome ORDER BY [Nome]";
@@ -75,6 +76,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					transacao = con.BeginTransaction();
 					using (var comando = new SqlCommand())
 					{
+						comando.Transaction = transacao;
 						comando.Connection = con;
 						comando.CommandText = "UPDATE[dbo].[usuario]SET[Nome]=@nome,[Senha]=@senha WHERE[Id]=@Id;";
 						comando.Parameters.AddWithValue("nome", usuario.Nome);
@@ -114,6 +116,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					transacao = con.BeginTransaction();
 					using (var comando = new SqlCommand())
 					{
+						comando.Transaction = transacao;
 						comando.Connection = con;
 						comando.CommandText = "DELETE FROM[dbo].[usuario]WHERE[Id]=@Id;";
 						comando.Parameters.AddWithValue("Id", id.ToString());
@@ -151,6 +154,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					transacao = con.BeginTransaction();
 					using (var comando = new SqlCommand())
 					{
+						comando.Transaction = transacao;
 						comando.Connection = con;
 						comando.CommandText = "INSERT INTO[dbo].[usuario]([Nome],[Senha],[Id])VALUES(@nome,@senha,@Id);";
 						comando.Parameters.AddWithValue("nome", usuario.Nome);

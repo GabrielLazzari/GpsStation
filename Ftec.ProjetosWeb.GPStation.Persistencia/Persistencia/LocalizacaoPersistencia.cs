@@ -80,6 +80,7 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 					transacao = con.BeginTransaction();
 					using (var comando = new SqlCommand())
 					{
+						comando.Transaction = transacao;
 						comando.Connection = con;
 						comando.CommandText =
 "INSERT INTO[dbo].[localizacao]([IdDispositivo],[DataHora],[Latitude],[Longitude])VALUES(@IdDispositivo,@DataHora,@Latitude,@Longitude);";
