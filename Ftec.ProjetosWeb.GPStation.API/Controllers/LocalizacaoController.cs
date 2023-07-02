@@ -4,6 +4,7 @@ using Ftec.ProjetosWeb.GPStation.Aplicacao.DTO;
 using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
 using Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia;
 using Microsoft.AspNetCore.Mvc;
+using NLog;
 
 namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 {
@@ -13,11 +14,10 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
     {
         public LocalizacaoController() { }
 
+		Logger _logger = LogManager.GetLogger(new 
+            DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName.Replace("\\bin\\Debug", ""));
 
-
-
-
-        [HttpPost]
+		[HttpPost]
         public IActionResult Post([FromBody]Guid id, DateTime dateTime, string latitude, string longitude)
         {
             try
@@ -27,19 +27,23 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 
                 if (localizacaoAplicacao.Inserir(new LocalizacaoDTO()
                 {
-                    IdDispositivo = id, 
-                    DataHora = dateTime, 
-                    Latitude = latitude, 
-                    Longitude = longitude 
+                    IdDispositivo = id,
+                    DataHora = dateTime,
+                    Latitude = latitude,
+                    Longitude = longitude
                 }))
-                
-                return Ok();
-              else
-                    return BadRequest();
+
+                    return Ok();
+                else
+                {
+					_logger.Info("Nao foi possivel inserir a localizacao");
+					return BadRequest();
+                }
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+				_logger.Info(ex.Message);
+				return BadRequest(ex.Message);
             }
             
         }
@@ -73,7 +77,8 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+				_logger.Info(ex.Message);
+				return BadRequest(ex.Message);
             }
         }
 

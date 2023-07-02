@@ -1,5 +1,6 @@
 ﻿using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
 using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
+using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
 
@@ -19,14 +20,14 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		{
 			var con = new SqlConnection(stringconexao);
 
-			con.Open();
+			
 			try
 			{
+				con.Open();
 				using (con)
 				{
 					using (var comando = new SqlCommand())
 					{
-
 						comando.Connection = con;
 						comando.CommandText =
 							"SELECT[Nome],[Senha],[Id]FROM[dbo].[usuario]WHERE[Nome]=@nome ORDER BY [Nome]";
@@ -45,7 +46,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 							}
 							return usuarios;
 						}
-
 					}
 				}
 			}
@@ -68,29 +68,30 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		{
 			var con = new SqlConnection(stringconexao);
 
-			con.Open();
 			try
 			{
-				using (con)
+				con.Open();
+				transacao = con.BeginTransaction();
+				using (var comando = new SqlCommand())
 				{
-					transacao = con.BeginTransaction();
-					using (var comando = new SqlCommand())
-					{
-						comando.Transaction = transacao;
-						comando.Connection = con;
-						comando.CommandText = "UPDATE[dbo].[usuario]SET[Nome]=@nome,[Senha]=@senha WHERE[Id]=@Id;";
-						comando.Parameters.AddWithValue("nome", usuario.Nome);
-						comando.Parameters.AddWithValue("senha", usuario.Senha);
-						comando.Parameters.AddWithValue("Id", usuario.Id);
-						comando.ExecuteNonQuery();
-						transacao.Commit();
-						return true;
-					}
+					comando.Transaction = transacao;
+					comando.Connection = con;
+					comando.CommandText = "UPDATE[dbo].[usuario]SET[Nome]=@nome,[Senha]=@senha WHERE[Id]=@Id;";
+					comando.Parameters.AddWithValue("nome", usuario.Nome);
+					comando.Parameters.AddWithValue("senha", usuario.Senha);
+					comando.Parameters.AddWithValue("Id", usuario.Id);
+					comando.ExecuteNonQuery();
+					transacao.Commit();
 				}
+
 			}
 			catch (Exception ex)
 			{
-				transacao.Rollback();
+				if (con.State == ConnectionState.Open)
+				{
+					transacao.Rollback();
+					con.Dispose();
+				}
 				string Mensagem = ex.Message;
 				string Metodo = MethodBase.GetCurrentMethod().Name;
 				string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -99,7 +100,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 				erro.Inserir(Mensagem, Metodo, Classe, dateTime);
 				return false;
 			}
-
+			con.Dispose();
+			return true;
 		}
 
 
@@ -108,27 +110,29 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		{
 			var con = new SqlConnection(stringconexao);
 
-			con.Open();
+
 			try
 			{
-				using (con)
+				con.Open();
+				transacao = con.BeginTransaction();
+				using (var comando = new SqlCommand())
 				{
-					transacao = con.BeginTransaction();
-					using (var comando = new SqlCommand())
-					{
-						comando.Transaction = transacao;
-						comando.Connection = con;
-						comando.CommandText = "DELETE FROM[dbo].[usuario]WHERE[Id]=@Id;";
-						comando.Parameters.AddWithValue("Id", id.ToString());
-						comando.ExecuteNonQuery();
-						transacao.Commit();
-						return true;
-					}
+					comando.Transaction = transacao;
+					comando.Connection = con;
+					comando.CommandText = "DELETE FROM[dbo].[usuario]WHERE[Id]=@Id;";
+					comando.Parameters.AddWithValue("Id", id.ToString());
+					comando.ExecuteNonQuery();
+					transacao.Commit();
 				}
+
 			}
 			catch (Exception ex)
 			{
-				transacao.Rollback();
+				if (con.State == ConnectionState.Open)
+				{
+					transacao.Rollback();
+					con.Dispose();
+				}
 				string Mensagem = ex.Message;
 				string Metodo = MethodBase.GetCurrentMethod().Name;
 				string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -137,7 +141,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 				erro.Inserir(Mensagem, Metodo, Classe, dateTime);
 				return false;
 			}
-
+			con.Dispose();
+			return true;
 		}
 
 
@@ -146,29 +151,31 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		public bool Inserir(Usuario usuario)
 		{
 			var con = new SqlConnection(stringconexao);
-			con.Open();
+
 			try
 			{
-				using (con)
+				con.Open();
+				transacao = con.BeginTransaction();
+				using (var comando = new SqlCommand())
 				{
-					transacao = con.BeginTransaction();
-					using (var comando = new SqlCommand())
-					{
-						comando.Transaction = transacao;
-						comando.Connection = con;
-						comando.CommandText = "INSERT INTO[dbo].[usuario]([Nome],[Senha],[Id])VALUES(@nome,@senha,@Id);";
-						comando.Parameters.AddWithValue("nome", usuario.Nome);
-						comando.Parameters.AddWithValue("senha", usuario.Senha);
-						comando.Parameters.AddWithValue("Id", usuario.Id);
-						comando.ExecuteNonQuery();
-						transacao.Commit();
-						return true;
-					}
+					comando.Transaction = transacao;
+					comando.Connection = con;
+					comando.CommandText = "INSERT INTO[dbo].[usuario]([Nome],[Senha],[Id])VALUES(@nome,@senha,@Id);";
+					comando.Parameters.AddWithValue("nome", usuario.Nome);
+					comando.Parameters.AddWithValue("senha", usuario.Senha);
+					comando.Parameters.AddWithValue("Id", usuario.Id);
+					comando.ExecuteNonQuery();
+					transacao.Commit();
 				}
+
 			}
 			catch (Exception ex)
 			{
-				transacao.Rollback();
+				if (con.State == ConnectionState.Open)
+				{
+					transacao.Rollback();
+					con.Dispose();
+				}
 				string Mensagem = ex.Message;
 				string Metodo = MethodBase.GetCurrentMethod().Name;
 				string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -177,7 +184,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 				erro.Inserir(Mensagem, Metodo, Classe, dateTime);
 				return false;
 			}
-
+			con.Dispose();
+			return true;
 		}
 
 
@@ -188,11 +196,9 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
 			try
 			{
-
+				con.Open();
 				using (con)
 				{
-
-					con.Open();
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
@@ -209,7 +215,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 									Id = Guid.Parse(reader["Id"].ToString())
 								});
 							}
-
 							return usuarios;
 						}
 
@@ -218,7 +223,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 			}
 			catch (Exception ex)
 			{
-
 				string Mensagem = ex.Message;
 				string Metodo = MethodBase.GetCurrentMethod().Name;
 				string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -227,7 +231,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 				erro.Inserir(Mensagem, Metodo, Classe, dateTime);
 				return null;
 			}
-
 		}
 
 
@@ -236,14 +239,12 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		public bool Login(string usuario, string senha)
 		{
 			var con = new SqlConnection(stringconexao);
-
+			Usuario login = new Usuario();
 			try
 			{
-				Usuario login = new Usuario();
+				con.Open();
 				using (con)
 				{
-
-					con.Open();
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
@@ -251,7 +252,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 						comando.Parameters.AddWithValue("usuario", usuario);
 						comando.Parameters.AddWithValue("senha", senha);
 						comando.ExecuteReader();
-
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
 							return reader.HasRows;
@@ -261,7 +261,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 			}
 			catch (Exception ex)
 			{
-
 				string Mensagem = ex.Message;
 				string Metodo = MethodBase.GetCurrentMethod().Name;
 				string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -282,11 +281,9 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 
 			try
 			{
+				con.Open();
 				using (con)
 				{
-
-
-					con.Open();
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
@@ -301,7 +298,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 								usuario.Nome = reader["nome"].ToString();
 								usuario.Senha = reader["senha"].ToString();
 								usuario.Id = Guid.Parse(reader["Id"].ToString());
-
 								return usuario;
 							}
 							else
@@ -312,7 +308,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 			}
 			catch (Exception ex)
 			{
-
 				string Mensagem = ex.Message;
 				string Metodo = MethodBase.GetCurrentMethod().Name;
 				string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;

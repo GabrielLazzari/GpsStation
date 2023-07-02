@@ -9,6 +9,8 @@ namespace Ftec.ProjetosWeb.GPStation.API.Models
             Id = Guid.Empty;
             Nome = string.Empty;
             Senha = string.Empty;
+            Token = string.Empty;
+            
         }
         public Guid Id { get; set; }
 
@@ -17,6 +19,8 @@ namespace Ftec.ProjetosWeb.GPStation.API.Models
 
         [StringLength(8, ErrorMessage = "Senha com no máximo 8 caracteres")]
         public string Senha { get; set; }
+
+        public string Token { get; set; }
 
     }
 }

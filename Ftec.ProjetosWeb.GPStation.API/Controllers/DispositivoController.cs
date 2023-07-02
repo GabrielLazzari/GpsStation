@@ -4,6 +4,7 @@ using Ftec.ProjetosWeb.GPStation.API.Models;
 using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
 using Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia;
 using Ftec.ProjetosWeb.GPStation.Aplicacao.DTO;
+using NLog;
 
 namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 {
@@ -12,13 +13,8 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 	[ApiController]
 	public class DispositivoController : ControllerBase
 	{
-
-		private readonly ILogger<DispositivoController> _logger;
-
-		public DispositivoController(ILogger<DispositivoController> logger)
-		{
-			_logger = logger;
-		}
+		Logger _logger = LogManager.GetLogger(new
+		DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName.Replace("\\bin\\Debug", ""));
 
 
 
@@ -42,11 +38,12 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 						Longitude = dispositivo.Longitude
 					});
 				}
-				_logger.LogInformation("teste do Nlog");
+				
 				return Ok(dispositivoModel);
 			}
 			catch (Exception ex)
 			{
+				_logger.Info(ex.Message);
 				return BadRequest(ex.Message);
 			}
 ;
@@ -84,6 +81,7 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 			}
 			catch (Exception ex)
 			{
+				_logger.Info(ex.Message);
 				return BadRequest(ex.Message);
 			}
 		}
@@ -112,10 +110,14 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 				if (dispositivoAplicacao.Inserir(dispositivo))
 					return Ok();
 				else
+				{
+					_logger.Info("Erro ao inserir o dispositivo");
 					return BadRequest();
+				}
 			}
 			catch (Exception ex)
 			{
+				_logger.Info(ex.Message);
 				return BadRequest(ex.Message);
 			}
 
@@ -140,10 +142,14 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 				if (dispositivoAplicacao.Excluir(Id))
 					return Ok();
 				else
+				{
+					_logger.Info("Erro ao excluir o dispositivo");
 					return BadRequest();
+				}
 			}
 			catch (Exception ex)
 			{
+				_logger.Info(ex.Message);
 				return BadRequest(ex.Message);
 			}
 

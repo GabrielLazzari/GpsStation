@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using Ftec.ProjetosWeb.GPStation.MVC.API;
+using GpsStation.Models;
 
 namespace GpsStation.Controllers
 {
@@ -9,7 +10,7 @@ namespace GpsStation.Controllers
 
         private string strConexao;
         private APIHttpClient httpClient = new APIHttpClient(@"http://localhost:5135/");
-        private string controller = "usuario";
+        private string controller = "login";
 
 
         public LoginController(IConfiguration configuration)
@@ -24,20 +25,17 @@ namespace GpsStation.Controllers
         }
 
 
-        public IActionResult Confirmarlogin(String usuario, String senha)
-        {
-            string url = $"{controller}/{usuario},{senha}";
-            Guid token = httpClient.Get<Guid>(url);
-
-            if (token == Guid.Empty)
+		public IActionResult ConfirmarLogin(string usuario, string senha)
+		{
+            UsuarioModel usuarioModel = new UsuarioModel()
             {
-                return RedirectToAction("Index", "Login");
-            }
-            else
-            {
-                return RedirectToAction("Index", "Mapa");
-            }
+                Nome = usuario,
+                Senha = senha,
+                Id = Guid.Empty
+            };
+			httpClient.Post<UsuarioModel>(controller, usuarioModel);
+			return RedirectToAction("Index");
+		}
 
-        }
     }
 }

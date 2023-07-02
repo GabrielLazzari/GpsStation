@@ -94,13 +94,30 @@ namespace Ftec.ProjetosWeb.GPStation.Aplicacao.Aplicacao
 
 
 
-        public Guid Login(string usuario, string senha)
+        public UsuarioDTO Login(string usuario, string senha)
         {
-            if (usuarioPersistencia.Login(usuario, senha))
-                return new Guid();
-            else
-                return Guid.Empty;
-        }
+
+				if (usuario == null)
+				{
+					throw new ApplicationException("Usario ou senha inválidos");
+				}
+				else
+				{
+
+				if (usuarioPersistencia.Login(usuario, senha))
+					{
+						return new UsuarioDTO()
+						{
+							Nome = usuario,
+							Senha = senha
+						};
+					}
+					else
+					{
+						throw new ApplicationException("Usario ou senha inválidos");
+					}
+				}
+		}
 
 
 

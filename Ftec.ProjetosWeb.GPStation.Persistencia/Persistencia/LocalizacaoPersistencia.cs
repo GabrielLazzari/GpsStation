@@ -1,5 +1,6 @@
 ﻿using Ftec.ProjetosWeb.GPStation.Dominio.Entidades;
 using Ftec.ProjetosWeb.GPStation.Dominio.Interfaces;
+using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
 
@@ -72,33 +73,30 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		{
 			var con = new SqlConnection(stringconexao);
 
-			con.Open();
 			try
 			{
-				using (con)
+				con.Open();
+				transacao = con.BeginTransaction();
+				using (var comando = new SqlCommand())
 				{
-					transacao = con.BeginTransaction();
-					using (var comando = new SqlCommand())
-					{
-						comando.Transaction = transacao;
-						comando.Connection = con;
-						comando.CommandText =
-"INSERT INTO[dbo].[localizacao]([IdDispositivo],[DataHora],[Latitude],[Longitude])VALUES(@IdDispositivo,@DataHora,@Latitude,@Longitude);";
-
-						comando.Parameters.AddWithValue("IdDispositivo", localizacao.IdDispositivo);
-						comando.Parameters.AddWithValue("DataHora", localizacao.DataHora);
-						comando.Parameters.AddWithValue("Latitude", localizacao.Latitude);
-						comando.Parameters.AddWithValue("Longitude", localizacao.Longitude);
-						comando.ExecuteNonQuery();
-						transacao.Commit();
-						return true;
-
-					}
+					comando.Transaction = transacao;
+					comando.Connection = con;
+					comando.CommandText ="INSERT INTO[dbo].[localizacao]([IdDispositivo],[DataHora],[Latitude],[Longitude])VALUES(@IdDispositivo,@DataHora,@Latitude,@Longitude);";
+					comando.Parameters.AddWithValue("IdDispositivo", localizacao.IdDispositivo);
+					comando.Parameters.AddWithValue("DataHora", localizacao.DataHora);
+					comando.Parameters.AddWithValue("Latitude", localizacao.Latitude);
+					comando.Parameters.AddWithValue("Longitude", localizacao.Longitude);
+					comando.ExecuteNonQuery();
+					transacao.Commit();
 				}
 			}
 			catch (Exception ex)
 			{
-				transacao.Rollback();
+				if (con.State == ConnectionState.Open)
+				{
+					transacao.Rollback();
+					con.Dispose();
+				}
 				string Mensagem = ex.Message;
 				string Metodo = MethodBase.GetCurrentMethod().Name;
 				string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -107,7 +105,8 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 				erro.Inserir(Mensagem, Metodo, Classe, dateTime);
 				return false;
 			}
-
+			con.Dispose();
+			return true;
 		}
 
 
@@ -115,19 +114,16 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 		public Localizacao LocalizacaoAtual(Guid dispositivo)
 		{
 			var con = new SqlConnection(stringconexao);
-			con.Open();
+			Localizacao localizacao = null;
 			try
 			{
-				Localizacao localizacao = null;
-
+				con.Open();
 				using (con)
 				{
-					transacao = con.BeginTransaction();
 					using (var comando = new SqlCommand())
 					{
 						comando.Connection = con;
-						comando.CommandText =
- "SELECT TOP 1 [DataHora],[Latitude],[Longitude]FROM[dbo].[localizacao]WHERE[IdDispositivo]=@dispositivo ORDER BY [DataHora] DESC";
+						comando.CommandText = "SELECT TOP 1 [DataHora],[Latitude],[Longitude]FROM[dbo].[localizacao]WHERE[IdDispositivo]=@dispositivo ORDER BY [DataHora] DESC";
 						comando.Parameters.AddWithValue("dispositivo", dispositivo);
 						using (SqlDataReader reader = comando.ExecuteReader())
 						{
@@ -138,16 +134,13 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 								localizacao.Latitude = reader["Latitude"].ToString();
 								localizacao.Longitude = reader["Longitude"].ToString();
 							}
-							transacao.Commit();
 							return localizacao;
 						}
-
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				transacao.Rollback();
 				string Mensagem = ex.Message;
 				string Metodo = MethodBase.GetCurrentMethod().Name;
 				string Classe = MethodBase.GetCurrentMethod().DeclaringType.Name;
@@ -156,8 +149,6 @@ namespace Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia
 				erro.Inserir(Mensagem, Metodo, Classe, dateTime);
 				return null;
 			}
-			return null;
-
 		}
 	}
 }

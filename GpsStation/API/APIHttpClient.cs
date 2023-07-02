@@ -56,7 +56,7 @@ namespace Ftec.ProjetosWeb.GPStation.MVC.API
                 }
                 else
                 {
-                    throw new Exception(response.Content.ReadAsStringAsync().Result);
+					throw new Exception(response.Content.ReadAsStringAsync().Result);
                 }
             }
         }

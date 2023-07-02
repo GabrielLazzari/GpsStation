@@ -7,6 +7,7 @@ using Ftec.ProjetosWeb.GPStation.Persistencia.Persistencia;
 using GpsStation.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using NLog;
 
 namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 {
@@ -16,8 +17,8 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 	{
 		public UsuarioController() { }
 
-
-
+		Logger _logger = LogManager.GetLogger(new
+			DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName.Replace("\\bin\\Debug", ""));
 
 		[HttpGet]
 		public IActionResult Get()
@@ -41,6 +42,7 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 			}
 			catch (Exception ex)
 			{
+				_logger.Info(ex.Message);
 				return BadRequest(ex.Message);
 			}
 
@@ -75,39 +77,11 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 			}
 			catch (Exception ex)
 			{
+				_logger.Info(ex.Message);
 				return BadRequest(ex.Message);
 			}
 
 		}
-
-
-
-
-		[HttpGet("{usuario},{senha}")]
-		public IActionResult Get(string usuario, string senha)
-		{
-			try
-			{
-				IUsuarioPersistencia usuarioPersistencia = new UsuarioPersistencia();
-				UsuarioAplicacao usuarioAplicacao = new UsuarioAplicacao(usuarioPersistencia);
-				Guid token = usuarioAplicacao.Login(usuario, senha);
-				return Ok(token);
-
-			}
-			catch (Exception ex)
-			{
-				return BadRequest(ex.Message);
-			}
-
-		}
-
-
-
-
-
-
-
-
 
 
 
@@ -128,10 +102,14 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 				if (usuarioAplicacao.Inserir(usuarioDTO))
 					return Ok();
 				else
+				{
+					_logger.Info("Nao foi possivel inserir o usuario");
 					return BadRequest();
+				}
 			}
 			catch (Exception ex)
 			{
+				_logger.Info(ex.Message);
 				return BadRequest(ex.Message);
 			}
 
@@ -158,10 +136,14 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 				if (usuarioAplicacao.Excluir(Id))
 					return Ok();
 				else
+				{
+					_logger.Info("Nao foi possivel excluir o usuario");
 					return BadRequest();
+				}
 			}
 			catch (Exception ex)
 			{
+				_logger.Info(ex.Message);
 				return BadRequest(ex.Message);
 			}
 		}
@@ -190,10 +172,14 @@ namespace Ftec.ProjetosWeb.GPStation.API.Controllers
 				if (usuarioAplicacao.Editar(usuarioDTO))
 					return Ok();
 				else
+				{
+					_logger.Info("Nao foi possivel alterar o usuario");
 					return BadRequest();
+				}
 			}
 			catch (Exception ex)
 			{
+				_logger.Info(ex.Message);
 				return BadRequest(ex.Message);
 			}
 

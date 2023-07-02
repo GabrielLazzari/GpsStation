@@ -45,3 +45,9 @@ Data/Hora: 24/06/2023 21:10:30 | Mensagem: Connection Timeout Expired.  The time
  
 Data/Hora: 24/06/2023 21:47:20 | Mensagem: Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=24; handshake=25; [Login] initialization=14; authentication=14; [Post-Login] complete=14012;  | Classe: Listar | Metodo: UsuarioPersistencia |  
  
+Data/Hora: 02/07/2023 13:22:26 | Mensagem: There is already an open DataReader associated with this Command which must be closed first. | Classe: Login | Metodo: UsuarioPersistencia |  
+ 
+Data/Hora: 02/07/2023 13:35:35 | Mensagem: There is already an open DataReader associated with this Command which must be closed first. | Classe: Login | Metodo: UsuarioPersistencia |  
+ 
+Data/Hora: 02/07/2023 13:40:29 | Mensagem: There is already an open DataReader associated with this Command which must be closed first. | Classe: Login | Metodo: UsuarioPersistencia |  
+ 

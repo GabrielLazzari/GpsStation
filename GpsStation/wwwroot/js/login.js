@@ -10,7 +10,7 @@
         usuario:usuario.trim(),
         senha:senha.trim()
     }
-    $.post("/login/Confirmarlogin/", dados,CallBackConfirmarlogin);
+    $.post("/login/ConfirmarLogin/", dados,CallBackConfirmarlogin);
 
 }
 

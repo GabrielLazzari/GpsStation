@@ -226,3 +226,9 @@ C:\Users\Bruno\Documents\GitHub\Nova pasta\GpsStation\GpsStation\obj\Debug\net6.
 C:\Users\Bruno\Documents\GitHub\Nova pasta\GpsStation\GpsStation\obj\Debug\net6.0\Ftec.ProjetosWeb.GPStation.MVC.pdb
 C:\Users\Bruno\Documents\GitHub\Nova pasta\GpsStation\GpsStation\obj\Debug\net6.0\Ftec.ProjetosWeb.GPStation.MVC.genruntimeconfig.cache
 C:\Users\Bruno\Documents\GitHub\Nova pasta\GpsStation\GpsStation\obj\Debug\net6.0\ref\Ftec.ProjetosWeb.GPStation.MVC.dll
+C:\Users\Bruno\Documents\GitHub\GpsStation\GpsStation\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Bruno\Documents\GitHub\GpsStation\GpsStation\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Bruno\Documents\GitHub\GpsStation\GpsStation\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Bruno\Documents\GitHub\GpsStation\GpsStation\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Bruno\Documents\GitHub\GpsStation\GpsStation\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Bruno\Documents\GitHub\GpsStation\GpsStation\bin\Debug\net6.0\NLog.config
