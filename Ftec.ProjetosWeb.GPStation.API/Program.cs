@@ -56,12 +56,10 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//serviço do swegger
 	app.UseSwagger();
 	app.UseSwaggerUI();
-}
+
 
 app.UseAuthorization();
 

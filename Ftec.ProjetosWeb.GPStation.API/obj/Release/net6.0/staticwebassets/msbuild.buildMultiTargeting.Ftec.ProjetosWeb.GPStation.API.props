@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Ftec.ProjetosWeb.GPStation.API.props" />
+</Project>
